@@ -1,0 +1,174 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=09",
+  "collection": "hu12",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -114.75332547607019,
+          45.47608064920371
+        ],
+        [
+          -89.8592967678357,
+          45.47608064920371
+        ],
+        [
+          -89.8592967678357,
+          50.55242529965756
+        ],
+        [
+          -114.75332547607019,
+          50.55242529965756
+        ],
+        [
+          -114.75332547607019,
+          45.47608064920371
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -114.75332547607019,
+    45.47608064920371,
+    -89.8592967678357,
+    50.55242529965756
+  ],
+  "properties": {
+    "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 09 Souris-Red-Rainy",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "09",
+    "table:row_count": 2331,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc12",
+        "type": "varchar",
+        "description": "12-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "hutype",
+        "type": "varchar"
+      },
+      {
+        "name": "humod",
+        "type": "varchar"
+      },
+      {
+        "name": "tohuc",
+        "type": "varchar"
+      },
+      {
+        "name": "noncontributingareaacres",
+        "type": "double"
+      },
+      {
+        "name": "noncontributingareasqkm",
+        "type": "double"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 09 Souris-Red-Rainy (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 43154975,
+      "file:checksum": "122024155c3a3e0c5137ae3d25d1368c2ba0477e6412f1a9cbaa4fa95caa356c7ed9",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

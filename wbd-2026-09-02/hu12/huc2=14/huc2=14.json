@@ -1,0 +1,174 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=14",
+  "collection": "hu12",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -112.32864202150046,
+          35.55836155730634
+        ],
+        [
+          -105.62641034752863,
+          35.55836155730634
+        ],
+        [
+          -105.62641034752863,
+          43.45218024505357
+        ],
+        [
+          -112.32864202150046,
+          43.45218024505357
+        ],
+        [
+          -112.32864202150046,
+          35.55836155730634
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -112.32864202150046,
+    35.55836155730634,
+    -105.62641034752863,
+    43.45218024505357
+  ],
+  "properties": {
+    "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 14 Upper Colorado",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "14",
+    "table:row_count": 3179,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc12",
+        "type": "varchar",
+        "description": "12-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "hutype",
+        "type": "varchar"
+      },
+      {
+        "name": "humod",
+        "type": "varchar"
+      },
+      {
+        "name": "tohuc",
+        "type": "varchar"
+      },
+      {
+        "name": "noncontributingareaacres",
+        "type": "double"
+      },
+      {
+        "name": "noncontributingareasqkm",
+        "type": "double"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 14 Upper Colorado (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 35914169,
+      "file:checksum": "12204b35784c3a86827daf838d4cfdb0227d8c1b708b02c70ff7144aa21a84854124",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

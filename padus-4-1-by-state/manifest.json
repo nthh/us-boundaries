@@ -1,0 +1,1822 @@
+{
+  "format": "folia-partitioned-geoparquet",
+  "version": 2,
+  "kind": "padus",
+  "built": "2026-10-09T20:22:56Z",
+  "build": {
+    "script": "https://github.com/nthh/us-boundaries/blob/main/scripts/build_sorted_boundary_partitions.py",
+    "script_sha256": "92b4badfc513865e127f51270241d66e29fda42a378f560a93921f34ee0b982f"
+  },
+  "sources": [
+    {
+      "title": "PAD-US 4.1 Combined (Source Cooperative cboettig/padus)",
+      "url": "https://data.source.coop/cboettig/padus/padus-4-1/combined.parquet",
+      "bytes": 1858273578,
+      "etag": "\"f1f0cad991ca44fdcf83af886b07c835-355\"",
+      "last_modified": "2026-06-18T07:02:55Z",
+      "sha256": "2c85043d3f3d2b832b110d8e76ad002f15d50a10d586559ed683cbc2d9403582"
+    }
+  ],
+  "tools": {
+    "duckdb": "1.5.6",
+    "duckdb_spatial": "04270fe",
+    "pyarrow": "21.0.0",
+    "pillow": "11.3.0",
+    "python": "3.12.12"
+  },
+  "parameters": {
+    "row_group_bytes": 2097152,
+    "max_rows_per_group": 100000,
+    "zstd_level": 9,
+    "sort": "features larger than a fraction of the partition last, then hilbert(bbox centre, partition extent), then id",
+    "large_feature_fraction_start": 0.5,
+    "geoparquet": "1.1.0, WKB, bbox covering",
+    "only": null
+  },
+  "collections": {
+    "combined": [
+      {
+        "value": "AK",
+        "rows": 2082,
+        "bytes": 309299337,
+        "sha256": "57f052183304d584e282998625c2d50f5e59b0b852135d1c4f15e9c3652b5994",
+        "bbox": [
+          -179.2310860005793,
+          51.17509200002174,
+          179.859680999087,
+          71.43978599936185
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 10,
+        "portolan_ordering_check": true,
+        "row_groups": 102,
+        "max_row_group_uncompressed": 26493172
+      },
+      {
+        "value": "AL",
+        "rows": 2555,
+        "bytes": 15432948,
+        "sha256": "4eaf93e8bc5ade81ab63576c9ae5d7f0799b16d71eab4805ff0eb143fd2fe2df",
+        "bbox": [
+          -88.43124433632029,
+          30.158542999814355,
+          -83.22958749319979,
+          35.007884647865374
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 3,
+        "portolan_ordering_check": true,
+        "row_groups": 10,
+        "max_row_group_uncompressed": 4173948
+      },
+      {
+        "value": "AR",
+        "rows": 2114,
+        "bytes": 8830308,
+        "sha256": "d4ebfe0a23dcd3d6004a936dfe762c19bc3cd727b8bde92ef6bad99f3abdc210",
+        "bbox": [
+          -94.61683027066057,
+          33.005966402274,
+          -89.71243662595354,
+          36.49916855687797
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 2,
+        "portolan_ordering_check": true,
+        "row_groups": 13,
+        "max_row_group_uncompressed": 1386211
+      },
+      {
+        "value": "AS",
+        "rows": 26,
+        "bytes": 249027,
+        "sha256": "4410517691bc16f3862e547e8d9435eee2d11db1e5bc09ff31620066df112f1b",
+        "bbox": [
+          -171.14091989343086,
+          -15.38614238737142,
+          -167.28333299960175,
+          -10.997592257528236
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 1,
+        "portolan_ordering_check": true,
+        "row_groups": 2,
+        "max_row_group_uncompressed": 257178
+      },
+      {
+        "value": "AZ",
+        "rows": 2955,
+        "bytes": 26256801,
+        "sha256": "d3621a364a3dcd57314dc1063b80c2347e940fa60517c8aa27b464468a9275aa",
+        "bbox": [
+          -114.81408699962473,
+          31.332342039889966,
+          -109.0451719995697,
+          37.00372500005534
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 8,
+        "portolan_ordering_check": true,
+        "row_groups": 16,
+        "max_row_group_uncompressed": 10825974
+      },
+      {
+        "value": "CA",
+        "rows": 33939,
+        "bytes": 113984373,
+        "sha256": "e84edf7b3ace7f0b2bd0f11cda4fa1d6c0806475a241b2754add2312eb196c06",
+        "bbox": [
+          -124.53262644631165,
+          32.52952378101107,
+          -114.13147284506842,
+          42.00950300024118
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 11,
+        "portolan_ordering_check": true,
+        "row_groups": 76,
+        "max_row_group_uncompressed": 12540912
+      },
+      {
+        "value": "CO",
+        "rows": 18276,
+        "bytes": 54928643,
+        "sha256": "0ce4f60d3d3d21a43772da2c7ce49c9226c0a6fb059fb9a6882519f0d25e56c3",
+        "bbox": [
+          -109.0602036008459,
+          36.73503234933215,
+          -102.04174899978351,
+          41.00344399958431
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 4,
+        "portolan_ordering_check": true,
+        "row_groups": 39,
+        "max_row_group_uncompressed": 2024787
+      },
+      {
+        "value": "CT",
+        "rows": 19129,
+        "bytes": 23029839,
+        "sha256": "0696149198208c3c9aff5718b276e34762199bd0a1ab118e3bd8b8c9bdcef4af",
+        "bbox": [
+          -73.717499612773,
+          40.98004551359331,
+          -71.20386382024641,
+          45.26171054575904
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 18,
+        "max_row_group_uncompressed": 1951826
+      },
+      {
+        "value": "DC",
+        "rows": 378,
+        "bytes": 1342560,
+        "sha256": "94bdf9b1559782cd5f0e49421991f62706f64510e1af34640fafe3da4770fbcb",
+        "bbox": [
+          -77.11933007302164,
+          38.80166380335148,
+          -76.9106467301827,
+          38.99526798771081
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 6,
+        "portolan_ordering_check": true,
+        "row_groups": 2,
+        "max_row_group_uncompressed": 1845445
+      },
+      {
+        "value": "DE",
+        "rows": 6782,
+        "bytes": 10850779,
+        "sha256": "1ff573f46376544100405118b70669ad25db4940e06291c1cff02d45ca1d1bcc",
+        "bbox": [
+          -75.78900146342507,
+          38.45119499983619,
+          -74.98416500066413,
+          39.83951600025714
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 8,
+        "max_row_group_uncompressed": 1921663
+      },
+      {
+        "value": "FL",
+        "rows": 10577,
+        "bytes": 80334878,
+        "sha256": "a241c4bf11ed5005f13b6a6b793df6aea8512be28a0dfe82385ac699817e4633",
+        "bbox": [
+          -87.6322633827933,
+          24.29999409027214,
+          -79.97472800055978,
+          31.000670897153388
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 2,
+        "portolan_ordering_check": true,
+        "row_groups": 53,
+        "max_row_group_uncompressed": 8120506
+      },
+      {
+        "value": "GA",
+        "rows": 7484,
+        "bytes": 18822672,
+        "sha256": "5d41defdad6b3e54585f3b4900572539827d00c6f2a89fe218ff2749ce03c23a",
+        "bbox": [
+          -90.73695869791966,
+          30.35967382598004,
+          -80.78582799977805,
+          35.4822774763811
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 13,
+        "max_row_group_uncompressed": 2034793
+      },
+      {
+        "value": "GU",
+        "rows": 27,
+        "bytes": 312191,
+        "sha256": "78166e0583a5a836083b270929df6932287df0182f6591b025ed5acefaaa629a",
+        "bbox": [
+          144.61686123959382,
+          13.235495975208046,
+          144.9721596044439,
+          13.661282676763282
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 3,
+        "portolan_ordering_check": true,
+        "row_groups": 2,
+        "max_row_group_uncompressed": 288854
+      },
+      {
+        "value": "HI",
+        "rows": 1144,
+        "bytes": 6896201,
+        "sha256": "b3567c0caa1f315521c977c734c498c2b8e993befda6a08fcb2f6c61ea6ef799",
+        "bbox": [
+          -179.99998854173415,
+          18.910690000257315,
+          179.99999999979548,
+          31.79786811724053
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 5,
+        "portolan_ordering_check": true,
+        "row_groups": 6,
+        "max_row_group_uncompressed": 2003144
+      },
+      {
+        "value": "IA",
+        "rows": 6880,
+        "bytes": 8897219,
+        "sha256": "547f61addb45438c76e1074341e9f0be0676dbd45e7aec26db675b00e0d8cfe1",
+        "bbox": [
+          -96.63948500040976,
+          40.37609516684101,
+          -90.14006099949755,
+          43.50119599969099
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.125,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 24,
+        "portolan_ordering_check": true,
+        "row_groups": 8,
+        "max_row_group_uncompressed": 1996279
+      },
+      {
+        "value": "ID",
+        "rows": 10945,
+        "bytes": 47125947,
+        "sha256": "f0de9195b3fddfecbd503e4b8a87f031a8016f5adc81d29748736777497fe15d",
+        "bbox": [
+          -117.24180983393748,
+          41.988182145680824,
+          -111.04351981862243,
+          49.00084562065661
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 26,
+        "portolan_ordering_check": true,
+        "row_groups": 33,
+        "max_row_group_uncompressed": 2064883
+      },
+      {
+        "value": "IL",
+        "rows": 14794,
+        "bytes": 23462768,
+        "sha256": "94d430c1f547fa397f9ec4841da7904f36b54500c04d8f6996e047431ee9d360",
+        "bbox": [
+          -91.50822830733377,
+          36.98317857741241,
+          -87.01993499947882,
+          45.596658795491656
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 2,
+        "portolan_ordering_check": true,
+        "row_groups": 19,
+        "max_row_group_uncompressed": 1969246
+      },
+      {
+        "value": "IN",
+        "rows": 4750,
+        "bytes": 5316440,
+        "sha256": "65546d1611f6132b08c6b454b7e73f45fb14327e7a122b697b1d1737b7a55773",
+        "bbox": [
+          -88.090322956189,
+          37.772953999842905,
+          -84.80252683628581,
+          41.761368000035944
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 2,
+        "portolan_ordering_check": true,
+        "row_groups": 10,
+        "max_row_group_uncompressed": 898582
+      },
+      {
+        "value": "KS",
+        "rows": 2162,
+        "bytes": 3807315,
+        "sha256": "ddfb023c05316930e3b8f25c6e3b082ed4d35d9614f41a23a911ec9ce8c102c3",
+        "bbox": [
+          -102.05176899986866,
+          36.99307233298471,
+          -94.58838700043249,
+          40.00307804686498
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.25,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 3,
+        "portolan_ordering_check": true,
+        "row_groups": 3,
+        "max_row_group_uncompressed": 1756302
+      },
+      {
+        "value": "KY",
+        "rows": 3728,
+        "bytes": 21166273,
+        "sha256": "4a675d406b3e1783c665711f49c83c4d06228d31122551bc4c6a7d4e2d3973e9",
+        "bbox": [
+          -89.54511163760647,
+          36.4972579780722,
+          -82.23056321722999,
+          39.13070003581816
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 15,
+        "max_row_group_uncompressed": 2052762
+      },
+      {
+        "value": "LA",
+        "rows": 2958,
+        "bytes": 8848914,
+        "sha256": "b2c99a45de4136e672b2c49af08fe4cfe4f4f820fd0f28e6fa77bcb1b80021ee",
+        "bbox": [
+          -94.04289458230683,
+          28.86037902157289,
+          -88.76267648064922,
+          33.0194150144429
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 4,
+        "portolan_ordering_check": true,
+        "row_groups": 13,
+        "max_row_group_uncompressed": 1005999
+      },
+      {
+        "value": "MA",
+        "rows": 48892,
+        "bytes": 52970394,
+        "sha256": "571c8f747851c3bb38ed94143d38a848125d0b65155f7d34686668ad8b405d66",
+        "bbox": [
+          -73.50821000018675,
+          41.187053000330856,
+          -69.85886100050949,
+          42.88640646744922
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 43,
+        "max_row_group_uncompressed": 1904848
+      },
+      {
+        "value": "MD",
+        "rows": 61414,
+        "bytes": 58105583,
+        "sha256": "1b8f1aab6363f8665f6b17f5a5ae011623d396c96870d10babea9949da8ab9b5",
+        "bbox": [
+          -79.4871175176515,
+          37.88975480627872,
+          -74.99962500025171,
+          39.723374536131544
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 1,
+        "portolan_ordering_check": true,
+        "row_groups": 50,
+        "max_row_group_uncompressed": 5330678
+      },
+      {
+        "value": "ME",
+        "rows": 12942,
+        "bytes": 33963298,
+        "sha256": "24e6422389dabc256eb377338f479f3f0642b2cb019e28c467eed94b0eba6c7d",
+        "bbox": [
+          -71.0748216702242,
+          42.98037974597192,
+          -66.94539421902589,
+          47.4598429089292
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 18,
+        "portolan_ordering_check": true,
+        "row_groups": 25,
+        "max_row_group_uncompressed": 2089511
+      },
+      {
+        "value": "MI",
+        "rows": 13990,
+        "bytes": 18927240,
+        "sha256": "823383c4ca4223679abc7c73dd5308f6c400d3c9c83f80786005bec47d256be2",
+        "bbox": [
+          -90.41839199970899,
+          41.696117999634424,
+          -82.12290417608824,
+          48.30425468317924
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 4,
+        "portolan_ordering_check": true,
+        "row_groups": 15,
+        "max_row_group_uncompressed": 2031224
+      },
+      {
+        "value": "MN",
+        "rows": 17185,
+        "bytes": 27656861,
+        "sha256": "e851a168e65c3a593be684f444a251970097f0624d075a05a1128ce11a8c75c1",
+        "bbox": [
+          -97.23909300050248,
+          43.49936099964741,
+          -89.48568569054868,
+          49.3710267529273
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 7,
+        "portolan_ordering_check": true,
+        "row_groups": 21,
+        "max_row_group_uncompressed": 2077550
+      },
+      {
+        "value": "MO",
+        "rows": 5807,
+        "bytes": 8868193,
+        "sha256": "9a3e579d2dd4423823fd627e30acd1ee786b08ad773d492752fee6aeb4f06e06",
+        "bbox": [
+          -95.75469069204124,
+          35.99782900002064,
+          -89.11446616366557,
+          40.60716935198139
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 8,
+        "portolan_ordering_check": true,
+        "row_groups": 8,
+        "max_row_group_uncompressed": 1943198
+      },
+      {
+        "value": "MP",
+        "rows": 22,
+        "bytes": 274387,
+        "sha256": "a7a5fe491981be7ff42e868d44122e3e14b9d51a4c607ff4465b69457ce714e0",
+        "bbox": [
+          -177.45194400147713,
+          -3.7308374512099984,
+          170.18200671485306,
+          23.893055559846395
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 1,
+        "max_row_group_uncompressed": 295442
+      },
+      {
+        "value": "MS",
+        "rows": 1984,
+        "bytes": 6592810,
+        "sha256": "a3cc56f3bdc538673653eb98ea1ace9e4e6631c23450f1a38d8c7fb3c61fa6af",
+        "bbox": [
+          -91.63042601025265,
+          30.146096000037666,
+          -88.09789179206557,
+          35.00495431087087
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 9,
+        "portolan_ordering_check": true,
+        "row_groups": 10,
+        "max_row_group_uncompressed": 976721
+      },
+      {
+        "value": "MT",
+        "rows": 5529,
+        "bytes": 34284383,
+        "sha256": "d7201e1957ec4dc7b078852ee4d32abcdf5dc0ac14a3e43967d5129e2b9c675f",
+        "bbox": [
+          -116.04915300001798,
+          44.35791499969977,
+          -104.03969400013911,
+          49.00139940926024
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.25,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 32,
+        "portolan_ordering_check": true,
+        "row_groups": 45,
+        "max_row_group_uncompressed": 3818732
+      },
+      {
+        "value": "NC",
+        "rows": 14657,
+        "bytes": 81048688,
+        "sha256": "86bb43b166d0d9fc5d44d20583e53410dbfe3cdac747a920484ea0568ebf09be",
+        "bbox": [
+          -84.31760180997014,
+          33.752878000058,
+          -75.40101585064885,
+          36.58813700006317
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.25,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 33,
+        "portolan_ordering_check": true,
+        "row_groups": 56,
+        "max_row_group_uncompressed": 6902398
+      },
+      {
+        "value": "ND",
+        "rows": 8396,
+        "bytes": 13541748,
+        "sha256": "ed6f7221da9c984791fa6c74fd4c7087666a47c2a4b9fc43290f9c4a37a9a763",
+        "bbox": [
+          -104.04901199993392,
+          45.93507199964461,
+          -96.55441099994522,
+          49.00069926889359
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.25,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 18,
+        "portolan_ordering_check": true,
+        "row_groups": 12,
+        "max_row_group_uncompressed": 2068958
+      },
+      {
+        "value": "NE",
+        "rows": 2915,
+        "bytes": 4617141,
+        "sha256": "899de0b738f8ab28dcbf4d2797e052985a67836f76cfb79b897b72b371adde71",
+        "bbox": [
+          -104.05324899995551,
+          39.999007970337374,
+          -83.45663557230691,
+          43.00170200041599
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 4,
+        "max_row_group_uncompressed": 1929048
+      },
+      {
+        "value": "NH",
+        "rows": 17023,
+        "bytes": 17916604,
+        "sha256": "2459444c37f11727e49c7f91dbefa4dc64fddacb58bdfd5209e4586bea104060",
+        "bbox": [
+          -72.55712400001318,
+          42.69703310997865,
+          -70.62229247445514,
+          45.305776517505315
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 2,
+        "portolan_ordering_check": true,
+        "row_groups": 15,
+        "max_row_group_uncompressed": 1886383
+      },
+      {
+        "value": "NJ",
+        "rows": 31030,
+        "bytes": 49152367,
+        "sha256": "6a857efa86ae04327e799917350c15e57cfd3c49cfa48a128200288307c0ef0e",
+        "bbox": [
+          -75.55744361065074,
+          38.78865700003871,
+          -73.88506000027228,
+          41.3504521355529
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 15,
+        "portolan_ordering_check": true,
+        "row_groups": 43,
+        "max_row_group_uncompressed": 2033969
+      },
+      {
+        "value": "NM",
+        "rows": 2389,
+        "bytes": 16980295,
+        "sha256": "f53cf38b205b48c6d6825b070a7adba57c72566bda0ab84b8bdb9df5be5fac07",
+        "bbox": [
+          -109.05043100003812,
+          31.33228138374594,
+          -103.00215125955468,
+          37.00023299985088
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 11,
+        "portolan_ordering_check": true,
+        "row_groups": 24,
+        "max_row_group_uncompressed": 1607747
+      },
+      {
+        "value": "NV",
+        "rows": 2774,
+        "bytes": 32786766,
+        "sha256": "2e5e4c50c89f11f66c739f4b4866e2202781f6306693be2162873c9488ec6b1b",
+        "bbox": [
+          -120.02389616459065,
+          35.00935899988743,
+          -114.03946100010614,
+          42.00184200016623
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 6,
+        "portolan_ordering_check": true,
+        "row_groups": 23,
+        "max_row_group_uncompressed": 2832620
+      },
+      {
+        "value": "NY",
+        "rows": 20314,
+        "bytes": 39816957,
+        "sha256": "43d0bce250ed188fb0868eafd88ea754887f78fb44c46e2df11f7821bea24d0b",
+        "bbox": [
+          -79.74177995255732,
+          40.486511000267335,
+          -71.7774910001366,
+          45.01300885614914
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 11,
+        "portolan_ordering_check": true,
+        "row_groups": 29,
+        "max_row_group_uncompressed": 2024289
+      },
+      {
+        "value": "OH",
+        "rows": 10191,
+        "bytes": 13491657,
+        "sha256": "47f2639137ca178941ae8c7b5f70bea3cb69d634d717220704b3048df6c81c32",
+        "bbox": [
+          -84.82016086612944,
+          38.40573953884323,
+          -80.51905228103216,
+          41.977248273646666
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 12,
+        "portolan_ordering_check": true,
+        "row_groups": 11,
+        "max_row_group_uncompressed": 1843584
+      },
+      {
+        "value": "OK",
+        "rows": 2109,
+        "bytes": 8421125,
+        "sha256": "6c13dd55bc5554e18d794807ccc2861b28138f0ff810cca61ca9794aef382b20",
+        "bbox": [
+          -103.00234699971378,
+          33.61578700037418,
+          -94.4310140003258,
+          37.0011227001409
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 2,
+        "portolan_ordering_check": true,
+        "row_groups": 13,
+        "max_row_group_uncompressed": 1059174
+      },
+      {
+        "value": "OR",
+        "rows": 8674,
+        "bytes": 57034480,
+        "sha256": "5f2403f0e5d178b36cb8a8445fc7aa528646a4a5524da2116527fbdca1dca6ed",
+        "bbox": [
+          -124.70380480340863,
+          41.99208200082151,
+          -116.4632620000907,
+          48.83121897128545
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 13,
+        "portolan_ordering_check": true,
+        "row_groups": 41,
+        "max_row_group_uncompressed": 2141900
+      },
+      {
+        "value": "PA",
+        "rows": 59964,
+        "bytes": 90400190,
+        "sha256": "d4b4a3b07bb412a6a3d5231bcd6ce419730af65428a1df5153a42eae077ba1d9",
+        "bbox": [
+          -80.51949184450683,
+          39.71713938876499,
+          -74.69425410428991,
+          42.263247638286806
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 4,
+        "portolan_ordering_check": true,
+        "row_groups": 74,
+        "max_row_group_uncompressed": 2036415
+      },
+      {
+        "value": "PR",
+        "rows": 665,
+        "bytes": 3056305,
+        "sha256": "917ed2d7be3a7055103708cc3e6f8299f0b8ab1e482a3ec8d7cf8b584e35771b",
+        "bbox": [
+          -68.11160373750728,
+          17.782980000197533,
+          -65.20055094073693,
+          18.64577499803883
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 1,
+        "portolan_ordering_check": true,
+        "row_groups": 3,
+        "max_row_group_uncompressed": 1945045
+      },
+      {
+        "value": "RI",
+        "rows": 5682,
+        "bytes": 5779746,
+        "sha256": "6b496896204ddb409283f1654b5a49d6609637ccd138d53b132d04788b2f3eee",
+        "bbox": [
+          -95.93956251047628,
+          38.1605987169717,
+          -71.08857100074312,
+          47.200866746160386
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 5,
+        "max_row_group_uncompressed": 1870093
+      },
+      {
+        "value": "SC",
+        "rows": 4124,
+        "bytes": 16149429,
+        "sha256": "a20b04c5f51818f049446c0c00f84b3cfaf8d7be89ea90a37acf1a4ff7cb38e4",
+        "bbox": [
+          -83.35392799956524,
+          32.00428805511393,
+          -78.587802147094,
+          35.21539226836286
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 12,
+        "max_row_group_uncompressed": 2057461
+      },
+      {
+        "value": "SD",
+        "rows": 9485,
+        "bytes": 14276421,
+        "sha256": "7e67515b78daa89f3f413f616772da53fb93dc670a5bda3af892b7861a120071",
+        "bbox": [
+          -104.07453767432597,
+          42.48341373072332,
+          -96.43647199994462,
+          45.94530579643048
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.25,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 21,
+        "portolan_ordering_check": true,
+        "row_groups": 14,
+        "max_row_group_uncompressed": 2035978
+      },
+      {
+        "value": "TN",
+        "rows": 3662,
+        "bytes": 29125169,
+        "sha256": "ae567e2b8443ba34f36236b51ca927c2b96b143b848766a051d6a63d3d04d907",
+        "bbox": [
+          -90.29484943001047,
+          33.27382447345026,
+          -81.64689999973213,
+          36.743225534223654
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 2,
+        "portolan_ordering_check": true,
+        "row_groups": 23,
+        "max_row_group_uncompressed": 2674656
+      },
+      {
+        "value": "TX",
+        "rows": 24900,
+        "bytes": 43511744,
+        "sha256": "73d1afd2191c35610129f76beeacd20a297e9885443001f55786835aaa905a95",
+        "bbox": [
+          -106.63029104761752,
+          25.837231361861896,
+          -93.57090929413378,
+          36.50055033093834
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 3,
+        "portolan_ordering_check": true,
+        "row_groups": 33,
+        "max_row_group_uncompressed": 2025003
+      },
+      {
+        "value": "UM",
+        "rows": 13,
+        "bytes": 121629,
+        "sha256": "9c4a352744e02f5b1b518dd70e7027b229b6a60d5c45db46c277f74212c9ebec",
+        "bbox": [
+          -177.6505561961015,
+          -0.011970533890631104,
+          166.86959181871106,
+          28.480133176612775
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 1,
+        "max_row_group_uncompressed": 128847
+      },
+      {
+        "value": "UNKF",
+        "rows": 579,
+        "bytes": 9326717,
+        "sha256": "ff18fbb4f8fd6f87797348baaf9dc25bbfefbe385bdf58fca21711d004ae219e",
+        "bbox": [
+          -180.0000000000568,
+          -3.7308374512099984,
+          179.99999999994174,
+          74.99635387149438
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 32,
+        "portolan_ordering_check": true,
+        "row_groups": 7,
+        "max_row_group_uncompressed": 2061060
+      },
+      {
+        "value": "UT",
+        "rows": 7609,
+        "bytes": 24671370,
+        "sha256": "06e12610444c9ea5812aa7e832253a312103b5ad2f6f9ffd97307adecfcd8650",
+        "bbox": [
+          -114.05288500033596,
+          36.99765700046134,
+          -109.04157200036695,
+          42.001702000011655
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 12,
+        "portolan_ordering_check": true,
+        "row_groups": 18,
+        "max_row_group_uncompressed": 2011114
+      },
+      {
+        "value": "VA",
+        "rows": 21268,
+        "bytes": 71236536,
+        "sha256": "1f828b70677afb5f24823ccd31473f7c9be2bedad7502859e90f1463fbf72a36",
+        "bbox": [
+          -83.67539500012207,
+          36.541048999827694,
+          -75.16643500041852,
+          39.46601199983743
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 1,
+        "portolan_ordering_check": true,
+        "row_groups": 44,
+        "max_row_group_uncompressed": 13386935
+      },
+      {
+        "value": "VI",
+        "rows": 87,
+        "bytes": 742097,
+        "sha256": "16b0c78513653311d1f61f8ccaf9b64827eb6d60df6764b96a3b79d9348d52fb",
+        "bbox": [
+          -75.22263080168615,
+          17.65802106881624,
+          -64.51257815428993,
+          18.596167599833585
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 1,
+        "max_row_group_uncompressed": 955149
+      },
+      {
+        "value": "VT",
+        "rows": 20006,
+        "bytes": 25077638,
+        "sha256": "64669d4cde887b21117d6aece6b7d8977d158603aa6bfb5764f89a5c8fd8ec14",
+        "bbox": [
+          -117.17938876247543,
+          32.995868903854394,
+          -71.46504700016544,
+          45.016062866961285
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 0,
+        "portolan_ordering_check": true,
+        "row_groups": 22,
+        "max_row_group_uncompressed": 1939111
+      },
+      {
+        "value": "WA",
+        "rows": 11725,
+        "bytes": 43542012,
+        "sha256": "9b43b6396736db53c6129ba38fc370515a3802faa100e9bb12421487bb2ce1ce",
+        "bbox": [
+          -125.68166351320606,
+          45.54354100028553,
+          -116.91607099977657,
+          49.00225807090761
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 9,
+        "portolan_ordering_check": true,
+        "row_groups": 33,
+        "max_row_group_uncompressed": 2164296
+      },
+      {
+        "value": "WI",
+        "rows": 21646,
+        "bytes": 27158052,
+        "sha256": "6aa773f51c70687323b703fd44dc04a946dd00f7a7d528d7cf014c032613e840",
+        "bbox": [
+          -92.88943299955312,
+          42.491720000184486,
+          -86.24954800069109,
+          47.30982199963088
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 25,
+        "portolan_ordering_check": true,
+        "row_groups": 21,
+        "max_row_group_uncompressed": 1902420
+      },
+      {
+        "value": "WV",
+        "rows": 2654,
+        "bytes": 6693862,
+        "sha256": "b80282eb6155963c1fcedf0a9fce4587ef73d74fc40f9ca28f71128bb9e2932e",
+        "bbox": [
+          -82.59550031026143,
+          37.23508984254578,
+          -77.7195467784887,
+          40.62915427405724
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 1048576,
+        "large_feature_rows": 5,
+        "portolan_ordering_check": true,
+        "row_groups": 11,
+        "max_row_group_uncompressed": 1026422
+      },
+      {
+        "value": "WY",
+        "rows": 20995,
+        "bytes": 17036323,
+        "sha256": "1f67ba257633e270240fa96b81ebaab1ea2dfe52d85e8584f9284adc8d7c817f",
+        "bbox": [
+          -111.05455800004111,
+          40.99477199962605,
+          -104.05268826072236,
+          45.02098159634984
+        ],
+        "geometry_types": [
+          "MultiPolygon"
+        ],
+        "empty_geometries": 0,
+        "large_feature_fraction": 0.5,
+        "row_group_bytes": 2097152,
+        "large_feature_rows": 6,
+        "portolan_ordering_check": true,
+        "row_groups": 17,
+        "max_row_group_uncompressed": 2006804
+      }
+    ]
+  },
+  "files": {
+    "AGENTS.md": {
+      "bytes": 101,
+      "sha256": "f527e4b95fff0b7e13541c81642596caf06d64d2ff46fce5395727c1da4eb70b"
+    },
+    "README.md": {
+      "bytes": 381,
+      "sha256": "52d9bb0d1737957730e347bee13b11969234fdaf41591564d1b3f6c83f0cf3be"
+    },
+    "catalog.json": {
+      "bytes": 1045,
+      "sha256": "a03e21a2fdc2f8cd531d87ac00f38ff00bd735152a242dbe8ba605cb688f43ec"
+    },
+    "combined/AGENTS.md": {
+      "bytes": 853,
+      "sha256": "9ec711dbfbdb86ed6588ba8aa0e7c7f479bdf52af5835460dfaea241c0821c38"
+    },
+    "combined/README.md": {
+      "bytes": 5221,
+      "sha256": "739725ae46e832daa4788681151dc13ce61492735515779e653970ea32d3613d"
+    },
+    "combined/collection.json": {
+      "bytes": 17166,
+      "sha256": "f06ed2a56b99761f28f48bc54a5aaf06d0fd7e29abcb272f0d76c43733bb426e"
+    },
+    "combined/state=AK/data.parquet": {
+      "bytes": 309299337,
+      "sha256": "57f052183304d584e282998625c2d50f5e59b0b852135d1c4f15e9c3652b5994"
+    },
+    "combined/state=AK/state=AK.json": {
+      "bytes": 4821,
+      "sha256": "b0725b6d3a54f141acb64128789c6e869e794967b9478f694ae9eff28a73446c"
+    },
+    "combined/state=AL/data.parquet": {
+      "bytes": 15432948,
+      "sha256": "4eaf93e8bc5ade81ab63576c9ae5d7f0799b16d71eab4805ff0eb143fd2fe2df"
+    },
+    "combined/state=AL/state=AL.json": {
+      "bytes": 4835,
+      "sha256": "bdaea7ba495949d81dfdcb12927d4c313eae9a4f93194d6d34accb555f59948d"
+    },
+    "combined/state=AR/data.parquet": {
+      "bytes": 8830308,
+      "sha256": "d4ebfe0a23dcd3d6004a936dfe762c19bc3cd727b8bde92ef6bad99f3abdc210"
+    },
+    "combined/state=AR/state=AR.json": {
+      "bytes": 4821,
+      "sha256": "e406cf7847a0cea6964f35a66e2426637287e7d524d27046860e58cada08bcec"
+    },
+    "combined/state=AS/data.parquet": {
+      "bytes": 249027,
+      "sha256": "4410517691bc16f3862e547e8d9435eee2d11db1e5bc09ff31620066df112f1b"
+    },
+    "combined/state=AS/state=AS.json": {
+      "bytes": 4855,
+      "sha256": "6b6ab014c8f617b1191957e432ae12024c84943e6867a286c9889445516970c6"
+    },
+    "combined/state=AZ/data.parquet": {
+      "bytes": 26256801,
+      "sha256": "d3621a364a3dcd57314dc1063b80c2347e940fa60517c8aa27b464468a9275aa"
+    },
+    "combined/state=AZ/state=AZ.json": {
+      "bytes": 4836,
+      "sha256": "9e0e8e7f9791a085ea872bc2a24ab2c8aa9d4530341fc8fa8a8e17599823506d"
+    },
+    "combined/state=CA/data.parquet": {
+      "bytes": 113984373,
+      "sha256": "e84edf7b3ace7f0b2bd0f11cda4fa1d6c0806475a241b2754add2312eb196c06"
+    },
+    "combined/state=CA/state=CA.json": {
+      "bytes": 4843,
+      "sha256": "78a2f75511173a4eea441c1a8a2fc593d01a3a9c2cfa5e2b2a2ae0c3a18f919d"
+    },
+    "combined/state=CO/data.parquet": {
+      "bytes": 54928643,
+      "sha256": "0ce4f60d3d3d21a43772da2c7ce49c9226c0a6fb059fb9a6882519f0d25e56c3"
+    },
+    "combined/state=CO/state=CO.json": {
+      "bytes": 4834,
+      "sha256": "9c748e69d4117286ba92f00de64bf94287d433b18843b83544b170dc4982daab"
+    },
+    "combined/state=CT/data.parquet": {
+      "bytes": 23029839,
+      "sha256": "0696149198208c3c9aff5718b276e34762199bd0a1ab118e3bd8b8c9bdcef4af"
+    },
+    "combined/state=CT/state=CT.json": {
+      "bytes": 4829,
+      "sha256": "06ea98b055275c2e27a1ada227318b0ca8abf1cf1e7d9e894a722dae6e62954e"
+    },
+    "combined/state=DC/data.parquet": {
+      "bytes": 1342560,
+      "sha256": "94bdf9b1559782cd5f0e49421991f62706f64510e1af34640fafe3da4770fbcb"
+    },
+    "combined/state=DC/state=DC.json": {
+      "bytes": 4849,
+      "sha256": "9a5bc118fff1a1a47c9b46aff86886400340fe7dc92515d195763491b0630201"
+    },
+    "combined/state=DE/data.parquet": {
+      "bytes": 10850779,
+      "sha256": "1ff573f46376544100405118b70669ad25db4940e06291c1cff02d45ca1d1bcc"
+    },
+    "combined/state=DE/state=DE.json": {
+      "bytes": 4830,
+      "sha256": "7ff4e5d5d3d275f4e67e5dffcaf89f1b8d7d8ca57e5594a67406a45e2364268b"
+    },
+    "combined/state=FL/data.parquet": {
+      "bytes": 80334878,
+      "sha256": "a241c4bf11ed5005f13b6a6b793df6aea8512be28a0dfe82385ac699817e4633"
+    },
+    "combined/state=FL/state=FL.json": {
+      "bytes": 4828,
+      "sha256": "8d2a4b7581c0d923f8b74ed5eadedae8965df3871dbfc8bc2bc5577454756acd"
+    },
+    "combined/state=GA/data.parquet": {
+      "bytes": 18822672,
+      "sha256": "5d41defdad6b3e54585f3b4900572539827d00c6f2a89fe218ff2749ce03c23a"
+    },
+    "combined/state=GA/state=GA.json": {
+      "bytes": 4825,
+      "sha256": "d12ef80a5b5cb17bf3e237ea4b0c7156502aa4c69d953154ac501ad506b6f31e"
+    },
+    "combined/state=GU/data.parquet": {
+      "bytes": 312191,
+      "sha256": "78166e0583a5a836083b270929df6932287df0182f6591b025ed5acefaaa629a"
+    },
+    "combined/state=GU/state=GU.json": {
+      "bytes": 4822,
+      "sha256": "34ba5b7bea297f11d7f3a916bce13e0da1c7b8ebf9214bada8c15c0980c8268e"
+    },
+    "combined/state=HI/data.parquet": {
+      "bytes": 6896201,
+      "sha256": "b3567c0caa1f315521c977c734c498c2b8e993befda6a08fcb2f6c61ea6ef799"
+    },
+    "combined/state=HI/state=HI.json": {
+      "bytes": 4833,
+      "sha256": "42947def5850c306d67eb03c5ea0d5c7d517251add5213ccf8d4ce5335e99cd3"
+    },
+    "combined/state=IA/data.parquet": {
+      "bytes": 8897219,
+      "sha256": "547f61addb45438c76e1074341e9f0be0676dbd45e7aec26db675b00e0d8cfe1"
+    },
+    "combined/state=IA/state=IA.json": {
+      "bytes": 4821,
+      "sha256": "983909a8fa38f59010218322781f4b655fd6f2f5d1617a612707c56fdaa10640"
+    },
+    "combined/state=ID/data.parquet": {
+      "bytes": 47125947,
+      "sha256": "f0de9195b3fddfecbd503e4b8a87f031a8016f5adc81d29748736777497fe15d"
+    },
+    "combined/state=ID/state=ID.json": {
+      "bytes": 4836,
+      "sha256": "11edd1473828e20622a24dde0675ca7dc371eb61e5419a62e2305bf55d74b278"
+    },
+    "combined/state=IL/data.parquet": {
+      "bytes": 23462768,
+      "sha256": "94d430c1f547fa397f9ec4841da7904f36b54500c04d8f6996e047431ee9d360"
+    },
+    "combined/state=IL/state=IL.json": {
+      "bytes": 4834,
+      "sha256": "5f12fabc1b0df672dbed0b5ccbd29caaa50f12ee7ce77844aa17a5f6d6d60753"
+    },
+    "combined/state=IN/data.parquet": {
+      "bytes": 5316440,
+      "sha256": "65546d1611f6132b08c6b454b7e73f45fb14327e7a122b697b1d1737b7a55773"
+    },
+    "combined/state=IN/state=IN.json": {
+      "bytes": 4826,
+      "sha256": "752bb76e62cc17d75736c611a15055cdcaecb2d5267b6b266553f722454aa10e"
+    },
+    "combined/state=KS/data.parquet": {
+      "bytes": 3807315,
+      "sha256": "ddfb023c05316930e3b8f25c6e3b082ed4d35d9614f41a23a911ec9ce8c102c3"
+    },
+    "combined/state=KS/state=KS.json": {
+      "bytes": 4829,
+      "sha256": "79ddb88ea2c369b33856b7a0f1a5ec733bb502392c475aabb219891acf0f9b38"
+    },
+    "combined/state=KY/data.parquet": {
+      "bytes": 21166273,
+      "sha256": "4a675d406b3e1783c665711f49c83c4d06228d31122551bc4c6a7d4e2d3973e9"
+    },
+    "combined/state=KY/state=KY.json": {
+      "bytes": 4826,
+      "sha256": "e607e9bd95bf5d21e09aab642b55878c283d1a50f528c2d95d835341f17992ef"
+    },
+    "combined/state=LA/data.parquet": {
+      "bytes": 8848914,
+      "sha256": "b2c99a45de4136e672b2c49af08fe4cfe4f4f820fd0f28e6fa77bcb1b80021ee"
+    },
+    "combined/state=LA/state=LA.json": {
+      "bytes": 4828,
+      "sha256": "8d6baef4905e861c46bae425a628ac244a445c2a5d817b3d4e490b1acac87c80"
+    },
+    "combined/state=MA/data.parquet": {
+      "bytes": 52970394,
+      "sha256": "571c8f747851c3bb38ed94143d38a848125d0b65155f7d34686668ad8b405d66"
+    },
+    "combined/state=MA/state=MA.json": {
+      "bytes": 4845,
+      "sha256": "daaa25a16e841a52b0a3603091ba4f4725f7bb48ef80d360ecfd0e8ebbd03668"
+    },
+    "combined/state=MD/data.parquet": {
+      "bytes": 58105583,
+      "sha256": "1b8f1aab6363f8665f6b17f5a5ae011623d396c96870d10babea9949da8ab9b5"
+    },
+    "combined/state=MD/state=MD.json": {
+      "bytes": 4830,
+      "sha256": "709438f7fed0228fb741ddfd715d1b3daf5e49b52d3c132bd0c7d5cf94480161"
+    },
+    "combined/state=ME/data.parquet": {
+      "bytes": 33963298,
+      "sha256": "24e6422389dabc256eb377338f479f3f0642b2cb019e28c467eed94b0eba6c7d"
+    },
+    "combined/state=ME/state=ME.json": {
+      "bytes": 4818,
+      "sha256": "9513e0984fea6fa16a6a0ce01ce4e9b706deea3045b0adc0191fa45452030f2b"
+    },
+    "combined/state=MI/data.parquet": {
+      "bytes": 18927240,
+      "sha256": "823383c4ca4223679abc7c73dd5308f6c400d3c9c83f80786005bec47d256be2"
+    },
+    "combined/state=MI/state=MI.json": {
+      "bytes": 4835,
+      "sha256": "dd4d7b08c2dbd9727078fe3b4d6d1b76e990fa40c81647fc47fd6748082cd812"
+    },
+    "combined/state=MN/data.parquet": {
+      "bytes": 27656861,
+      "sha256": "e851a168e65c3a593be684f444a251970097f0624d075a05a1128ce11a8c75c1"
+    },
+    "combined/state=MN/state=MN.json": {
+      "bytes": 4830,
+      "sha256": "a453e8133d373dc47bb6d59e3837fa35af79c3028cb0bf5c23d798cee798c7f9"
+    },
+    "combined/state=MO/data.parquet": {
+      "bytes": 8868193,
+      "sha256": "9a3e579d2dd4423823fd627e30acd1ee786b08ad773d492752fee6aeb4f06e06"
+    },
+    "combined/state=MO/state=MO.json": {
+      "bytes": 4829,
+      "sha256": "39337bc1b39e5b31a49864ca370d30c53108f50e95302b48a360297ebb3085ce"
+    },
+    "combined/state=MP/data.parquet": {
+      "bytes": 274387,
+      "sha256": "a7a5fe491981be7ff42e868d44122e3e14b9d51a4c607ff4465b69457ce714e0"
+    },
+    "combined/state=MP/state=MP.json": {
+      "bytes": 4873,
+      "sha256": "d453a1b9015bb35a49f7b953e49e79ef2f48f5e534f68d70402ce3e3ad729b2a"
+    },
+    "combined/state=MS/data.parquet": {
+      "bytes": 6592810,
+      "sha256": "a3cc56f3bdc538673653eb98ea1ace9e4e6631c23450f1a38d8c7fb3c61fa6af"
+    },
+    "combined/state=MS/state=MS.json": {
+      "bytes": 4839,
+      "sha256": "fd10e4c0d92f22f9670d8b093a4eb61b851e534c98362efba8d0b6e0b18dacc7"
+    },
+    "combined/state=MT/data.parquet": {
+      "bytes": 34284383,
+      "sha256": "d7201e1957ec4dc7b078852ee4d32abcdf5dc0ac14a3e43967d5129e2b9c675f"
+    },
+    "combined/state=MT/state=MT.json": {
+      "bytes": 4835,
+      "sha256": "90ebc7dfb6fcc6b3e7db71dbb648de67b34e2c44ca62238667eff3b21ab59766"
+    },
+    "combined/state=NC/data.parquet": {
+      "bytes": 81048688,
+      "sha256": "86bb43b166d0d9fc5d44d20583e53410dbfe3cdac747a920484ea0568ebf09be"
+    },
+    "combined/state=NC/state=NC.json": {
+      "bytes": 4835,
+      "sha256": "589a8c4e4f2b98cbadde3ed16f51033644ef63a2ce228b788f239998a2147286"
+    },
+    "combined/state=ND/data.parquet": {
+      "bytes": 13541748,
+      "sha256": "ed6f7221da9c984791fa6c74fd4c7087666a47c2a4b9fc43290f9c4a37a9a763"
+    },
+    "combined/state=ND/state=ND.json": {
+      "bytes": 4842,
+      "sha256": "2b7e38373482976be313489c881ac4567b0dd23d5ce4b0ecab7caac8202d5d42"
+    },
+    "combined/state=NE/data.parquet": {
+      "bytes": 4617141,
+      "sha256": "899de0b738f8ab28dcbf4d2797e052985a67836f76cfb79b897b72b371adde71"
+    },
+    "combined/state=NE/state=NE.json": {
+      "bytes": 4837,
+      "sha256": "d09ef94a5cb7e2bc1bcca27d3d670356fe186b85ab1b99bc6116ba689227dc4e"
+    },
+    "combined/state=NH/data.parquet": {
+      "bytes": 17916604,
+      "sha256": "2459444c37f11727e49c7f91dbefa4dc64fddacb58bdfd5209e4586bea104060"
+    },
+    "combined/state=NH/state=NH.json": {
+      "bytes": 4844,
+      "sha256": "38368c733a0de85f21d239309383c7ff8dabf41f2f04b358cc2958b966c8604a"
+    },
+    "combined/state=NJ/data.parquet": {
+      "bytes": 49152367,
+      "sha256": "6a857efa86ae04327e799917350c15e57cfd3c49cfa48a128200288307c0ef0e"
+    },
+    "combined/state=NJ/state=NJ.json": {
+      "bytes": 4832,
+      "sha256": "361df8c4297e2734f8c7ecef5a0487c56693c51a040093400eed65e22db02d97"
+    },
+    "combined/state=NM/data.parquet": {
+      "bytes": 16980295,
+      "sha256": "f53cf38b205b48c6d6825b070a7adba57c72566bda0ab84b8bdb9df5be5fac07"
+    },
+    "combined/state=NM/state=NM.json": {
+      "bytes": 4841,
+      "sha256": "c6c33ead215f5496f773a8d68d8505d2b9da578b1feca1cbcca710e25a379b02"
+    },
+    "combined/state=NV/data.parquet": {
+      "bytes": 32786766,
+      "sha256": "2e5e4c50c89f11f66c739f4b4866e2202781f6306693be2162873c9488ec6b1b"
+    },
+    "combined/state=NV/state=NV.json": {
+      "bytes": 4833,
+      "sha256": "c4189b9f901c9a27851fe3acabe242615c35bf61c43cbbe743603bd4888cd515"
+    },
+    "combined/state=NY/data.parquet": {
+      "bytes": 39816957,
+      "sha256": "43d0bce250ed188fb0868eafd88ea754887f78fb44c46e2df11f7821bea24d0b"
+    },
+    "combined/state=NY/state=NY.json": {
+      "bytes": 4832,
+      "sha256": "b9fee0304b3411f3640bb05ffd17d53e25a2cd52337736c7f58533b30b6df1b9"
+    },
+    "combined/state=OH/data.parquet": {
+      "bytes": 13491657,
+      "sha256": "47f2639137ca178941ae8c7b5f70bea3cb69d634d717220704b3048df6c81c32"
+    },
+    "combined/state=OH/state=OH.json": {
+      "bytes": 4826,
+      "sha256": "e8224bb96e9af361a44bf8d2ebddc9df6c476022c429d3eda158bff785b32f12"
+    },
+    "combined/state=OK/data.parquet": {
+      "bytes": 8421125,
+      "sha256": "6c13dd55bc5554e18d794807ccc2861b28138f0ff810cca61ca9794aef382b20"
+    },
+    "combined/state=OK/state=OK.json": {
+      "bytes": 4827,
+      "sha256": "9e71152ff140970daccaea6214282ad320d2f65b4db3e20d2c1394be2c9023cb"
+    },
+    "combined/state=OR/data.parquet": {
+      "bytes": 57034480,
+      "sha256": "5f2403f0e5d178b36cb8a8445fc7aa528646a4a5524da2116527fbdca1dca6ed"
+    },
+    "combined/state=OR/state=OR.json": {
+      "bytes": 4830,
+      "sha256": "d053afc49d90ab83b15b89025a2191bc44f827f8538e69ace65270bf8684a6d7"
+    },
+    "combined/state=PA/data.parquet": {
+      "bytes": 90400190,
+      "sha256": "d4b4a3b07bb412a6a3d5231bcd6ce419730af65428a1df5153a42eae077ba1d9"
+    },
+    "combined/state=PA/state=PA.json": {
+      "bytes": 4842,
+      "sha256": "a31224bba0ba4027df45ae5d8d4235e7852d4cf78eb6b39e377379d33e8ca26a"
+    },
+    "combined/state=PR/data.parquet": {
+      "bytes": 3056305,
+      "sha256": "917ed2d7be3a7055103708cc3e6f8299f0b8ab1e482a3ec8d7cf8b584e35771b"
+    },
+    "combined/state=PR/state=PR.json": {
+      "bytes": 4838,
+      "sha256": "8bc4daf924a3fafae70f4084621bbaba8b1f3e21383702cdc36fd21158a77a0c"
+    },
+    "combined/state=RI/data.parquet": {
+      "bytes": 5779746,
+      "sha256": "6b496896204ddb409283f1654b5a49d6609637ccd138d53b132d04788b2f3eee"
+    },
+    "combined/state=RI/state=RI.json": {
+      "bytes": 4836,
+      "sha256": "15d1fa3e054bd5cbfc5d69f2ece1a26a86505f7bdcaa55bc71e90cc0600bee60"
+    },
+    "combined/state=SC/data.parquet": {
+      "bytes": 16149429,
+      "sha256": "a20b04c5f51818f049446c0c00f84b3cfaf8d7be89ea90a37acf1a4ff7cb38e4"
+    },
+    "combined/state=SC/state=SC.json": {
+      "bytes": 4836,
+      "sha256": "5c006e103c0b8df6ad8852c099fcb416756ac4f369b28717f7f3aea1ee8116d1"
+    },
+    "combined/state=SD/data.parquet": {
+      "bytes": 14276421,
+      "sha256": "7e67515b78daa89f3f413f616772da53fb93dc670a5bda3af892b7861a120071"
+    },
+    "combined/state=SD/state=SD.json": {
+      "bytes": 4842,
+      "sha256": "3ab59850a5883d093c09c53fd34185bfff73e04ac9aecd60195a9d3cfa3b3a5f"
+    },
+    "combined/state=TN/data.parquet": {
+      "bytes": 29125169,
+      "sha256": "ae567e2b8443ba34f36236b51ca927c2b96b143b848766a051d6a63d3d04d907"
+    },
+    "combined/state=TN/state=TN.json": {
+      "bytes": 4835,
+      "sha256": "ce4544f1e40a98041cf647e91332d0fea7f4c99875eb656b45ab95038653eb82"
+    },
+    "combined/state=TX/data.parquet": {
+      "bytes": 43511744,
+      "sha256": "73d1afd2191c35610129f76beeacd20a297e9885443001f55786835aaa905a95"
+    },
+    "combined/state=TX/state=TX.json": {
+      "bytes": 4833,
+      "sha256": "f581ae9d2f10b0b0099611a8f3bdc77476eff179095d6cf30f195a30f82d059d"
+    },
+    "combined/state=UM/data.parquet": {
+      "bytes": 121629,
+      "sha256": "9c4a352744e02f5b1b518dd70e7027b229b6a60d5c45db46c277f74212c9ebec"
+    },
+    "combined/state=UM/state=UM.json": {
+      "bytes": 4879,
+      "sha256": "195c7abd72fd7a875114cc656e1e4a803f55b14a8da126142f1cd8c9fb67840b"
+    },
+    "combined/state=UNKF/data.parquet": {
+      "bytes": 9326717,
+      "sha256": "ff18fbb4f8fd6f87797348baaf9dc25bbfefbe385bdf58fca21711d004ae219e"
+    },
+    "combined/state=UNKF/state=UNKF.json": {
+      "bytes": 4834,
+      "sha256": "e3185b1ca2a17a120b1cc5eb49284d28f02dda2ec858b66a9f7080b5e9536f9c"
+    },
+    "combined/state=UT/data.parquet": {
+      "bytes": 24671370,
+      "sha256": "06e12610444c9ea5812aa7e832253a312103b5ad2f6f9ffd97307adecfcd8650"
+    },
+    "combined/state=UT/state=UT.json": {
+      "bytes": 4832,
+      "sha256": "80354275280c27a85da7f689bffb23a8dfa32490ddfb7b2318195de92d6aaaa5"
+    },
+    "combined/state=VA/data.parquet": {
+      "bytes": 71236536,
+      "sha256": "1f828b70677afb5f24823ccd31473f7c9be2bedad7502859e90f1463fbf72a36"
+    },
+    "combined/state=VA/state=VA.json": {
+      "bytes": 4835,
+      "sha256": "363a8956ad6a00a7e6894cf1560d027085177102ca8b7f913cb81f51c3f65acf"
+    },
+    "combined/state=VI/data.parquet": {
+      "bytes": 742097,
+      "sha256": "16b0c78513653311d1f61f8ccaf9b64827eb6d60df6764b96a3b79d9348d52fb"
+    },
+    "combined/state=VI/state=VI.json": {
+      "bytes": 4847,
+      "sha256": "c9ff50d4996b04e19ea5024bd95207e2e582b59ff1430f417b793104d8c26cb9"
+    },
+    "combined/state=VT/data.parquet": {
+      "bytes": 25077638,
+      "sha256": "64669d4cde887b21117d6aece6b7d8977d158603aa6bfb5764f89a5c8fd8ec14"
+    },
+    "combined/state=VT/state=VT.json": {
+      "bytes": 4840,
+      "sha256": "708a91c8b86f0df2955505e632ce027e49917bf557f334f8009c25d63ca6f25c"
+    },
+    "combined/state=WA/data.parquet": {
+      "bytes": 43542012,
+      "sha256": "9b43b6396736db53c6129ba38fc370515a3802faa100e9bb12421487bb2ce1ce"
+    },
+    "combined/state=WA/state=WA.json": {
+      "bytes": 4842,
+      "sha256": "fc6a8ec57ab7b35e038952caf7f591ea2de98f8089a82966bed0dfedc200b30b"
+    },
+    "combined/state=WI/data.parquet": {
+      "bytes": 27158052,
+      "sha256": "6aa773f51c70687323b703fd44dc04a946dd00f7a7d528d7cf014c032613e840"
+    },
+    "combined/state=WI/state=WI.json": {
+      "bytes": 4837,
+      "sha256": "81ee8f35b52a7990017e885b2d59e16d43f485633c456982ff1dca2ab9df08ab"
+    },
+    "combined/state=WV/data.parquet": {
+      "bytes": 6693862,
+      "sha256": "b80282eb6155963c1fcedf0a9fce4587ef73d74fc40f9ca28f71128bb9e2932e"
+    },
+    "combined/state=WV/state=WV.json": {
+      "bytes": 4836,
+      "sha256": "6a4a5883bd0df740f49c081938a1c06e73f2dc2661852816351dac9f3e01f518"
+    },
+    "combined/state=WY/data.parquet": {
+      "bytes": 17036323,
+      "sha256": "1f67ba257633e270240fa96b81ebaab1ea2dfe52d85e8584f9284adc8d7c817f"
+    },
+    "combined/state=WY/state=WY.json": {
+      "bytes": 4836,
+      "sha256": "0d924afc7acb7bcaeb43ba2f495df8346c74952413c8db1978a2a8e20c8a7833"
+    },
+    "combined/styles/default.json": {
+      "bytes": 650,
+      "sha256": "533ce93fd0197468f0187ed20c665d3b929acfbde8031215211ab7259c5a01a5"
+    },
+    "combined/thumbnail.png": {
+      "bytes": 3765,
+      "sha256": "a5aa3af404ab5aada2bcefd75eeef653a296f2b9445a9f3403daa219e4e7f9f6"
+    },
+    "combined/versions.json": {
+      "bytes": 14442,
+      "sha256": "6b64872f0e698d1c1d03be4aae4586f28ecc03647489b28814abcfcd34ff2d21"
+    }
+  },
+  "totals": {
+    "parquet_files": 58,
+    "parquet_bytes": 1793551650
+  }
+}

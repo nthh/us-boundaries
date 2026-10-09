@@ -1,0 +1,377 @@
+{
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "id": "hu12",
+  "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region",
+  "description": "USGS WBD 12-digit hydrologic units (subwatersheds), 2026-09-02 national release, one Hilbert-sorted GeoParquet per HUC2 region with a bbox covering.",
+  "license": "other",
+  "keywords": [
+    "watersheds",
+    "hydrology",
+    "wbd",
+    "huc12",
+    "usgs",
+    "boundaries"
+  ],
+  "providers": [
+    {
+      "name": "U.S. Geological Survey",
+      "url": "https://www.usgs.gov/national-hydrography/watershed-boundary-dataset",
+      "roles": [
+        "producer",
+        "licensor"
+      ]
+    },
+    {
+      "name": "Source Cooperative nthh/us-boundaries",
+      "url": "https://source.coop/nthh/us-boundaries",
+      "roles": [
+        "host"
+      ]
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -179.22965548744838,
+          -14.610192762738677,
+          179.8566747353862,
+          71.4395725901532
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-09-02T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "table:columns": [
+    {
+      "name": "tnmid",
+      "type": "varchar"
+    },
+    {
+      "name": "metasourceid",
+      "type": "varchar"
+    },
+    {
+      "name": "sourcedatadesc",
+      "type": "varchar"
+    },
+    {
+      "name": "sourceoriginator",
+      "type": "varchar"
+    },
+    {
+      "name": "sourcefeatureid",
+      "type": "varchar"
+    },
+    {
+      "name": "loaddate",
+      "type": "timestamp"
+    },
+    {
+      "name": "referencegnis_ids",
+      "type": "varchar"
+    },
+    {
+      "name": "areaacres",
+      "type": "double"
+    },
+    {
+      "name": "areasqkm",
+      "type": "double"
+    },
+    {
+      "name": "states",
+      "type": "varchar"
+    },
+    {
+      "name": "huc12",
+      "type": "varchar",
+      "description": "12-digit hydrologic unit code; its first two digits are the partition value."
+    },
+    {
+      "name": "name",
+      "type": "varchar"
+    },
+    {
+      "name": "hutype",
+      "type": "varchar"
+    },
+    {
+      "name": "humod",
+      "type": "varchar"
+    },
+    {
+      "name": "tohuc",
+      "type": "varchar"
+    },
+    {
+      "name": "noncontributingareaacres",
+      "type": "double"
+    },
+    {
+      "name": "noncontributingareasqkm",
+      "type": "double"
+    },
+    {
+      "name": "globalid",
+      "type": "varchar"
+    },
+    {
+      "name": "shape_Length",
+      "type": "double"
+    },
+    {
+      "name": "shape_Area",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "geometry",
+      "description": "Unit polygon, WKB, EPSG:4269."
+    },
+    {
+      "name": "bbox",
+      "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+      "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+    }
+  ],
+  "table:primary_geometry": "geometry",
+  "table:row_count": 103068,
+  "partition:scheme": "hive",
+  "partition:strategy": "attribute",
+  "partition:keys": [
+    {
+      "name": "huc2",
+      "type": "string",
+      "description": "First two digits of huc12: the HUC2 region."
+    }
+  ],
+  "partition:file_count": 22,
+  "partition:glob": "https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu12/huc2=*/*.parquet",
+  "assets": {
+    "visual": {
+      "href": "https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu12.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "WBD HU12 vector tiles (cboettig/usgs-wbd mirror, 2025-01-07 build)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 3970987181
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Preview: outlines in the default style colour, Web Mercator, no basemap",
+      "roles": [
+        "thumbnail"
+      ],
+      "file:size": 2131,
+      "file:checksum": "12201b14f99f7aad9d277d4fdec483e1dd7944c4d8937a02a7dd62298bf439773cd9"
+    },
+    "style-default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Outlines over a light fill",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "file:size": 655,
+      "file:checksum": "12205eac8c7d25964cef259df0c122c178fdd4ab97874e9bd423b37fa401409931ec"
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=01/huc2=01.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 01 New England"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=02/huc2=02.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 02 Mid Atlantic"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=03/huc2=03.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 03 South Atlantic-Gulf"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=04/huc2=04.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 04 Great Lakes"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=05/huc2=05.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 05 Ohio"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=06/huc2=06.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 06 Tennessee"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=07/huc2=07.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 07 Upper Mississippi"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=08/huc2=08.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 08 Lower Mississippi"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=09/huc2=09.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 09 Souris-Red-Rainy"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=10/huc2=10.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 10 Missouri"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=11/huc2=11.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 11 Arkansas-White-Red"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=12/huc2=12.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 12 Texas-Gulf"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=13/huc2=13.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 13 Rio Grande"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=14/huc2=14.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 14 Upper Colorado"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=15/huc2=15.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 15 Lower Colorado"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=16/huc2=16.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 16 Great Basin"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=17/huc2=17.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 17 Pacific Northwest"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=18/huc2=18.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 18 California"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=19/huc2=19.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 19 Alaska"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=20/huc2=20.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 20 Hawaii"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=21/huc2=21.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 21 Caribbean"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=22/huc2=22.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 22 South Pacific"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu12.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Web map tiles (upstream)",
+      "pmtiles:layers": [
+        "hu12"
+      ]
+    },
+    {
+      "rel": "via",
+      "href": "https://www.usgs.gov/national-hydrography/access-national-hydrography-products",
+      "type": "text/html",
+      "title": "Original source"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "type": "text/html",
+      "title": "USGS: public domain, credit requested"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Guidance for AI agents"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Human-readable documentation"
+    }
+  ],
+  "updated": "2026-10-09T20:23:00Z"
+}

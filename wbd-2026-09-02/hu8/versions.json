@@ -1,0 +1,148 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-10-09T20:23:00Z",
+      "breaking": false,
+      "message": "Initial build from WBD_National_GDB.zip sha256 e721273d26b655a7c71f82c1c4cdf7edb28c1e9bc37989fc56ac9164ed27ec82",
+      "assets": {
+        "huc2=01/data.parquet": {
+          "sha256": "e9875569c2edc26f14e1f2a7ef16d69e675369816c896b5ddbbaf6e734eb0a33",
+          "size_bytes": 10773911,
+          "href": "huc2=01/data.parquet"
+        },
+        "huc2=02/data.parquet": {
+          "sha256": "cfe05cb4b7a02a7afa0509a02271faa338b45c275d1ce0edf7025cdc225f719f",
+          "size_bytes": 11101446,
+          "href": "huc2=02/data.parquet"
+        },
+        "huc2=03/data.parquet": {
+          "sha256": "e1cc18a67c0bd138bb4c086e497268706633b197408313a1f518773c413bf25a",
+          "size_bytes": 20280807,
+          "href": "huc2=03/data.parquet"
+        },
+        "huc2=04/data.parquet": {
+          "sha256": "22ea12139902dda9f8e4238e1c528221ae00bab75c682d86803e615363553e6f",
+          "size_bytes": 55768115,
+          "href": "huc2=04/data.parquet"
+        },
+        "huc2=05/data.parquet": {
+          "sha256": "d6f69b20ea21543687bb598fe0b6a710a4726cb44702dfbd9bd9a5f0c893b5ca",
+          "size_bytes": 12860258,
+          "href": "huc2=05/data.parquet"
+        },
+        "huc2=06/data.parquet": {
+          "sha256": "a6ca3734dc089f43a41fe4e266229f4dc55c69119497581cb1087062e52b69d4",
+          "size_bytes": 3593596,
+          "href": "huc2=06/data.parquet"
+        },
+        "huc2=07/data.parquet": {
+          "sha256": "c40f5c37cb67cc43434bf7de601ca0d30cf567519f14055788f760901085f8b5",
+          "size_bytes": 15282052,
+          "href": "huc2=07/data.parquet"
+        },
+        "huc2=08/data.parquet": {
+          "sha256": "b3233d65c54f0a3a17d28cc0cc11db0a72f313a1c2df6f394b44fc3d91108461",
+          "size_bytes": 7264699,
+          "href": "huc2=08/data.parquet"
+        },
+        "huc2=09/data.parquet": {
+          "sha256": "ccfde6c952f7b80beebb48d5ee05f01f7a209f8f2debf7bd8846b703a56905ea",
+          "size_bytes": 9889257,
+          "href": "huc2=09/data.parquet"
+        },
+        "huc2=10/data.parquet": {
+          "sha256": "e47f91f6faf5de605523e7c76f4aa486322b0dddacc226d21de75237a57afce9",
+          "size_bytes": 45049626,
+          "href": "huc2=10/data.parquet"
+        },
+        "huc2=11/data.parquet": {
+          "sha256": "1ca686181d5c67969ca50d64776fd4522906ddc85577bf69270c5b6b9583081c",
+          "size_bytes": 19491766,
+          "href": "huc2=11/data.parquet"
+        },
+        "huc2=12/data.parquet": {
+          "sha256": "104d2ceebeb3f537aef1ab39353d6482a83365ab3f15a08c9d4617d381fb6e7f",
+          "size_bytes": 10667657,
+          "href": "huc2=12/data.parquet"
+        },
+        "huc2=13/data.parquet": {
+          "sha256": "0a60392bcc949f888ac684f8da004782488fbacbe188657789d91fa8331d5a31",
+          "size_bytes": 8318858,
+          "href": "huc2=13/data.parquet"
+        },
+        "huc2=14/data.parquet": {
+          "sha256": "41ecdaf94e600a4043237875ad9567e3f4300863dc3fd3ab81bac877c3557ee8",
+          "size_bytes": 7448820,
+          "href": "huc2=14/data.parquet"
+        },
+        "huc2=15/data.parquet": {
+          "sha256": "1f4127beb9a134e036716f605d4d698436c85388576216c5972af96603eada72",
+          "size_bytes": 13915524,
+          "href": "huc2=15/data.parquet"
+        },
+        "huc2=16/data.parquet": {
+          "sha256": "962cff893884e98a043f9412b85e89f94150345676571008003ad623019b2dc8",
+          "size_bytes": 13731120,
+          "href": "huc2=16/data.parquet"
+        },
+        "huc2=17/data.parquet": {
+          "sha256": "088bdb4292bf98c91e1352473f971aa2b95d1fa31b85fecb77e654222888125c",
+          "size_bytes": 46017633,
+          "href": "huc2=17/data.parquet"
+        },
+        "huc2=18/data.parquet": {
+          "sha256": "3815969e7a5235c2ee8104d1afa89f2625ad6571febdbdcd20a78a633facdbb6",
+          "size_bytes": 15098108,
+          "href": "huc2=18/data.parquet"
+        },
+        "huc2=19/data.parquet": {
+          "sha256": "1a679b6d376af0d102d8590ccf4cd57972f0efe838684d8bfad61d8512fd51a4",
+          "size_bytes": 58651494,
+          "href": "huc2=19/data.parquet"
+        },
+        "huc2=20/data.parquet": {
+          "sha256": "ebe498849db73cc3da4c041d0f26177d6df461da31829498a542d256ad2d0166",
+          "size_bytes": 374831,
+          "href": "huc2=20/data.parquet"
+        },
+        "huc2=21/data.parquet": {
+          "sha256": "2d6fb34f2ec379d1d12825cdaff17ff0e414b4ac302830fd4317802f6a2c0556",
+          "size_bytes": 587666,
+          "href": "huc2=21/data.parquet"
+        },
+        "huc2=22/data.parquet": {
+          "sha256": "f5bb1d0b76710573f137ad0a317073bad4d962a85cfc82c483c2a3f78f7c4b1e",
+          "size_bytes": 288197,
+          "href": "huc2=22/data.parquet"
+        }
+      },
+      "changes": [
+        "huc2=01/data.parquet",
+        "huc2=02/data.parquet",
+        "huc2=03/data.parquet",
+        "huc2=04/data.parquet",
+        "huc2=05/data.parquet",
+        "huc2=06/data.parquet",
+        "huc2=07/data.parquet",
+        "huc2=08/data.parquet",
+        "huc2=09/data.parquet",
+        "huc2=10/data.parquet",
+        "huc2=11/data.parquet",
+        "huc2=12/data.parquet",
+        "huc2=13/data.parquet",
+        "huc2=14/data.parquet",
+        "huc2=15/data.parquet",
+        "huc2=16/data.parquet",
+        "huc2=17/data.parquet",
+        "huc2=18/data.parquet",
+        "huc2=19/data.parquet",
+        "huc2=20/data.parquet",
+        "huc2=21/data.parquet",
+        "huc2=22/data.parquet"
+      ]
+    }
+  ]
+}

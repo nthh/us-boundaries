@@ -1,0 +1,154 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=08",
+  "collection": "hu4",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -94.3389115785908,
+          28.854303778129065
+        ],
+        [
+          -88.28940582235583,
+          28.854303778129065
+        ],
+        [
+          -88.28940582235583,
+          37.861337573523315
+        ],
+        [
+          -94.3389115785908,
+          37.861337573523315
+        ],
+        [
+          -94.3389115785908,
+          28.854303778129065
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -94.3389115785908,
+    28.854303778129065,
+    -88.28940582235583,
+    37.861337573523315
+  ],
+  "properties": {
+    "title": "WBD HUC4 subregions (2026-09-02) by HUC2 region: Region 08 Lower Mississippi",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "08",
+    "table:row_count": 9,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc4",
+        "type": "varchar",
+        "description": "4-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 08 Lower Mississippi (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 2880814,
+      "file:checksum": "12205042a472f3a087f4df2dfb04923c6497987ff5ff536626a0d8c9c8c7b59512ff",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

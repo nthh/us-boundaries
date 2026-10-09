@@ -1,0 +1,174 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=19",
+  "collection": "hu12",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -179.22965548744838,
+          51.1568278424694
+        ],
+        [
+          179.8566747353862,
+          51.1568278424694
+        ],
+        [
+          179.8566747353862,
+          71.4395725901532
+        ],
+        [
+          -179.22965548744838,
+          71.4395725901532
+        ],
+        [
+          -179.22965548744838,
+          51.1568278424694
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -179.22965548744838,
+    51.1568278424694,
+    179.8566747353862,
+    71.4395725901532
+  ],
+  "properties": {
+    "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region: Region 19 Alaska",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "19",
+    "table:row_count": 15545,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc12",
+        "type": "varchar",
+        "description": "12-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "hutype",
+        "type": "varchar"
+      },
+      {
+        "name": "humod",
+        "type": "varchar"
+      },
+      {
+        "name": "tohuc",
+        "type": "varchar"
+      },
+      {
+        "name": "noncontributingareaacres",
+        "type": "double"
+      },
+      {
+        "name": "noncontributingareasqkm",
+        "type": "double"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 19 Alaska (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 263945812,
+      "file:checksum": "12206385e6590c69ebbe2ae75577e8ac1cf18cce5296a9ef95b5bca8befa3e8ebb61",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

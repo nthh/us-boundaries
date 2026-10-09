@@ -1,0 +1,154 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=11",
+  "collection": "hu6",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -106.59975822935115,
+          31.208320426558487
+        ],
+        [
+          -90.14300304447869,
+          31.208320426558487
+        ],
+        [
+          -90.14300304447869,
+          39.38324517636937
+        ],
+        [
+          -106.59975822935115,
+          39.38324517636937
+        ],
+        [
+          -106.59975822935115,
+          31.208320426558487
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -106.59975822935115,
+    31.208320426558487,
+    -90.14300304447869,
+    39.38324517636937
+  ],
+  "properties": {
+    "title": "WBD HUC6 basins (2026-09-02) by HUC2 region: Region 11 Arkansas-White-Red",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "11",
+    "table:row_count": 25,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc6",
+        "type": "varchar",
+        "description": "6-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 11 Arkansas-White-Red (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 7840055,
+      "file:checksum": "12204af5c0f58181277a8b2cf0e13fe9131de0660397d138b83ba2b2a8afddaeb748",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

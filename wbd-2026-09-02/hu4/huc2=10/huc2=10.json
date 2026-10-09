@@ -1,0 +1,154 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=10",
+  "collection": "hu4",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -113.93814129921054,
+          37.02460230086376
+        ],
+        [
+          -90.11422112056499,
+          37.02460230086376
+        ],
+        [
+          -90.11422112056499,
+          49.7390856644617
+        ],
+        [
+          -113.93814129921054,
+          49.7390856644617
+        ],
+        [
+          -113.93814129921054,
+          37.02460230086376
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -113.93814129921054,
+    37.02460230086376,
+    -90.11422112056499,
+    49.7390856644617
+  ],
+  "properties": {
+    "title": "WBD HUC4 subregions (2026-09-02) by HUC2 region: Region 10 Missouri",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "10",
+    "table:row_count": 29,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc4",
+        "type": "varchar",
+        "description": "4-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 10 Missouri (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 17150456,
+      "file:checksum": "1220150b856d09cdceee642777b9d5905667a5661df961f8f784b83051d4bfd5afd5",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

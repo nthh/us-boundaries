@@ -1,0 +1,83 @@
+{
+  "type": "Catalog",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
+  ],
+  "id": "wbd-2026-09-02-by-huc2",
+  "title": "USGS WBD 2026-09-02, HUC2, HUC4, HUC6, HUC8, HUC10, HUC12, HUC14 and HUC16 by HUC2 region",
+  "description": "Spatially sorted, HUC2-partitioned GeoParquet of the USGS Watershed Boundary Dataset national release of 2026-09-02.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./hu2/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC2 regions (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "child",
+      "href": "./hu4/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC4 subregions (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "child",
+      "href": "./hu6/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC6 basins (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "child",
+      "href": "./hu8/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC8 subbasins (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "child",
+      "href": "./hu10/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC10 watersheds (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "child",
+      "href": "./hu12/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC12 subwatersheds (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "child",
+      "href": "./hu14/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC14 (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "child",
+      "href": "./hu16/collection.json",
+      "type": "application/json",
+      "title": "WBD HUC16 (2026-09-02) by HUC2 region"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Guidance for AI agents"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Human-readable documentation"
+    }
+  ],
+  "updated": "2026-10-09T20:23:00Z"
+}

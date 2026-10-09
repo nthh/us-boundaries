@@ -1,0 +1,251 @@
+{
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "hu14",
+  "title": "WBD HUC14 (2026-09-02) by HUC2 region",
+  "description": "USGS WBD 14-digit hydrologic units, 2026-09-02 national release, one Hilbert-sorted GeoParquet per HUC2 region with a bbox covering. Coverage is partial: USGS delineates this level only where a state chose to subdivide further, so most of the country has no units here. A missing unit means it was never delineated, not that the area has none; use HUC12 for complete coverage.",
+  "license": "other",
+  "keywords": [
+    "watersheds",
+    "hydrology",
+    "wbd",
+    "huc14",
+    "usgs",
+    "boundaries"
+  ],
+  "providers": [
+    {
+      "name": "U.S. Geological Survey",
+      "url": "https://www.usgs.gov/national-hydrography/watershed-boundary-dataset",
+      "roles": [
+        "producer",
+        "licensor"
+      ]
+    },
+    {
+      "name": "Source Cooperative nthh/us-boundaries",
+      "url": "https://source.coop/nthh/us-boundaries",
+      "roles": [
+        "host"
+      ]
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -150.43389569464514,
+          37.78386749135194,
+          -70.71181118505643,
+          61.51892425451035
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-09-02T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "table:columns": [
+    {
+      "name": "tnmid",
+      "type": "varchar"
+    },
+    {
+      "name": "metasourceid",
+      "type": "varchar"
+    },
+    {
+      "name": "sourcedatadesc",
+      "type": "varchar"
+    },
+    {
+      "name": "sourceoriginator",
+      "type": "varchar"
+    },
+    {
+      "name": "sourcefeatureid",
+      "type": "varchar"
+    },
+    {
+      "name": "loaddate",
+      "type": "timestamp"
+    },
+    {
+      "name": "referencegnis_ids",
+      "type": "varchar"
+    },
+    {
+      "name": "areaacres",
+      "type": "double"
+    },
+    {
+      "name": "areasqkm",
+      "type": "double"
+    },
+    {
+      "name": "states",
+      "type": "varchar"
+    },
+    {
+      "name": "huc14",
+      "type": "varchar",
+      "description": "14-digit hydrologic unit code; its first two digits are the partition value."
+    },
+    {
+      "name": "name",
+      "type": "varchar"
+    },
+    {
+      "name": "hutype",
+      "type": "varchar"
+    },
+    {
+      "name": "humod",
+      "type": "varchar"
+    },
+    {
+      "name": "tohuc",
+      "type": "varchar"
+    },
+    {
+      "name": "noncontributingareaacres",
+      "type": "double"
+    },
+    {
+      "name": "noncontributingareasqkm",
+      "type": "double"
+    },
+    {
+      "name": "globalid",
+      "type": "varchar"
+    },
+    {
+      "name": "shape_Length",
+      "type": "double"
+    },
+    {
+      "name": "shape_Area",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "geometry",
+      "description": "Unit polygon, WKB, EPSG:4269."
+    },
+    {
+      "name": "bbox",
+      "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+      "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+    }
+  ],
+  "table:primary_geometry": "geometry",
+  "table:row_count": 8149,
+  "partition:scheme": "hive",
+  "partition:strategy": "attribute",
+  "partition:keys": [
+    {
+      "name": "huc2",
+      "type": "string",
+      "description": "First two digits of huc14: the HUC2 region."
+    }
+  ],
+  "partition:file_count": 6,
+  "partition:glob": "https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu14/huc2=*/*.parquet",
+  "assets": {
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Preview: outlines in the default style colour, Web Mercator, no basemap",
+      "roles": [
+        "thumbnail"
+      ],
+      "file:size": 2234,
+      "file:checksum": "1220f1a5d57e6488aeb64ff6a9d0d4a039a582032f025a96589e3e168cd19836ce59"
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=01/huc2=01.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 01 New England"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=02/huc2=02.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 02 Mid Atlantic"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=07/huc2=07.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 07 Upper Mississippi"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=17/huc2=17.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 17 Pacific Northwest"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=18/huc2=18.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 18 California"
+    },
+    {
+      "rel": "item",
+      "href": "./huc2=19/huc2=19.json",
+      "type": "application/geo+json",
+      "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 19 Alaska"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.usgs.gov/national-hydrography/access-national-hydrography-products",
+      "type": "text/html",
+      "title": "Original source"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "type": "text/html",
+      "title": "USGS: public domain, credit requested"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Guidance for AI agents"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Human-readable documentation"
+    }
+  ],
+  "updated": "2026-10-09T20:23:00Z"
+}

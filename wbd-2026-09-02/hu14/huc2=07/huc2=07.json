@@ -1,0 +1,174 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=07",
+  "collection": "hu14",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -90.11330495077476,
+          38.55413976515632
+        ],
+        [
+          -89.67167089312693,
+          38.55413976515632
+        ],
+        [
+          -89.67167089312693,
+          39.11781499032304
+        ],
+        [
+          -90.11330495077476,
+          39.11781499032304
+        ],
+        [
+          -90.11330495077476,
+          38.55413976515632
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -90.11330495077476,
+    38.55413976515632,
+    -89.67167089312693,
+    39.11781499032304
+  ],
+  "properties": {
+    "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 07 Upper Mississippi",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "07",
+    "table:row_count": 59,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc14",
+        "type": "varchar",
+        "description": "14-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "hutype",
+        "type": "varchar"
+      },
+      {
+        "name": "humod",
+        "type": "varchar"
+      },
+      {
+        "name": "tohuc",
+        "type": "varchar"
+      },
+      {
+        "name": "noncontributingareaacres",
+        "type": "double"
+      },
+      {
+        "name": "noncontributingareasqkm",
+        "type": "double"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 07 Upper Mississippi (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 864230,
+      "file:checksum": "1220fdf88fea950a59ce836a26a881c112cb55a0ce9bb4391b30983f0a767a5738f9",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

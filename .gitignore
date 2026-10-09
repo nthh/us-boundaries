@@ -1,0 +1,4 @@
+# GeoParquet data lives on Source Cooperative, not in git.
+*.parquet
+out/
+work/

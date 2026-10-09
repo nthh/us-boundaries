@@ -1,0 +1,154 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=01",
+  "collection": "hu2",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -73.73798175535921,
+          40.939103693746006
+        ],
+        [
+          -66.01874679129935,
+          40.939103693746006
+        ],
+        [
+          -66.01874679129935,
+          48.09970565971469
+        ],
+        [
+          -73.73798175535921,
+          48.09970565971469
+        ],
+        [
+          -73.73798175535921,
+          40.939103693746006
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -73.73798175535921,
+    40.939103693746006,
+    -66.01874679129935,
+    48.09970565971469
+  ],
+  "properties": {
+    "title": "WBD HUC2 regions (2026-09-02) by HUC2 region: Region 01 New England",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "01",
+    "table:row_count": 1,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc2",
+        "type": "varchar",
+        "description": "2-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 01 New England (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 1222181,
+      "file:checksum": "1220148b86e984809a1060332d00a3d8507e8921dc268c550c7a73334efffe7f6578",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

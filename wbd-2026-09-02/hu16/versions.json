@@ -1,0 +1,28 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-10-09T20:23:00Z",
+      "breaking": false,
+      "message": "Initial build from WBD_National_GDB.zip sha256 e721273d26b655a7c71f82c1c4cdf7edb28c1e9bc37989fc56ac9164ed27ec82",
+      "assets": {
+        "huc2=02/data.parquet": {
+          "sha256": "d1a1a16b2516d883ba9a75cae655fd8b7a9220d2614a707baec3970a3ef5c661",
+          "size_bytes": 139004875,
+          "href": "huc2=02/data.parquet"
+        },
+        "huc2=17/data.parquet": {
+          "sha256": "3d4c8a1f293407cad79cb97e30c9c64f67c9c4a724c44885faa3e552d90173a1",
+          "size_bytes": 7987810,
+          "href": "huc2=17/data.parquet"
+        }
+      },
+      "changes": [
+        "huc2=02/data.parquet",
+        "huc2=17/data.parquet"
+      ]
+    }
+  ]
+}

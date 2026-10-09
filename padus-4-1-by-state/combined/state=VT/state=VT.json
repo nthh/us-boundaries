@@ -1,0 +1,235 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "state=VT",
+  "collection": "combined",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -117.17938876247543,
+          32.995868903854394
+        ],
+        [
+          -71.46504700016544,
+          32.995868903854394
+        ],
+        [
+          -71.46504700016544,
+          45.016062866961285
+        ],
+        [
+          -117.17938876247543,
+          45.016062866961285
+        ],
+        [
+          -117.17938876247543,
+          32.995868903854394
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -117.17938876247543,
+    32.995868903854394,
+    -71.46504700016544,
+    45.016062866961285
+  ],
+  "properties": {
+    "title": "PAD-US 4.1 Combined by state: Vermont",
+    "datetime": "2025-03-31T00:00:00Z",
+    "state": "VT",
+    "table:row_count": 20006,
+    "table:primary_geometry": "SHAPE",
+    "table:columns": [
+      {
+        "name": "_cng_fid",
+        "type": "bigint",
+        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+      },
+      {
+        "name": "FeatClass",
+        "type": "varchar"
+      },
+      {
+        "name": "Category",
+        "type": "varchar"
+      },
+      {
+        "name": "Own_Type",
+        "type": "varchar"
+      },
+      {
+        "name": "Own_Name",
+        "type": "varchar"
+      },
+      {
+        "name": "Loc_Own",
+        "type": "varchar"
+      },
+      {
+        "name": "Mang_Type",
+        "type": "varchar"
+      },
+      {
+        "name": "Mang_Name",
+        "type": "varchar"
+      },
+      {
+        "name": "Loc_Mang",
+        "type": "varchar"
+      },
+      {
+        "name": "Des_Tp",
+        "type": "varchar"
+      },
+      {
+        "name": "Loc_Ds",
+        "type": "varchar"
+      },
+      {
+        "name": "Unit_Nm",
+        "type": "varchar"
+      },
+      {
+        "name": "Loc_Nm",
+        "type": "varchar"
+      },
+      {
+        "name": "State_Nm",
+        "type": "varchar",
+        "description": "State or territory code; equals the partition value."
+      },
+      {
+        "name": "Agg_Src",
+        "type": "varchar"
+      },
+      {
+        "name": "GIS_Src",
+        "type": "varchar"
+      },
+      {
+        "name": "Src_Date",
+        "type": "varchar"
+      },
+      {
+        "name": "GIS_Acres",
+        "type": "integer"
+      },
+      {
+        "name": "Source_PAID",
+        "type": "varchar"
+      },
+      {
+        "name": "WDPA_Cd",
+        "type": "integer"
+      },
+      {
+        "name": "Pub_Access",
+        "type": "varchar"
+      },
+      {
+        "name": "Access_Src",
+        "type": "varchar"
+      },
+      {
+        "name": "Access_Dt",
+        "type": "varchar"
+      },
+      {
+        "name": "GAP_Sts",
+        "type": "varchar"
+      },
+      {
+        "name": "GAPCdSrc",
+        "type": "varchar"
+      },
+      {
+        "name": "GAPCdDt",
+        "type": "varchar"
+      },
+      {
+        "name": "IUCN_Cat",
+        "type": "varchar"
+      },
+      {
+        "name": "IUCNCtSrc",
+        "type": "varchar"
+      },
+      {
+        "name": "IUCNCtDt",
+        "type": "varchar"
+      },
+      {
+        "name": "Date_Est",
+        "type": "varchar"
+      },
+      {
+        "name": "Comments",
+        "type": "varchar"
+      },
+      {
+        "name": "Term",
+        "type": "integer"
+      },
+      {
+        "name": "Duration",
+        "type": "varchar"
+      },
+      {
+        "name": "SHAPE_Length",
+        "type": "double"
+      },
+      {
+        "name": "SHAPE_Area",
+        "type": "double"
+      },
+      {
+        "name": "SHAPE",
+        "type": "geometry",
+        "description": "Feature geometry, WKB, OGC:CRS84."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Vermont (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 25077638,
+      "file:checksum": "122064669d4cde887b21117d6aece6b7d8977d158603aa6bfb5764f89a5c8fd8ec14",
+      "proj:code": "OGC:CRS84"
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=15",
+  "collection": "hu6",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -115.70609766834127,
+          29.838554381809615
+        ],
+        [
+          -107.78313753480597,
+          29.838554381809615
+        ],
+        [
+          -107.78313753480597,
+          39.3028410494108
+        ],
+        [
+          -115.70609766834127,
+          39.3028410494108
+        ],
+        [
+          -115.70609766834127,
+          29.838554381809615
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -115.70609766834127,
+    29.838554381809615,
+    -107.78313753480597,
+    39.3028410494108
+  ],
+  "properties": {
+    "title": "WBD HUC6 basins (2026-09-02) by HUC2 region: Region 15 Lower Colorado",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "15",
+    "table:row_count": 15,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc6",
+        "type": "varchar",
+        "description": "6-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 15 Lower Colorado (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 8003153,
+      "file:checksum": "122009ab5e3d70085a5f9bb2b939a5c7138e7fe94176f0809e3234a9c1d27bfd385a",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

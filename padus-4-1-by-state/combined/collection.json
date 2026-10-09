@@ -1,0 +1,660 @@
+{
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "id": "combined",
+  "title": "PAD-US 4.1 Combined by state",
+  "description": "PAD-US 4.1 Combined protected-area records (USGS GAP), one Hilbert-sorted GeoParquet per state with a bbox covering, built from Source Cooperative cboettig/padus combined.parquet.",
+  "license": "other",
+  "keywords": [
+    "protected-areas",
+    "public-lands",
+    "pad-us",
+    "usgs",
+    "boundaries"
+  ],
+  "providers": [
+    {
+      "name": "U.S. Geological Survey, Gap Analysis Project",
+      "url": "https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview",
+      "roles": [
+        "producer",
+        "licensor"
+      ]
+    },
+    {
+      "name": "Carl Boettiger (Source Cooperative cboettig/padus, GeoParquet conversion)",
+      "url": "https://source.coop/cboettig/padus",
+      "roles": [
+        "processor"
+      ]
+    },
+    {
+      "name": "Source Cooperative nthh/us-boundaries",
+      "url": "https://source.coop/nthh/us-boundaries",
+      "roles": [
+        "host"
+      ]
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -15.38614238737142,
+          179.99999999994174,
+          74.99635387149438
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2025-03-31T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "table:columns": [
+    {
+      "name": "_cng_fid",
+      "type": "bigint",
+      "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+    },
+    {
+      "name": "FeatClass",
+      "type": "varchar"
+    },
+    {
+      "name": "Category",
+      "type": "varchar"
+    },
+    {
+      "name": "Own_Type",
+      "type": "varchar"
+    },
+    {
+      "name": "Own_Name",
+      "type": "varchar"
+    },
+    {
+      "name": "Loc_Own",
+      "type": "varchar"
+    },
+    {
+      "name": "Mang_Type",
+      "type": "varchar"
+    },
+    {
+      "name": "Mang_Name",
+      "type": "varchar"
+    },
+    {
+      "name": "Loc_Mang",
+      "type": "varchar"
+    },
+    {
+      "name": "Des_Tp",
+      "type": "varchar"
+    },
+    {
+      "name": "Loc_Ds",
+      "type": "varchar"
+    },
+    {
+      "name": "Unit_Nm",
+      "type": "varchar"
+    },
+    {
+      "name": "Loc_Nm",
+      "type": "varchar"
+    },
+    {
+      "name": "State_Nm",
+      "type": "varchar",
+      "description": "State or territory code; equals the partition value."
+    },
+    {
+      "name": "Agg_Src",
+      "type": "varchar"
+    },
+    {
+      "name": "GIS_Src",
+      "type": "varchar"
+    },
+    {
+      "name": "Src_Date",
+      "type": "varchar"
+    },
+    {
+      "name": "GIS_Acres",
+      "type": "integer"
+    },
+    {
+      "name": "Source_PAID",
+      "type": "varchar"
+    },
+    {
+      "name": "WDPA_Cd",
+      "type": "integer"
+    },
+    {
+      "name": "Pub_Access",
+      "type": "varchar"
+    },
+    {
+      "name": "Access_Src",
+      "type": "varchar"
+    },
+    {
+      "name": "Access_Dt",
+      "type": "varchar"
+    },
+    {
+      "name": "GAP_Sts",
+      "type": "varchar"
+    },
+    {
+      "name": "GAPCdSrc",
+      "type": "varchar"
+    },
+    {
+      "name": "GAPCdDt",
+      "type": "varchar"
+    },
+    {
+      "name": "IUCN_Cat",
+      "type": "varchar"
+    },
+    {
+      "name": "IUCNCtSrc",
+      "type": "varchar"
+    },
+    {
+      "name": "IUCNCtDt",
+      "type": "varchar"
+    },
+    {
+      "name": "Date_Est",
+      "type": "varchar"
+    },
+    {
+      "name": "Comments",
+      "type": "varchar"
+    },
+    {
+      "name": "Term",
+      "type": "integer"
+    },
+    {
+      "name": "Duration",
+      "type": "varchar"
+    },
+    {
+      "name": "SHAPE_Length",
+      "type": "double"
+    },
+    {
+      "name": "SHAPE_Area",
+      "type": "double"
+    },
+    {
+      "name": "SHAPE",
+      "type": "geometry",
+      "description": "Feature geometry, WKB, OGC:CRS84."
+    },
+    {
+      "name": "bbox",
+      "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+      "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+    }
+  ],
+  "table:primary_geometry": "SHAPE",
+  "table:row_count": 656986,
+  "partition:scheme": "hive",
+  "partition:strategy": "attribute",
+  "partition:keys": [
+    {
+      "name": "state",
+      "type": "string",
+      "description": "State_Nm: two-letter state or territory code, UNKF for records with no state."
+    }
+  ],
+  "partition:file_count": 58,
+  "partition:glob": "https://data.source.coop/nthh/us-boundaries/padus-4-1-by-state/combined/state=*/*.parquet",
+  "assets": {
+    "visual": {
+      "href": "https://data.source.coop/cboettig/padus/padus-4-1/combined.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "PAD-US 4.1 Combined vector tiles (cboettig/padus)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 3636293548
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Preview: outlines in the default style colour, Web Mercator, no basemap",
+      "roles": [
+        "thumbnail"
+      ],
+      "file:size": 3765,
+      "file:checksum": "1220a5aa3af404ab5aada2bcefd75eeef653a296f2b9445a9f3403daa219e4e7f9f6"
+    },
+    "style-default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Outlines over a light fill",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "file:size": 650,
+      "file:checksum": "1220533ce93fd0197468f0187ed20c665d3b929acfbde8031215211ab7259c5a01a5"
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./state=AK/state=AK.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Alaska"
+    },
+    {
+      "rel": "item",
+      "href": "./state=AL/state=AL.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Alabama"
+    },
+    {
+      "rel": "item",
+      "href": "./state=AR/state=AR.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Arkansas"
+    },
+    {
+      "rel": "item",
+      "href": "./state=AS/state=AS.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: American Samoa"
+    },
+    {
+      "rel": "item",
+      "href": "./state=AZ/state=AZ.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Arizona"
+    },
+    {
+      "rel": "item",
+      "href": "./state=CA/state=CA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: California"
+    },
+    {
+      "rel": "item",
+      "href": "./state=CO/state=CO.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Colorado"
+    },
+    {
+      "rel": "item",
+      "href": "./state=CT/state=CT.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Connecticut"
+    },
+    {
+      "rel": "item",
+      "href": "./state=DC/state=DC.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: District of Columbia"
+    },
+    {
+      "rel": "item",
+      "href": "./state=DE/state=DE.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Delaware"
+    },
+    {
+      "rel": "item",
+      "href": "./state=FL/state=FL.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Florida"
+    },
+    {
+      "rel": "item",
+      "href": "./state=GA/state=GA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Georgia"
+    },
+    {
+      "rel": "item",
+      "href": "./state=GU/state=GU.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Guam"
+    },
+    {
+      "rel": "item",
+      "href": "./state=HI/state=HI.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Hawaii"
+    },
+    {
+      "rel": "item",
+      "href": "./state=IA/state=IA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Iowa"
+    },
+    {
+      "rel": "item",
+      "href": "./state=ID/state=ID.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Idaho"
+    },
+    {
+      "rel": "item",
+      "href": "./state=IL/state=IL.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Illinois"
+    },
+    {
+      "rel": "item",
+      "href": "./state=IN/state=IN.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Indiana"
+    },
+    {
+      "rel": "item",
+      "href": "./state=KS/state=KS.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Kansas"
+    },
+    {
+      "rel": "item",
+      "href": "./state=KY/state=KY.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Kentucky"
+    },
+    {
+      "rel": "item",
+      "href": "./state=LA/state=LA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Louisiana"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MA/state=MA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Massachusetts"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MD/state=MD.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Maryland"
+    },
+    {
+      "rel": "item",
+      "href": "./state=ME/state=ME.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Maine"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MI/state=MI.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Michigan"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MN/state=MN.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Minnesota"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MO/state=MO.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Missouri"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MP/state=MP.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Northern Mariana Islands"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MS/state=MS.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Mississippi"
+    },
+    {
+      "rel": "item",
+      "href": "./state=MT/state=MT.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Montana"
+    },
+    {
+      "rel": "item",
+      "href": "./state=NC/state=NC.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: North Carolina"
+    },
+    {
+      "rel": "item",
+      "href": "./state=ND/state=ND.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: North Dakota"
+    },
+    {
+      "rel": "item",
+      "href": "./state=NE/state=NE.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Nebraska"
+    },
+    {
+      "rel": "item",
+      "href": "./state=NH/state=NH.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: New Hampshire"
+    },
+    {
+      "rel": "item",
+      "href": "./state=NJ/state=NJ.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: New Jersey"
+    },
+    {
+      "rel": "item",
+      "href": "./state=NM/state=NM.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: New Mexico"
+    },
+    {
+      "rel": "item",
+      "href": "./state=NV/state=NV.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Nevada"
+    },
+    {
+      "rel": "item",
+      "href": "./state=NY/state=NY.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: New York"
+    },
+    {
+      "rel": "item",
+      "href": "./state=OH/state=OH.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Ohio"
+    },
+    {
+      "rel": "item",
+      "href": "./state=OK/state=OK.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Oklahoma"
+    },
+    {
+      "rel": "item",
+      "href": "./state=OR/state=OR.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Oregon"
+    },
+    {
+      "rel": "item",
+      "href": "./state=PA/state=PA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Pennsylvania"
+    },
+    {
+      "rel": "item",
+      "href": "./state=PR/state=PR.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Puerto Rico"
+    },
+    {
+      "rel": "item",
+      "href": "./state=RI/state=RI.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Rhode Island"
+    },
+    {
+      "rel": "item",
+      "href": "./state=SC/state=SC.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: South Carolina"
+    },
+    {
+      "rel": "item",
+      "href": "./state=SD/state=SD.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: South Dakota"
+    },
+    {
+      "rel": "item",
+      "href": "./state=TN/state=TN.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Tennessee"
+    },
+    {
+      "rel": "item",
+      "href": "./state=TX/state=TX.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Texas"
+    },
+    {
+      "rel": "item",
+      "href": "./state=UM/state=UM.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: US Minor Outlying Islands"
+    },
+    {
+      "rel": "item",
+      "href": "./state=UNKF/state=UNKF.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Unknown (marine and offshore)"
+    },
+    {
+      "rel": "item",
+      "href": "./state=UT/state=UT.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Utah"
+    },
+    {
+      "rel": "item",
+      "href": "./state=VA/state=VA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Virginia"
+    },
+    {
+      "rel": "item",
+      "href": "./state=VI/state=VI.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: US Virgin Islands"
+    },
+    {
+      "rel": "item",
+      "href": "./state=VT/state=VT.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Vermont"
+    },
+    {
+      "rel": "item",
+      "href": "./state=WA/state=WA.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Washington"
+    },
+    {
+      "rel": "item",
+      "href": "./state=WI/state=WI.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Wisconsin"
+    },
+    {
+      "rel": "item",
+      "href": "./state=WV/state=WV.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: West Virginia"
+    },
+    {
+      "rel": "item",
+      "href": "./state=WY/state=WY.json",
+      "type": "application/geo+json",
+      "title": "PAD-US 4.1 Combined by state: Wyoming"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cboettig/padus/padus-4-1/combined.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Web map tiles (upstream)",
+      "pmtiles:layers": [
+        "combined"
+      ]
+    },
+    {
+      "rel": "via",
+      "href": "https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-download",
+      "type": "text/html",
+      "title": "Original source"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "type": "text/html",
+      "title": "USGS: public domain, credit requested"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Guidance for AI agents"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Human-readable documentation"
+    }
+  ],
+  "updated": "2026-10-09T20:21:23Z"
+}

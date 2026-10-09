@@ -1,0 +1,154 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=22",
+  "collection": "hu8",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -176.67417247162334,
+          -14.610192762738677
+        ],
+        [
+          166.7110409391242,
+          -14.610192762738677
+        ],
+        [
+          166.7110409391242,
+          20.603991656560197
+        ],
+        [
+          -176.67417247162334,
+          20.603991656560197
+        ],
+        [
+          -176.67417247162334,
+          -14.610192762738677
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -176.67417247162334,
+    -14.610192762738677,
+    166.7110409391242,
+    20.603991656560197
+  ],
+  "properties": {
+    "title": "WBD HUC8 subbasins (2026-09-02) by HUC2 region: Region 22 South Pacific",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "22",
+    "table:row_count": 27,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc8",
+        "type": "varchar",
+        "description": "8-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 22 South Pacific (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 288197,
+      "file:checksum": "1220f5bb1d0b76710573f137ad0a317073bad4d962a85cfc82c483c2a3f78f7c4b1e",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

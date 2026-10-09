@@ -1,0 +1,154 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "huc2=02",
+  "collection": "hu4",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -80.54099214271622,
+          36.66941860766508
+        ],
+        [
+          -71.78971297609166,
+          36.66941860766508
+        ],
+        [
+          -71.78971297609166,
+          44.153047280424005
+        ],
+        [
+          -80.54099214271622,
+          44.153047280424005
+        ],
+        [
+          -80.54099214271622,
+          36.66941860766508
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -80.54099214271622,
+    36.66941860766508,
+    -71.78971297609166,
+    44.153047280424005
+  ],
+  "properties": {
+    "title": "WBD HUC4 subregions (2026-09-02) by HUC2 region: Region 02 Mid Atlantic",
+    "datetime": "2026-09-02T00:00:00Z",
+    "huc2": "02",
+    "table:row_count": 7,
+    "table:primary_geometry": "geometry",
+    "table:columns": [
+      {
+        "name": "tnmid",
+        "type": "varchar"
+      },
+      {
+        "name": "metasourceid",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcedatadesc",
+        "type": "varchar"
+      },
+      {
+        "name": "sourceoriginator",
+        "type": "varchar"
+      },
+      {
+        "name": "sourcefeatureid",
+        "type": "varchar"
+      },
+      {
+        "name": "loaddate",
+        "type": "timestamp"
+      },
+      {
+        "name": "referencegnis_ids",
+        "type": "varchar"
+      },
+      {
+        "name": "areaacres",
+        "type": "double"
+      },
+      {
+        "name": "areasqkm",
+        "type": "double"
+      },
+      {
+        "name": "states",
+        "type": "varchar"
+      },
+      {
+        "name": "huc4",
+        "type": "varchar",
+        "description": "4-digit hydrologic unit code; its first two digits are the partition value."
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "globalid",
+        "type": "varchar"
+      },
+      {
+        "name": "shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "shape_Area",
+        "type": "double"
+      },
+      {
+        "name": "geometry",
+        "type": "geometry",
+        "description": "Unit polygon, WKB, EPSG:4269."
+      },
+      {
+        "name": "bbox",
+        "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+        "description": "Per-feature bounding box, the GeoParquet 1.1 covering."
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./data.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Region 02 Mid Atlantic (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "file:size": 4742634,
+      "file:checksum": "1220fa104916aaa2dd2baa1f129db1e92ddfc5ea772f3095adc8ecda44e553b99636",
+      "proj:code": "EPSG:4269"
+    }
+  }
+}

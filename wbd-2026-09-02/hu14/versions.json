@@ -1,0 +1,52 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-10-09T20:23:00Z",
+      "breaking": false,
+      "message": "Initial build from WBD_National_GDB.zip sha256 e721273d26b655a7c71f82c1c4cdf7edb28c1e9bc37989fc56ac9164ed27ec82",
+      "assets": {
+        "huc2=01/data.parquet": {
+          "sha256": "e56c733bbb0bcccd827fc7c1f4a1d742a722f6760829f7d69ec0f53dfb44c944",
+          "size_bytes": 6918975,
+          "href": "huc2=01/data.parquet"
+        },
+        "huc2=02/data.parquet": {
+          "sha256": "7797c7edfe1f0ba5cb82e70172b86bedde6ff3595184b5bd8a379b12689777cb",
+          "size_bytes": 40894649,
+          "href": "huc2=02/data.parquet"
+        },
+        "huc2=07/data.parquet": {
+          "sha256": "fdf88fea950a59ce836a26a881c112cb55a0ce9bb4391b30983f0a767a5738f9",
+          "size_bytes": 864230,
+          "href": "huc2=07/data.parquet"
+        },
+        "huc2=17/data.parquet": {
+          "sha256": "02080d21e70670cd01708c64e8758a9f1b2481821f77831b1ec166c66c40e722",
+          "size_bytes": 4439604,
+          "href": "huc2=17/data.parquet"
+        },
+        "huc2=18/data.parquet": {
+          "sha256": "81b26e7ace3f5d30effc4437963e73cb0052af71bd8a6d717200e51080e99855",
+          "size_bytes": 4816005,
+          "href": "huc2=18/data.parquet"
+        },
+        "huc2=19/data.parquet": {
+          "sha256": "05ae706248eb92ba2164f098a639ea96382df9136b03eaa9d9ca9ce4fabce784",
+          "size_bytes": 62417009,
+          "href": "huc2=19/data.parquet"
+        }
+      },
+      "changes": [
+        "huc2=01/data.parquet",
+        "huc2=02/data.parquet",
+        "huc2=07/data.parquet",
+        "huc2=17/data.parquet",
+        "huc2=18/data.parquet",
+        "huc2=19/data.parquet"
+      ]
+    }
+  ]
+}
