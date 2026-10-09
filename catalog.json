@@ -7,6 +7,34 @@
   "id": "us-boundaries",
   "title": "US boundaries: protected areas and watersheds, spatially sorted GeoParquet",
   "description": "Public-domain US boundary datasets (PAD-US, WBD) rebuilt as partitioned, Hilbert-sorted GeoParquet with bbox coverings, so a reader can range-read a small area.",
+  "keywords": [
+    "united states",
+    "boundaries",
+    "protected areas",
+    "pad-us",
+    "watersheds",
+    "wbd",
+    "huc",
+    "geoparquet"
+  ],
+  "providers": [
+    {
+      "name": "U.S. Geological Survey",
+      "url": "https://www.usgs.gov/",
+      "roles": [
+        "producer",
+        "licensor"
+      ]
+    },
+    {
+      "name": "Source Cooperative nthh/us-boundaries",
+      "url": "https://source.coop/nthh/us-boundaries",
+      "roles": [
+        "host",
+        "processor"
+      ]
+    }
+  ],
   "links": [
     {
       "rel": "root",
@@ -44,5 +72,5 @@
       "title": "Build script and metadata history (GitHub)"
     }
   ],
-  "updated": "2026-10-09T20:27:43Z"
+  "updated": "2026-10-09T20:36:41Z"
 }

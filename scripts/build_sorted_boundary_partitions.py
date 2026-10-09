@@ -1307,6 +1307,11 @@ def build_root(args: argparse.Namespace) -> None:
             "id": "us-boundaries",
             "title": "US boundaries: protected areas and watersheds, spatially sorted GeoParquet",
             "description": "Public-domain US boundary datasets (PAD-US, WBD) rebuilt as partitioned, Hilbert-sorted GeoParquet with bbox coverings, so a reader can range-read a small area.",
+            "keywords": ["united states", "boundaries", "protected areas", "pad-us", "watersheds", "wbd", "huc", "geoparquet"],
+            "providers": [
+                {"name": "U.S. Geological Survey", "url": "https://www.usgs.gov/", "roles": ["producer", "licensor"]},
+                {"name": "Source Cooperative nthh/us-boundaries", "url": CATALOG_URL, "roles": ["host", "processor"]},
+            ],
             "links": [
                 link("root", "./catalog.json", "application/json"),
                 *[
