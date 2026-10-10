@@ -3,7 +3,7 @@
 #
 #   scripts/publish.sh <built catalog dir> [--dry-run]
 #
-# Order: GeoParquet first, then item/collection metadata, then versions.json and manifest.json, and
+# Order: GeoParquet and PMTiles first, then item/collection metadata, then versions.json and manifest.json, and
 # the root catalog.json last, so a reader never sees metadata that names files not yet uploaded.
 # Needs the `source-coop` AWS profile (see README: `source-coop login`); credentials never leave
 # this machine. Refuses to run if the repo's metadata differs from the build (commit it first).
@@ -17,8 +17,8 @@ REPO=$(cd "$(dirname "$0")/.." && pwd)
 export AWS_PROFILE=${AWS_PROFILE:-source-coop}
 
 # The repo must mirror the build (everything but the GeoParquet), and be committed.
-if ! diff -rq -x '*.parquet' -x .git -x scripts -x LICENSE -x .gitignore "$OUT" "$REPO" >/dev/null; then
-  diff -rq -x '*.parquet' -x .git -x scripts -x LICENSE -x .gitignore "$OUT" "$REPO" | head -20
+if ! diff -rq -x '*.parquet' -x '*.pmtiles' -x .git -x scripts -x LICENSE -x .gitignore "$OUT" "$REPO" >/dev/null; then
+  diff -rq -x '*.parquet' -x '*.pmtiles' -x .git -x scripts -x LICENSE -x .gitignore "$OUT" "$REPO" | head -20
   echo "repo metadata differs from $OUT; copy it in and commit before publishing" >&2
   exit 1
 fi
@@ -29,10 +29,10 @@ fi
 
 sync() { aws s3 sync "$OUT" "$DEST" --only-show-errors --no-progress ${DRY:+--dryrun} "$@"; }
 
-echo "1/4 GeoParquet"
-sync --exclude '*' --include '*.parquet'
+echo "1/4 GeoParquet and PMTiles"
+sync --exclude '*' --include '*.parquet' --include '*.pmtiles'
 echo "2/4 items, collections, READMEs, styles, thumbnails, build script"
-sync --exclude '*.parquet' --exclude '*/versions.json' --exclude '*/manifest.json' --exclude 'catalog.json'
+sync --exclude '*.parquet' --exclude '*.pmtiles' --exclude '*/versions.json' --exclude '*/manifest.json' --exclude 'catalog.json'
 aws s3 cp "$REPO/scripts/build_sorted_boundary_partitions.py" "$DEST/scripts/build_sorted_boundary_partitions.py" \
   --only-show-errors ${DRY:+--dryrun}
 echo "3/4 versions.json and manifest.json"

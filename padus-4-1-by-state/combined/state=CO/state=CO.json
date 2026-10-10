@@ -13,33 +13,33 @@
     "coordinates": [
       [
         [
-          -109.0602036008459,
-          36.73503234933215
+          -109.06020369097682,
+          36.73503293754314
         ],
         [
-          -102.04174899978351,
-          36.73503234933215
+          -102.0417523808517,
+          36.73503293754314
         ],
         [
-          -102.04174899978351,
-          41.00344399958431
+          -102.0417523808517,
+          41.00344533842277
         ],
         [
-          -109.0602036008459,
-          41.00344399958431
+          -109.06020369097682,
+          41.00344533842277
         ],
         [
-          -109.0602036008459,
-          36.73503234933215
+          -109.06020369097682,
+          36.73503293754314
         ]
       ]
     ]
   },
   "bbox": [
-    -109.0602036008459,
-    36.73503234933215,
-    -102.04174899978351,
-    41.00344399958431
+    -109.06020369097682,
+    36.73503293754314,
+    -102.0417523808517,
+    41.00344533842277
   ],
   "properties": {
     "title": "PAD-US 4.1 Combined by state: Colorado",
@@ -49,9 +49,9 @@
     "table:primary_geometry": "SHAPE",
     "table:columns": [
       {
-        "name": "_cng_fid",
+        "name": "OBJECTID",
         "type": "bigint",
-        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+        "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
       },
       {
         "name": "FeatClass",
@@ -193,7 +193,7 @@
       {
         "name": "SHAPE",
         "type": "geometry",
-        "description": "Feature geometry, WKB, OGC:CRS84."
+        "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
       },
       {
         "name": "bbox",
@@ -227,8 +227,8 @@
       "roles": [
         "data"
       ],
-      "file:size": 54928643,
-      "file:checksum": "12200ce4f60d3d3d21a43772da2c7ce49c9226c0a6fb059fb9a6882519f0d25e56c3",
+      "file:size": 54933387,
+      "file:checksum": "1220ea742bef905355b5cf7aceb4582883506af5920791bd23b626d72884cdba9e7a",
       "proj:code": "OGC:CRS84"
     }
   }

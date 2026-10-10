@@ -4,7 +4,7 @@
   "versions": [
     {
       "version": "1.0.0",
-      "created": "2026-10-09T20:23:00Z",
+      "created": "2026-10-09T22:01:24Z",
       "breaking": false,
       "message": "Initial build from WBD_National_GDB.zip sha256 e721273d26b655a7c71f82c1c4cdf7edb28c1e9bc37989fc56ac9164ed27ec82",
       "assets": {
@@ -117,9 +117,15 @@
           "sha256": "d55a710216f523d45e4b5f858950685d96a13e74308b3b753ab2d5311878c4bf",
           "size_bytes": 259909,
           "href": "huc2=22/data.parquet"
+        },
+        "hu6.pmtiles": {
+          "sha256": "55873d30ef82733c51a24170481579b9fa5198c2b69984bd2f895046d4c7000c",
+          "size_bytes": 38166866,
+          "href": "hu6.pmtiles"
         }
       },
       "changes": [
+        "hu6.pmtiles",
         "huc2=01/data.parquet",
         "huc2=02/data.parquet",
         "huc2=03/data.parquet",

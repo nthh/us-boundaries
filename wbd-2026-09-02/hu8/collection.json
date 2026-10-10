@@ -146,13 +146,14 @@
   "partition:glob": "https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu8/huc2=*/*.parquet",
   "assets": {
     "visual": {
-      "href": "https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu8.pmtiles",
+      "href": "./hu8.pmtiles",
       "type": "application/vnd.pmtiles",
-      "title": "WBD HU8 vector tiles (cboettig/usgs-wbd mirror, 2025-01-07 build)",
+      "title": "WBD HU8 vector tiles (2026-09-02; huc8, name, areasqkm)",
       "roles": [
         "visual"
       ],
-      "file:size": 789148999
+      "file:size": 81071613,
+      "file:checksum": "12204c2811228bd3fcc12c487383ef5f1f2df6d0699a98967f30a79433b7a44afac3"
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -172,8 +173,8 @@
         "style",
         "default"
       ],
-      "file:size": 645,
-      "file:checksum": "1220aac46cdfb65eb961acc6f3068528cc325c6635e8823ce6f94a90d7188c3d4b88"
+      "file:size": 656,
+      "file:checksum": "1220525602fdd2c0a2b614a474ae0b5e452a8e3c74a6b22bc90d8c4725e604445b00"
     }
   },
   "links": [
@@ -321,9 +322,9 @@
     },
     {
       "rel": "pmtiles",
-      "href": "https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu8.pmtiles",
+      "href": "./hu8.pmtiles",
       "type": "application/vnd.pmtiles",
-      "title": "Web map tiles (upstream)",
+      "title": "Web map tiles",
       "pmtiles:layers": [
         "hu8"
       ]
@@ -353,5 +354,5 @@
       "title": "Human-readable documentation"
     }
   ],
-  "updated": "2026-10-09T20:23:00Z"
+  "updated": "2026-10-09T22:01:24Z"
 }

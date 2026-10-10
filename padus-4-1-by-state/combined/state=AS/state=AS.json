@@ -13,33 +13,33 @@
     "coordinates": [
       [
         [
-          -171.14091989343086,
-          -15.38614238737142
+          -171.1409198934309,
+          -15.386142387371404
         ],
         [
-          -167.28333299960175,
-          -15.38614238737142
+          -167.28333299960178,
+          -15.386142387371404
         ],
         [
-          -167.28333299960175,
-          -10.997592257528236
+          -167.28333299960178,
+          -10.997592257528186
         ],
         [
-          -171.14091989343086,
-          -10.997592257528236
+          -171.1409198934309,
+          -10.997592257528186
         ],
         [
-          -171.14091989343086,
-          -15.38614238737142
+          -171.1409198934309,
+          -15.386142387371404
         ]
       ]
     ]
   },
   "bbox": [
-    -171.14091989343086,
-    -15.38614238737142,
-    -167.28333299960175,
-    -10.997592257528236
+    -171.1409198934309,
+    -15.386142387371404,
+    -167.28333299960178,
+    -10.997592257528186
   ],
   "properties": {
     "title": "PAD-US 4.1 Combined by state: American Samoa",
@@ -49,9 +49,9 @@
     "table:primary_geometry": "SHAPE",
     "table:columns": [
       {
-        "name": "_cng_fid",
+        "name": "OBJECTID",
         "type": "bigint",
-        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+        "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
       },
       {
         "name": "FeatClass",
@@ -193,7 +193,7 @@
       {
         "name": "SHAPE",
         "type": "geometry",
-        "description": "Feature geometry, WKB, OGC:CRS84."
+        "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
       },
       {
         "name": "bbox",
@@ -227,8 +227,8 @@
       "roles": [
         "data"
       ],
-      "file:size": 249027,
-      "file:checksum": "12204410517691bc16f3862e547e8d9435eee2d11db1e5bc09ff31620066df112f1b",
+      "file:size": 249101,
+      "file:checksum": "1220b962d42d6324a377f1661ee2a38967f58e5324aa1bf1d21023bb871c17940605",
       "proj:code": "OGC:CRS84"
     }
   }

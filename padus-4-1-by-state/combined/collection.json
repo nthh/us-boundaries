@@ -11,7 +11,7 @@
   ],
   "id": "combined",
   "title": "PAD-US 4.1 Combined by state",
-  "description": "PAD-US 4.1 Combined protected-area records (USGS GAP), one Hilbert-sorted GeoParquet per state with a bbox covering, built from Source Cooperative cboettig/padus combined.parquet.",
+  "description": "PAD-US 4.1 Combined protected-area records (USGS GAP), one Hilbert-sorted GeoParquet per state with a bbox covering, built from the USGS PAD-US 4.1 geodatabase.",
   "license": "other",
   "keywords": [
     "protected-areas",
@@ -30,13 +30,6 @@
       ]
     },
     {
-      "name": "Carl Boettiger (Source Cooperative cboettig/padus, GeoParquet conversion)",
-      "url": "https://source.coop/cboettig/padus",
-      "roles": [
-        "processor"
-      ]
-    },
-    {
       "name": "Source Cooperative nthh/us-boundaries",
       "url": "https://source.coop/nthh/us-boundaries",
       "roles": [
@@ -49,7 +42,7 @@
       "bbox": [
         [
           -180.0,
-          -15.38614238737142,
+          -15.386142387371404,
           179.99999999994174,
           74.99635387149438
         ]
@@ -66,9 +59,9 @@
   },
   "table:columns": [
     {
-      "name": "_cng_fid",
+      "name": "OBJECTID",
       "type": "bigint",
-      "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+      "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
     },
     {
       "name": "FeatClass",
@@ -210,7 +203,7 @@
     {
       "name": "SHAPE",
       "type": "geometry",
-      "description": "Feature geometry, WKB, OGC:CRS84."
+      "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
     },
     {
       "name": "bbox",
@@ -248,8 +241,8 @@
       "roles": [
         "thumbnail"
       ],
-      "file:size": 3765,
-      "file:checksum": "1220a5aa3af404ab5aada2bcefd75eeef653a296f2b9445a9f3403daa219e4e7f9f6"
+      "file:size": 3756,
+      "file:checksum": "122064d4b6025b187b8d1c9b8e872cf1e920ae7040abf464cbe0c216e3a456c09971"
     },
     "style-default": {
       "href": "./styles/default.json",
@@ -656,5 +649,5 @@
       "title": "Human-readable documentation"
     }
   ],
-  "updated": "2026-10-09T20:21:23Z"
+  "updated": "2026-10-09T21:40:05Z"
 }

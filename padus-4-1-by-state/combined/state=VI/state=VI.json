@@ -13,33 +13,33 @@
     "coordinates": [
       [
         [
-          -75.22263080168615,
-          17.65802106881624
+          -75.22263080168614,
+          17.658021068816264
         ],
         [
-          -64.51257815428993,
-          17.65802106881624
+          -64.5125781542899,
+          17.658021068816264
         ],
         [
-          -64.51257815428993,
-          18.596167599833585
+          -64.5125781542899,
+          18.596167599833574
         ],
         [
-          -75.22263080168615,
-          18.596167599833585
+          -75.22263080168614,
+          18.596167599833574
         ],
         [
-          -75.22263080168615,
-          17.65802106881624
+          -75.22263080168614,
+          17.658021068816264
         ]
       ]
     ]
   },
   "bbox": [
-    -75.22263080168615,
-    17.65802106881624,
-    -64.51257815428993,
-    18.596167599833585
+    -75.22263080168614,
+    17.658021068816264,
+    -64.5125781542899,
+    18.596167599833574
   ],
   "properties": {
     "title": "PAD-US 4.1 Combined by state: US Virgin Islands",
@@ -49,9 +49,9 @@
     "table:primary_geometry": "SHAPE",
     "table:columns": [
       {
-        "name": "_cng_fid",
+        "name": "OBJECTID",
         "type": "bigint",
-        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+        "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
       },
       {
         "name": "FeatClass",
@@ -193,7 +193,7 @@
       {
         "name": "SHAPE",
         "type": "geometry",
-        "description": "Feature geometry, WKB, OGC:CRS84."
+        "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
       },
       {
         "name": "bbox",
@@ -227,8 +227,8 @@
       "roles": [
         "data"
       ],
-      "file:size": 742097,
-      "file:checksum": "122016b0c78513653311d1f61f8ccaf9b64827eb6d60df6764b96a3b79d9348d52fb",
+      "file:size": 745194,
+      "file:checksum": "122015f461375252e9612c234314cf2801821a7358a94267ecd1d7fdd074520327b5",
       "proj:code": "OGC:CRS84"
     }
   }

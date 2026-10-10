@@ -4,298 +4,298 @@
   "versions": [
     {
       "version": "1.0.0",
-      "created": "2026-10-09T20:21:23Z",
+      "created": "2026-10-09T21:40:05Z",
       "breaking": false,
-      "message": "Initial build from combined.parquet sha256 2c85043d3f3d2b832b110d8e76ad002f15d50a10d586559ed683cbc2d9403582",
+      "message": "Initial build from the PAD-US 4.1 geodatabase, tree sha256 fb402c9cee022e4dd2a4feca1c991f28f421d290428682d2bc8c9f83e437c242",
       "assets": {
         "state=AK/data.parquet": {
-          "sha256": "57f052183304d584e282998625c2d50f5e59b0b852135d1c4f15e9c3652b5994",
-          "size_bytes": 309299337,
+          "sha256": "0af6954404a446fc82218c3305f0df0a08ec76f952be5a89987fd8ede04146fa",
+          "size_bytes": 309225699,
           "href": "state=AK/data.parquet"
         },
         "state=AL/data.parquet": {
-          "sha256": "4eaf93e8bc5ade81ab63576c9ae5d7f0799b16d71eab4805ff0eb143fd2fe2df",
-          "size_bytes": 15432948,
+          "sha256": "80d6a71a58fb63220f12d61848566999e4ec3fec18b33a26f68a2bd446082f10",
+          "size_bytes": 15436330,
           "href": "state=AL/data.parquet"
         },
         "state=AR/data.parquet": {
-          "sha256": "d4ebfe0a23dcd3d6004a936dfe762c19bc3cd727b8bde92ef6bad99f3abdc210",
-          "size_bytes": 8830308,
+          "sha256": "6ba996c5fc2728a7c27fcebc9a28881d3c1a8d21926b5bfc2f86bf1cb0edd4fb",
+          "size_bytes": 8825800,
           "href": "state=AR/data.parquet"
         },
         "state=AS/data.parquet": {
-          "sha256": "4410517691bc16f3862e547e8d9435eee2d11db1e5bc09ff31620066df112f1b",
-          "size_bytes": 249027,
+          "sha256": "b962d42d6324a377f1661ee2a38967f58e5324aa1bf1d21023bb871c17940605",
+          "size_bytes": 249101,
           "href": "state=AS/data.parquet"
         },
         "state=AZ/data.parquet": {
-          "sha256": "d3621a364a3dcd57314dc1063b80c2347e940fa60517c8aa27b464468a9275aa",
-          "size_bytes": 26256801,
+          "sha256": "1e99303815edc63a64d9e27c744025e80941f7de069ce3aeab87524d1d536f4d",
+          "size_bytes": 26134812,
           "href": "state=AZ/data.parquet"
         },
         "state=CA/data.parquet": {
-          "sha256": "e84edf7b3ace7f0b2bd0f11cda4fa1d6c0806475a241b2754add2312eb196c06",
-          "size_bytes": 113984373,
+          "sha256": "cab5a2c9b80972ca0bce258be48f5e5fe4a03b7f866fda554d4d2bcddd2aec8e",
+          "size_bytes": 114014525,
           "href": "state=CA/data.parquet"
         },
         "state=CO/data.parquet": {
-          "sha256": "0ce4f60d3d3d21a43772da2c7ce49c9226c0a6fb059fb9a6882519f0d25e56c3",
-          "size_bytes": 54928643,
+          "sha256": "ea742bef905355b5cf7aceb4582883506af5920791bd23b626d72884cdba9e7a",
+          "size_bytes": 54933387,
           "href": "state=CO/data.parquet"
         },
         "state=CT/data.parquet": {
-          "sha256": "0696149198208c3c9aff5718b276e34762199bd0a1ab118e3bd8b8c9bdcef4af",
-          "size_bytes": 23029839,
+          "sha256": "53337251f71218316557095771b0ac53879575f3d33c8b80d34f1328127db36d",
+          "size_bytes": 23022757,
           "href": "state=CT/data.parquet"
         },
         "state=DC/data.parquet": {
-          "sha256": "94bdf9b1559782cd5f0e49421991f62706f64510e1af34640fafe3da4770fbcb",
-          "size_bytes": 1342560,
+          "sha256": "dfb5ea353b7cc4a665da39f651517660dee9f22450acd50b63aff1cf1a2e6cde",
+          "size_bytes": 1334370,
           "href": "state=DC/data.parquet"
         },
         "state=DE/data.parquet": {
-          "sha256": "1ff573f46376544100405118b70669ad25db4940e06291c1cff02d45ca1d1bcc",
-          "size_bytes": 10850779,
+          "sha256": "504a9e3d328fb9a50df4e1c48ff2715b4658555677479dae2f43ef32fec38bce",
+          "size_bytes": 10847087,
           "href": "state=DE/data.parquet"
         },
         "state=FL/data.parquet": {
-          "sha256": "a241c4bf11ed5005f13b6a6b793df6aea8512be28a0dfe82385ac699817e4633",
-          "size_bytes": 80334878,
+          "sha256": "8cabf8f11e8ff8bf4539ac540c7758ca36b3d1fc3a32e49f36bb398395126f7d",
+          "size_bytes": 80407554,
           "href": "state=FL/data.parquet"
         },
         "state=GA/data.parquet": {
-          "sha256": "5d41defdad6b3e54585f3b4900572539827d00c6f2a89fe218ff2749ce03c23a",
-          "size_bytes": 18822672,
+          "sha256": "4ed8f88061575a3c3c81c5858d145f1c63aaead5fd0ac01bf68336cd0c61714c",
+          "size_bytes": 18834242,
           "href": "state=GA/data.parquet"
         },
         "state=GU/data.parquet": {
-          "sha256": "78166e0583a5a836083b270929df6932287df0182f6591b025ed5acefaaa629a",
-          "size_bytes": 312191,
+          "sha256": "a1fbe652da9cceac62ba1b9fca843b0e262751416762c20c2069ee46c08b50b4",
+          "size_bytes": 316755,
           "href": "state=GU/data.parquet"
         },
         "state=HI/data.parquet": {
-          "sha256": "b3567c0caa1f315521c977c734c498c2b8e993befda6a08fcb2f6c61ea6ef799",
-          "size_bytes": 6896201,
+          "sha256": "822a197f8007df708af950f00b934a2b85d5e654a2fec1e90ae1624587bc7d73",
+          "size_bytes": 6871365,
           "href": "state=HI/data.parquet"
         },
         "state=IA/data.parquet": {
-          "sha256": "547f61addb45438c76e1074341e9f0be0676dbd45e7aec26db675b00e0d8cfe1",
-          "size_bytes": 8897219,
+          "sha256": "5ba8d187763ed424bd96620c24ce17ab780cceb4ce29e4d66d6a867c1b00de60",
+          "size_bytes": 8892204,
           "href": "state=IA/data.parquet"
         },
         "state=ID/data.parquet": {
-          "sha256": "f0de9195b3fddfecbd503e4b8a87f031a8016f5adc81d29748736777497fe15d",
-          "size_bytes": 47125947,
+          "sha256": "9637c47e529ccee4dfdbea9f134729eb11f3fec9464f7bcfb1b3e3b9b6c50659",
+          "size_bytes": 47381521,
           "href": "state=ID/data.parquet"
         },
         "state=IL/data.parquet": {
-          "sha256": "94d430c1f547fa397f9ec4841da7904f36b54500c04d8f6996e047431ee9d360",
-          "size_bytes": 23462768,
+          "sha256": "49873106abd9933546ee29a126bcb3983992026d1c0f4c0f6c0030fd43e7fbaf",
+          "size_bytes": 23469716,
           "href": "state=IL/data.parquet"
         },
         "state=IN/data.parquet": {
-          "sha256": "65546d1611f6132b08c6b454b7e73f45fb14327e7a122b697b1d1737b7a55773",
-          "size_bytes": 5316440,
+          "sha256": "9ef15c502724f41645e526503acdaebd60f6f9a81aa65c118f52a03ff1cb32d8",
+          "size_bytes": 5319579,
           "href": "state=IN/data.parquet"
         },
         "state=KS/data.parquet": {
-          "sha256": "ddfb023c05316930e3b8f25c6e3b082ed4d35d9614f41a23a911ec9ce8c102c3",
-          "size_bytes": 3807315,
+          "sha256": "dda24f942c3e919bffdb7f5aebe123031b2f47bf2949e6cb43e6fc263b36a942",
+          "size_bytes": 3806551,
           "href": "state=KS/data.parquet"
         },
         "state=KY/data.parquet": {
-          "sha256": "4a675d406b3e1783c665711f49c83c4d06228d31122551bc4c6a7d4e2d3973e9",
-          "size_bytes": 21166273,
+          "sha256": "b242327353eb30b22886010d8843881843b0f09dddf9735a94ef3809f3952eed",
+          "size_bytes": 21123958,
           "href": "state=KY/data.parquet"
         },
         "state=LA/data.parquet": {
-          "sha256": "b2c99a45de4136e672b2c49af08fe4cfe4f4f820fd0f28e6fa77bcb1b80021ee",
-          "size_bytes": 8848914,
+          "sha256": "ca74183d42f286237a7783436c5156be726c1c64c3896acf743fac20a8d386d4",
+          "size_bytes": 8826424,
           "href": "state=LA/data.parquet"
         },
         "state=MA/data.parquet": {
-          "sha256": "571c8f747851c3bb38ed94143d38a848125d0b65155f7d34686668ad8b405d66",
-          "size_bytes": 52970394,
+          "sha256": "1718118dd6d0be5be9368a8055f2993c2d735bb6b6b87de8e6a54d2d41148679",
+          "size_bytes": 52960216,
           "href": "state=MA/data.parquet"
         },
         "state=MD/data.parquet": {
-          "sha256": "1b8f1aab6363f8665f6b17f5a5ae011623d396c96870d10babea9949da8ab9b5",
-          "size_bytes": 58105583,
+          "sha256": "96640d8b21ad3c89977f43e0d0235a45d93fcc780e6ba2b86618d4d73583b935",
+          "size_bytes": 58116414,
           "href": "state=MD/data.parquet"
         },
         "state=ME/data.parquet": {
-          "sha256": "24e6422389dabc256eb377338f479f3f0642b2cb019e28c467eed94b0eba6c7d",
-          "size_bytes": 33963298,
+          "sha256": "e4e676d7bec06de3e42528248725834549ee9e863cd2f439170069972dac4045",
+          "size_bytes": 33831274,
           "href": "state=ME/data.parquet"
         },
         "state=MI/data.parquet": {
-          "sha256": "823383c4ca4223679abc7c73dd5308f6c400d3c9c83f80786005bec47d256be2",
-          "size_bytes": 18927240,
+          "sha256": "aebcfcfbbdd0c8d20fb6b3416a4b3a6662aa49ea44804836435e4f90cedadfd4",
+          "size_bytes": 18922873,
           "href": "state=MI/data.parquet"
         },
         "state=MN/data.parquet": {
-          "sha256": "e851a168e65c3a593be684f444a251970097f0624d075a05a1128ce11a8c75c1",
-          "size_bytes": 27656861,
+          "sha256": "5331c97e8063adbda7d20e19a48d050e88f33ac76bd006c708b08f09303dff7f",
+          "size_bytes": 27665262,
           "href": "state=MN/data.parquet"
         },
         "state=MO/data.parquet": {
-          "sha256": "9a3e579d2dd4423823fd627e30acd1ee786b08ad773d492752fee6aeb4f06e06",
-          "size_bytes": 8868193,
+          "sha256": "d6a7fd590c1f3e4dee296c25c6aa8a5edb1b1382bbd3bf6bee41a430378b5646",
+          "size_bytes": 8872984,
           "href": "state=MO/data.parquet"
         },
         "state=MP/data.parquet": {
-          "sha256": "a7a5fe491981be7ff42e868d44122e3e14b9d51a4c607ff4465b69457ce714e0",
-          "size_bytes": 274387,
+          "sha256": "f23e362b2a955f548dfc74556c25e72c795d080eaf597772501c00d841065121",
+          "size_bytes": 267824,
           "href": "state=MP/data.parquet"
         },
         "state=MS/data.parquet": {
-          "sha256": "a3cc56f3bdc538673653eb98ea1ace9e4e6631c23450f1a38d8c7fb3c61fa6af",
-          "size_bytes": 6592810,
+          "sha256": "dc3b548af81a1a8d1aa5368580b97a958fd4225d1d40cba48bb6da47758a88e5",
+          "size_bytes": 6571030,
           "href": "state=MS/data.parquet"
         },
         "state=MT/data.parquet": {
-          "sha256": "d7201e1957ec4dc7b078852ee4d32abcdf5dc0ac14a3e43967d5129e2b9c675f",
-          "size_bytes": 34284383,
+          "sha256": "45e572e8486f69067642999869c74fe62f61df49acb359990b6523346580b5af",
+          "size_bytes": 34280096,
           "href": "state=MT/data.parquet"
         },
         "state=NC/data.parquet": {
-          "sha256": "86bb43b166d0d9fc5d44d20583e53410dbfe3cdac747a920484ea0568ebf09be",
-          "size_bytes": 81048688,
+          "sha256": "0f73c4b17a19df6d9310253ed9b0d6a159cab18be215c7b9370ef0fff083f556",
+          "size_bytes": 81119675,
           "href": "state=NC/data.parquet"
         },
         "state=ND/data.parquet": {
-          "sha256": "ed6f7221da9c984791fa6c74fd4c7087666a47c2a4b9fc43290f9c4a37a9a763",
-          "size_bytes": 13541748,
+          "sha256": "1b8bba9890bbea8693178bdf0e7b2444def4d0cf95f128abc786a7f0d1edc910",
+          "size_bytes": 13558649,
           "href": "state=ND/data.parquet"
         },
         "state=NE/data.parquet": {
-          "sha256": "899de0b738f8ab28dcbf4d2797e052985a67836f76cfb79b897b72b371adde71",
-          "size_bytes": 4617141,
+          "sha256": "cc5aa66d361a09f5a67934a0fa1a167d9fc41d51555f90d71abcbaeda6cdef72",
+          "size_bytes": 4614144,
           "href": "state=NE/data.parquet"
         },
         "state=NH/data.parquet": {
-          "sha256": "2459444c37f11727e49c7f91dbefa4dc64fddacb58bdfd5209e4586bea104060",
-          "size_bytes": 17916604,
+          "sha256": "706ebdee949018d4e77e819941dca6d6f9ec762a9648b6f16cee52f565a0375b",
+          "size_bytes": 17850454,
           "href": "state=NH/data.parquet"
         },
         "state=NJ/data.parquet": {
-          "sha256": "6a857efa86ae04327e799917350c15e57cfd3c49cfa48a128200288307c0ef0e",
-          "size_bytes": 49152367,
+          "sha256": "205ac301af25f1758d7459c24b3e629f528940605f7c2c0581de68db89eaf442",
+          "size_bytes": 49136006,
           "href": "state=NJ/data.parquet"
         },
         "state=NM/data.parquet": {
-          "sha256": "f53cf38b205b48c6d6825b070a7adba57c72566bda0ab84b8bdb9df5be5fac07",
-          "size_bytes": 16980295,
+          "sha256": "c90e941714c2885fa05d5a47a2752243e9de0a356c7c53724706d84e3ea506b1",
+          "size_bytes": 17004712,
           "href": "state=NM/data.parquet"
         },
         "state=NV/data.parquet": {
-          "sha256": "2e5e4c50c89f11f66c739f4b4866e2202781f6306693be2162873c9488ec6b1b",
-          "size_bytes": 32786766,
+          "sha256": "63aeaa5b92cc6edb99281fd8ef3861dc85a06b5aa9918ed4f0db537300167f24",
+          "size_bytes": 32789524,
           "href": "state=NV/data.parquet"
         },
         "state=NY/data.parquet": {
-          "sha256": "43d0bce250ed188fb0868eafd88ea754887f78fb44c46e2df11f7821bea24d0b",
-          "size_bytes": 39816957,
+          "sha256": "d889ebea0dfea18ccb9c3625ade642a749925cf1ba03dca3142885125ea04a83",
+          "size_bytes": 39795042,
           "href": "state=NY/data.parquet"
         },
         "state=OH/data.parquet": {
-          "sha256": "47f2639137ca178941ae8c7b5f70bea3cb69d634d717220704b3048df6c81c32",
-          "size_bytes": 13491657,
+          "sha256": "070fc8713f10bb18b695a8ba92b63aa8e47fa8b494e5a18b34c853ac759f90ef",
+          "size_bytes": 13480519,
           "href": "state=OH/data.parquet"
         },
         "state=OK/data.parquet": {
-          "sha256": "6c13dd55bc5554e18d794807ccc2861b28138f0ff810cca61ca9794aef382b20",
-          "size_bytes": 8421125,
+          "sha256": "d5c65d894bab36c5b17440cfa96b12383dc2412382fafcb76f9b860bbe327899",
+          "size_bytes": 8448436,
           "href": "state=OK/data.parquet"
         },
         "state=OR/data.parquet": {
-          "sha256": "5f2403f0e5d178b36cb8a8445fc7aa528646a4a5524da2116527fbdca1dca6ed",
-          "size_bytes": 57034480,
+          "sha256": "9e9be7ab6c7bfe2beeea4500825074a2fe0d23d6b8aae21dcf2aa7c75d094622",
+          "size_bytes": 57197965,
           "href": "state=OR/data.parquet"
         },
         "state=PA/data.parquet": {
-          "sha256": "d4b4a3b07bb412a6a3d5231bcd6ce419730af65428a1df5153a42eae077ba1d9",
-          "size_bytes": 90400190,
+          "sha256": "11dc899e527aa4160452ae424e39214b308b4f732301bf88de773a5c366853b1",
+          "size_bytes": 90351029,
           "href": "state=PA/data.parquet"
         },
         "state=PR/data.parquet": {
-          "sha256": "917ed2d7be3a7055103708cc3e6f8299f0b8ab1e482a3ec8d7cf8b584e35771b",
-          "size_bytes": 3056305,
+          "sha256": "819da7def3bba8797a170ac12fed5a92b8b21f8bddcf2c1bb495beb0ac23aa52",
+          "size_bytes": 3079957,
           "href": "state=PR/data.parquet"
         },
         "state=RI/data.parquet": {
-          "sha256": "6b496896204ddb409283f1654b5a49d6609637ccd138d53b132d04788b2f3eee",
-          "size_bytes": 5779746,
+          "sha256": "5287b671f9590d87defdb15c538a8211d0d910f23ef93adf5726e17eafd32ea6",
+          "size_bytes": 5787805,
           "href": "state=RI/data.parquet"
         },
         "state=SC/data.parquet": {
-          "sha256": "a20b04c5f51818f049446c0c00f84b3cfaf8d7be89ea90a37acf1a4ff7cb38e4",
-          "size_bytes": 16149429,
+          "sha256": "2006498cf361c3c0f4ec638ff954ef9fe717c8465eb386a22160a559e4589ad6",
+          "size_bytes": 16159312,
           "href": "state=SC/data.parquet"
         },
         "state=SD/data.parquet": {
-          "sha256": "7e67515b78daa89f3f413f616772da53fb93dc670a5bda3af892b7861a120071",
-          "size_bytes": 14276421,
+          "sha256": "d5c9058173993897edc84af9d025fa3f029db11712f69c8ee25e8af409979112",
+          "size_bytes": 14280303,
           "href": "state=SD/data.parquet"
         },
         "state=TN/data.parquet": {
-          "sha256": "ae567e2b8443ba34f36236b51ca927c2b96b143b848766a051d6a63d3d04d907",
-          "size_bytes": 29125169,
+          "sha256": "fe69351a6ef8cc3d90be5d0b2d1e82374db2a953f775fcbcc0f6cb24b99aff28",
+          "size_bytes": 29146617,
           "href": "state=TN/data.parquet"
         },
         "state=TX/data.parquet": {
-          "sha256": "73d1afd2191c35610129f76beeacd20a297e9885443001f55786835aaa905a95",
-          "size_bytes": 43511744,
+          "sha256": "a003932771062cef64a6a31bde613c54b5b1193f565d03cb5816d00ad22a12df",
+          "size_bytes": 43505244,
           "href": "state=TX/data.parquet"
         },
         "state=UM/data.parquet": {
-          "sha256": "9c4a352744e02f5b1b518dd70e7027b229b6a60d5c45db46c277f74212c9ebec",
-          "size_bytes": 121629,
+          "sha256": "9e429d463cfa4c3a551749b1451503e98b7f9f88e5d99af0fafce253751f8b7d",
+          "size_bytes": 121601,
           "href": "state=UM/data.parquet"
         },
         "state=UNKF/data.parquet": {
-          "sha256": "ff18fbb4f8fd6f87797348baaf9dc25bbfefbe385bdf58fca21711d004ae219e",
-          "size_bytes": 9326717,
+          "sha256": "b4e3e0d5355392cc7e60072a44103879f2a5faa3f5599d78ffb0705f0410e73a",
+          "size_bytes": 9331210,
           "href": "state=UNKF/data.parquet"
         },
         "state=UT/data.parquet": {
-          "sha256": "06e12610444c9ea5812aa7e832253a312103b5ad2f6f9ffd97307adecfcd8650",
-          "size_bytes": 24671370,
+          "sha256": "ed11c629e803c579530431c0f248a6fc23a7ce35cc5c53dfb811c77bf44013b1",
+          "size_bytes": 24679882,
           "href": "state=UT/data.parquet"
         },
         "state=VA/data.parquet": {
-          "sha256": "1f828b70677afb5f24823ccd31473f7c9be2bedad7502859e90f1463fbf72a36",
-          "size_bytes": 71236536,
+          "sha256": "6236b1f8e47ad9b08e27fdf803086762aa598f86f8f42afaab9abd7a2f5786f8",
+          "size_bytes": 70996318,
           "href": "state=VA/data.parquet"
         },
         "state=VI/data.parquet": {
-          "sha256": "16b0c78513653311d1f61f8ccaf9b64827eb6d60df6764b96a3b79d9348d52fb",
-          "size_bytes": 742097,
+          "sha256": "15f461375252e9612c234314cf2801821a7358a94267ecd1d7fdd074520327b5",
+          "size_bytes": 745194,
           "href": "state=VI/data.parquet"
         },
         "state=VT/data.parquet": {
-          "sha256": "64669d4cde887b21117d6aece6b7d8977d158603aa6bfb5764f89a5c8fd8ec14",
-          "size_bytes": 25077638,
+          "sha256": "ae0645ced38785d296b7b3a8b916f9a808120380c82dab2fb68d55ab39022fda",
+          "size_bytes": 25032167,
           "href": "state=VT/data.parquet"
         },
         "state=WA/data.parquet": {
-          "sha256": "9b43b6396736db53c6129ba38fc370515a3802faa100e9bb12421487bb2ce1ce",
-          "size_bytes": 43542012,
+          "sha256": "54d878793c0980d45b1b2ca30fbd6b68c1181318aa9875ac7fa202309bb1b5d5",
+          "size_bytes": 43306630,
           "href": "state=WA/data.parquet"
         },
         "state=WI/data.parquet": {
-          "sha256": "6aa773f51c70687323b703fd44dc04a946dd00f7a7d528d7cf014c032613e840",
-          "size_bytes": 27158052,
+          "sha256": "059abcfff223224472044117c684eb5e226ab9d41c6a3e5083b89d8c8b468818",
+          "size_bytes": 27192046,
           "href": "state=WI/data.parquet"
         },
         "state=WV/data.parquet": {
-          "sha256": "b80282eb6155963c1fcedf0a9fce4587ef73d74fc40f9ca28f71128bb9e2932e",
-          "size_bytes": 6693862,
+          "sha256": "aa086fee68754fcd5de9c28a79618db1d932840c8bc8310ac843998e8864f8e6",
+          "size_bytes": 6693571,
           "href": "state=WV/data.parquet"
         },
         "state=WY/data.parquet": {
-          "sha256": "1f67ba257633e270240fa96b81ebaab1ea2dfe52d85e8584f9284adc8d7c817f",
-          "size_bytes": 17036323,
+          "sha256": "6fe2409a078aaacd85677baacd625fe53b79b95aba3b166ed2fa8676a9211134",
+          "size_bytes": 17178666,
           "href": "state=WY/data.parquet"
         }
       },

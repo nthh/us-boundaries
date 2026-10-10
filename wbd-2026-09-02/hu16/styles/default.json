@@ -1,28 +1,28 @@
 {
   "version": 8,
-  "name": "WBD HUC8 subbasins (2026-09-02) by HUC2 region",
+  "name": "WBD HUC16 (2026-09-02) by HUC2 region",
   "sources": {
     "data": {
       "type": "vector",
-      "url": "pmtiles://https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu8/hu8.pmtiles"
+      "url": "pmtiles://https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu16/hu16.pmtiles"
     }
   },
   "layers": [
     {
-      "id": "hu8-fill",
+      "id": "hu16-fill",
       "type": "fill",
       "source": "data",
-      "source-layer": "hu8",
+      "source-layer": "hu16",
       "paint": {
         "fill-color": "#1f5fa8",
         "fill-opacity": 0.35
       }
     },
     {
-      "id": "hu8-line",
+      "id": "hu16-line",
       "type": "line",
       "source": "data",
-      "source-layer": "hu8",
+      "source-layer": "hu16",
       "paint": {
         "line-color": "#1f5fa8",
         "line-width": 0.6

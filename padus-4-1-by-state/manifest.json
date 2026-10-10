@@ -2,19 +2,27 @@
   "format": "folia-partitioned-geoparquet",
   "version": 2,
   "kind": "padus",
-  "built": "2026-10-09T20:22:56Z",
+  "built": "2026-10-09T21:42:11Z",
   "build": {
     "script": "https://github.com/nthh/us-boundaries/blob/main/scripts/build_sorted_boundary_partitions.py",
-    "script_sha256": "92b4badfc513865e127f51270241d66e29fda42a378f560a93921f34ee0b982f"
+    "script_sha256": "0c2f7ba8e815d3accd76d362b05b1ae45cddcbda802ef75c16e156d625b1330c"
   },
   "sources": [
     {
-      "title": "PAD-US 4.1 Combined (Source Cooperative cboettig/padus)",
-      "url": "https://data.source.coop/cboettig/padus/padus-4-1/combined.parquet",
-      "bytes": 1858273578,
-      "etag": "\"f1f0cad991ca44fdcf83af886b07c835-355\"",
-      "last_modified": "2026-06-18T07:02:55Z",
-      "sha256": "2c85043d3f3d2b832b110d8e76ad002f15d50a10d586559ed683cbc2d9403582"
+      "title": "PAD-US 4.1 Geodatabase (USGS Gap Analysis Project, ScienceBase)",
+      "url": "https://www.sciencebase.gov/catalog/item/652d4fc5d34e44db0e2ee45e",
+      "filename": "PADUS4_1Geodatabase.zip",
+      "bytes": 1523434496,
+      "layer": "PADUS4_1Combined_Proclamation_Marine_Fee_Designation_Easement",
+      "gdb_files": 110,
+      "gdb_bytes": 2058509215,
+      "gdb_tree_sha256": "fb402c9cee022e4dd2a4feca1c991f28f421d290428682d2bc8c9f83e437c242",
+      "retrieval": "downloaded by hand from ScienceBase (no scriptable link)",
+      "transform": {
+        "gdal": "3.13.1",
+        "proj": "9.8.1",
+        "command": "ogr2ogr -f Parquet combined-crs84.parquet PADUS4_1Geodatabase.gdb PADUS4_1Combined_Proclamation_Marine_Fee_Designation_Easement -t_srs OGC:CRS84 -nlt CONVERT_TO_LINEAR -nlt PROMOTE_TO_MULTI -lco GEOMETRY_NAME=SHAPE -preserve_fid -lco FID=OBJECTID -lco WRITE_COVERING_BBOX=NO -lco COMPRESSION=ZSTD"
+      }
     }
   ],
   "tools": {
@@ -38,13 +46,13 @@
       {
         "value": "AK",
         "rows": 2082,
-        "bytes": 309299337,
-        "sha256": "57f052183304d584e282998625c2d50f5e59b0b852135d1c4f15e9c3652b5994",
+        "bytes": 309225699,
+        "sha256": "0af6954404a446fc82218c3305f0df0a08ec76f952be5a89987fd8ede04146fa",
         "bbox": [
           -179.2310860005793,
-          51.17509200002174,
+          51.17509200002176,
           179.859680999087,
-          71.43978599936185
+          71.43978599936189
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -55,18 +63,18 @@
         "large_feature_rows": 10,
         "portolan_ordering_check": true,
         "row_groups": 102,
-        "max_row_group_uncompressed": 26493172
+        "max_row_group_uncompressed": 26494412
       },
       {
         "value": "AL",
         "rows": 2555,
-        "bytes": 15432948,
-        "sha256": "4eaf93e8bc5ade81ab63576c9ae5d7f0799b16d71eab4805ff0eb143fd2fe2df",
+        "bytes": 15436330,
+        "sha256": "80d6a71a58fb63220f12d61848566999e4ec3fec18b33a26f68a2bd446082f10",
         "bbox": [
-          -88.43124433632029,
-          30.158542999814355,
-          -83.22958749319979,
-          35.007884647865374
+          -88.43124314071623,
+          30.158537679517007,
+          -83.22958428658639,
+          35.007884582403705
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -82,13 +90,13 @@
       {
         "value": "AR",
         "rows": 2114,
-        "bytes": 8830308,
-        "sha256": "d4ebfe0a23dcd3d6004a936dfe762c19bc3cd727b8bde92ef6bad99f3abdc210",
+        "bytes": 8825800,
+        "sha256": "6ba996c5fc2728a7c27fcebc9a28881d3c1a8d21926b5bfc2f86bf1cb0edd4fb",
         "bbox": [
-          -94.61683027066057,
-          33.005966402274,
-          -89.71243662595354,
-          36.49916855687797
+          -94.61682963672112,
+          33.005962819217046,
+          -89.71243662047874,
+          36.49916573869875
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -104,13 +112,13 @@
       {
         "value": "AS",
         "rows": 26,
-        "bytes": 249027,
-        "sha256": "4410517691bc16f3862e547e8d9435eee2d11db1e5bc09ff31620066df112f1b",
+        "bytes": 249101,
+        "sha256": "b962d42d6324a377f1661ee2a38967f58e5324aa1bf1d21023bb871c17940605",
         "bbox": [
-          -171.14091989343086,
-          -15.38614238737142,
-          -167.28333299960175,
-          -10.997592257528236
+          -171.1409198934309,
+          -15.386142387371404,
+          -167.28333299960178,
+          -10.997592257528186
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -126,13 +134,13 @@
       {
         "value": "AZ",
         "rows": 2955,
-        "bytes": 26256801,
-        "sha256": "d3621a364a3dcd57314dc1063b80c2347e940fa60517c8aa27b464468a9275aa",
+        "bytes": 26134812,
+        "sha256": "1e99303815edc63a64d9e27c744025e80941f7de069ce3aeab87524d1d536f4d",
         "bbox": [
-          -114.81408699962473,
-          31.332342039889966,
-          -109.0451719995697,
-          37.00372500005534
+          -114.8140844542499,
+          31.33234540700783,
+          -109.04517102225891,
+          37.00372572111564
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -143,18 +151,18 @@
         "large_feature_rows": 8,
         "portolan_ordering_check": true,
         "row_groups": 16,
-        "max_row_group_uncompressed": 10825974
+        "max_row_group_uncompressed": 10825994
       },
       {
         "value": "CA",
         "rows": 33939,
-        "bytes": 113984373,
-        "sha256": "e84edf7b3ace7f0b2bd0f11cda4fa1d6c0806475a241b2754add2312eb196c06",
+        "bytes": 114014525,
+        "sha256": "cab5a2c9b80972ca0bce258be48f5e5fe4a03b7f866fda554d4d2bcddd2aec8e",
         "bbox": [
-          -124.53262644631165,
-          32.52952378101107,
-          -114.13147284506842,
-          42.00950300024118
+          -124.53262358067954,
+          32.52952513885813,
+          -114.13147093061195,
+          42.009505336556025
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -170,13 +178,13 @@
       {
         "value": "CO",
         "rows": 18276,
-        "bytes": 54928643,
-        "sha256": "0ce4f60d3d3d21a43772da2c7ce49c9226c0a6fb059fb9a6882519f0d25e56c3",
+        "bytes": 54933387,
+        "sha256": "ea742bef905355b5cf7aceb4582883506af5920791bd23b626d72884cdba9e7a",
         "bbox": [
-          -109.0602036008459,
-          36.73503234933215,
-          -102.04174899978351,
-          41.00344399958431
+          -109.06020369097682,
+          36.73503293754314,
+          -102.0417523808517,
+          41.00344533842277
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -192,13 +200,13 @@
       {
         "value": "CT",
         "rows": 19129,
-        "bytes": 23029839,
-        "sha256": "0696149198208c3c9aff5718b276e34762199bd0a1ab118e3bd8b8c9bdcef4af",
+        "bytes": 23022757,
+        "sha256": "53337251f71218316557095771b0ac53879575f3d33c8b80d34f1328127db36d",
         "bbox": [
-          -73.717499612773,
-          40.98004551359331,
-          -71.20386382024641,
-          45.26171054575904
+          -73.71749949692875,
+          40.98004497361606,
+          -71.20386114894583,
+          45.26170904345747
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -214,13 +222,13 @@
       {
         "value": "DC",
         "rows": 378,
-        "bytes": 1342560,
-        "sha256": "94bdf9b1559782cd5f0e49421991f62706f64510e1af34640fafe3da4770fbcb",
+        "bytes": 1334370,
+        "sha256": "dfb5ea353b7cc4a665da39f651517660dee9f22450acd50b63aff1cf1a2e6cde",
         "bbox": [
-          -77.11933007302164,
-          38.80166380335148,
-          -76.9106467301827,
-          38.99526798771081
+          -77.1193272508241,
+          38.80166383767033,
+          -76.91064345758335,
+          38.995268259358454
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -231,18 +239,18 @@
         "large_feature_rows": 6,
         "portolan_ordering_check": true,
         "row_groups": 2,
-        "max_row_group_uncompressed": 1845445
+        "max_row_group_uncompressed": 1845465
       },
       {
         "value": "DE",
         "rows": 6782,
-        "bytes": 10850779,
-        "sha256": "1ff573f46376544100405118b70669ad25db4940e06291c1cff02d45ca1d1bcc",
+        "bytes": 10847087,
+        "sha256": "504a9e3d328fb9a50df4e1c48ff2715b4658555677479dae2f43ef32fec38bce",
         "bbox": [
-          -75.78900146342507,
-          38.45119499983619,
-          -74.98416500066413,
-          39.83951600025714
+          -75.78899950758064,
+          38.45119944354267,
+          -74.9841593303115,
+          39.839517022909455
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -253,18 +261,18 @@
         "large_feature_rows": 0,
         "portolan_ordering_check": true,
         "row_groups": 8,
-        "max_row_group_uncompressed": 1921663
+        "max_row_group_uncompressed": 1921703
       },
       {
         "value": "FL",
         "rows": 10577,
-        "bytes": 80334878,
-        "sha256": "a241c4bf11ed5005f13b6a6b793df6aea8512be28a0dfe82385ac699817e4633",
+        "bytes": 80407554,
+        "sha256": "8cabf8f11e8ff8bf4539ac540c7758ca36b3d1fc3a32e49f36bb398395126f7d",
         "bbox": [
-          -87.6322633827933,
-          24.29999409027214,
+          -87.63226215551768,
+          24.299988209208465,
           -79.97472800055978,
-          31.000670897153388
+          31.000669375946973
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -275,18 +283,18 @@
         "large_feature_rows": 2,
         "portolan_ordering_check": true,
         "row_groups": 53,
-        "max_row_group_uncompressed": 8120506
+        "max_row_group_uncompressed": 8120526
       },
       {
         "value": "GA",
         "rows": 7484,
-        "bytes": 18822672,
-        "sha256": "5d41defdad6b3e54585f3b4900572539827d00c6f2a89fe218ff2749ce03c23a",
+        "bytes": 18834242,
+        "sha256": "4ed8f88061575a3c3c81c5858d145f1c63aaead5fd0ac01bf68336cd0c61714c",
         "bbox": [
-          -90.73695869791966,
-          30.35967382598004,
-          -80.78582799977805,
-          35.4822774763811
+          -90.73695874596011,
+          30.359670400392954,
+          -80.78582219953887,
+          35.482274017063666
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -302,13 +310,13 @@
       {
         "value": "GU",
         "rows": 27,
-        "bytes": 312191,
-        "sha256": "78166e0583a5a836083b270929df6932287df0182f6591b025ed5acefaaa629a",
+        "bytes": 316755,
+        "sha256": "a1fbe652da9cceac62ba1b9fca843b0e262751416762c20c2069ee46c08b50b4",
         "bbox": [
-          144.61686123959382,
-          13.235495975208046,
-          144.9721596044439,
-          13.661282676763282
+          144.61686123959373,
+          13.235495975208083,
+          144.97215960444387,
+          13.661282676763314
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -319,17 +327,17 @@
         "large_feature_rows": 3,
         "portolan_ordering_check": true,
         "row_groups": 2,
-        "max_row_group_uncompressed": 288854
+        "max_row_group_uncompressed": 288845
       },
       {
         "value": "HI",
         "rows": 1144,
-        "bytes": 6896201,
-        "sha256": "b3567c0caa1f315521c977c734c498c2b8e993befda6a08fcb2f6c61ea6ef799",
+        "bytes": 6871365,
+        "sha256": "822a197f8007df708af950f00b934a2b85d5e654a2fec1e90ae1624587bc7d73",
         "bbox": [
           -179.99998854173415,
-          18.910690000257315,
-          179.99999999979548,
+          18.91069000025734,
+          179.99999999979542,
           31.79786811724053
         ],
         "geometry_types": [
@@ -346,13 +354,13 @@
       {
         "value": "IA",
         "rows": 6880,
-        "bytes": 8897219,
-        "sha256": "547f61addb45438c76e1074341e9f0be0676dbd45e7aec26db675b00e0d8cfe1",
+        "bytes": 8892204,
+        "sha256": "5ba8d187763ed424bd96620c24ce17ab780cceb4ce29e4d66d6a867c1b00de60",
         "bbox": [
-          -96.63948500040976,
-          40.37609516684101,
-          -90.14006099949755,
-          43.50119599969099
+          -96.63948672700721,
+          40.37609229698477,
+          -90.14006010200009,
+          43.5011973901854
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -363,18 +371,18 @@
         "large_feature_rows": 24,
         "portolan_ordering_check": true,
         "row_groups": 8,
-        "max_row_group_uncompressed": 1996279
+        "max_row_group_uncompressed": 1996499
       },
       {
         "value": "ID",
         "rows": 10945,
-        "bytes": 47125947,
-        "sha256": "f0de9195b3fddfecbd503e4b8a87f031a8016f5adc81d29748736777497fe15d",
+        "bytes": 47381521,
+        "sha256": "9637c47e529ccee4dfdbea9f134729eb11f3fec9464f7bcfb1b3e3b9b6c50659",
         "bbox": [
-          -117.24180983393748,
-          41.988182145680824,
-          -111.04351981862243,
-          49.00084562065661
+          -117.24180955574604,
+          41.988182907350215,
+          -111.04352271315672,
+          49.00084329147888
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -390,13 +398,13 @@
       {
         "value": "IL",
         "rows": 14794,
-        "bytes": 23462768,
-        "sha256": "94d430c1f547fa397f9ec4841da7904f36b54500c04d8f6996e047431ee9d360",
+        "bytes": 23469716,
+        "sha256": "49873106abd9933546ee29a126bcb3983992026d1c0f4c0f6c0030fd43e7fbaf",
         "bbox": [
-          -91.50822830733377,
-          36.98317857741241,
-          -87.01993499947882,
-          45.596658795491656
+          -91.50822796560081,
+          36.98317848068091,
+          -87.01992912489997,
+          45.59665949648743
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -412,13 +420,13 @@
       {
         "value": "IN",
         "rows": 4750,
-        "bytes": 5316440,
-        "sha256": "65546d1611f6132b08c6b454b7e73f45fb14327e7a122b697b1d1737b7a55773",
+        "bytes": 5319579,
+        "sha256": "9ef15c502724f41645e526503acdaebd60f6f9a81aa65c118f52a03ff1cb32d8",
         "bbox": [
-          -88.090322956189,
-          37.772953999842905,
-          -84.80252683628581,
-          41.761368000035944
+          -88.09032243651352,
+          37.77295218456317,
+          -84.80252260644045,
+          41.761366309866986
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -429,18 +437,18 @@
         "large_feature_rows": 2,
         "portolan_ordering_check": true,
         "row_groups": 10,
-        "max_row_group_uncompressed": 898582
+        "max_row_group_uncompressed": 898622
       },
       {
         "value": "KS",
         "rows": 2162,
-        "bytes": 3807315,
-        "sha256": "ddfb023c05316930e3b8f25c6e3b082ed4d35d9614f41a23a911ec9ce8c102c3",
+        "bytes": 3806551,
+        "sha256": "dda24f942c3e919bffdb7f5aebe123031b2f47bf2949e6cb43e6fc263b36a942",
         "bbox": [
-          -102.05176899986866,
-          36.99307233298471,
-          -94.58838700043249,
-          40.00307804686498
+          -102.05176922023423,
+          36.993072142520546,
+          -94.5883882305949,
+          40.00307795994592
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -451,18 +459,18 @@
         "large_feature_rows": 3,
         "portolan_ordering_check": true,
         "row_groups": 3,
-        "max_row_group_uncompressed": 1756302
+        "max_row_group_uncompressed": 1756362
       },
       {
         "value": "KY",
         "rows": 3728,
-        "bytes": 21166273,
-        "sha256": "4a675d406b3e1783c665711f49c83c4d06228d31122551bc4c6a7d4e2d3973e9",
+        "bytes": 21123958,
+        "sha256": "b242327353eb30b22886010d8843881843b0f09dddf9735a94ef3809f3952eed",
         "bbox": [
-          -89.54511163760647,
-          36.4972579780722,
-          -82.23056321722999,
-          39.13070003581816
+          -89.5451118023401,
+          36.49725702827824,
+          -82.23056098368593,
+          39.130699421948606
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -478,13 +486,13 @@
       {
         "value": "LA",
         "rows": 2958,
-        "bytes": 8848914,
-        "sha256": "b2c99a45de4136e672b2c49af08fe4cfe4f4f820fd0f28e6fa77bcb1b80021ee",
+        "bytes": 8826424,
+        "sha256": "ca74183d42f286237a7783436c5156be726c1c64c3896acf743fac20a8d386d4",
         "bbox": [
-          -94.04289458230683,
-          28.86037902157289,
-          -88.76267648064922,
-          33.0194150144429
+          -94.04289555344327,
+          28.860377294376665,
+          -88.76267907438496,
+          33.01941238381437
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -495,18 +503,18 @@
         "large_feature_rows": 4,
         "portolan_ordering_check": true,
         "row_groups": 13,
-        "max_row_group_uncompressed": 1005999
+        "max_row_group_uncompressed": 1005983
       },
       {
         "value": "MA",
         "rows": 48892,
-        "bytes": 52970394,
-        "sha256": "571c8f747851c3bb38ed94143d38a848125d0b65155f7d34686668ad8b405d66",
+        "bytes": 52960216,
+        "sha256": "1718118dd6d0be5be9368a8055f2993c2d735bb6b6b87de8e6a54d2d41148679",
         "bbox": [
-          -73.50821000018675,
-          41.187053000330856,
-          -69.85886100050949,
-          42.88640646744922
+          -73.50821052017234,
+          41.187054400512416,
+          -69.8588623111761,
+          42.88640571248255
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -522,13 +530,13 @@
       {
         "value": "MD",
         "rows": 61414,
-        "bytes": 58105583,
-        "sha256": "1b8f1aab6363f8665f6b17f5a5ae011623d396c96870d10babea9949da8ab9b5",
+        "bytes": 58116414,
+        "sha256": "96640d8b21ad3c89977f43e0d0235a45d93fcc780e6ba2b86618d4d73583b935",
         "bbox": [
-          -79.4871175176515,
-          37.88975480627872,
-          -74.99962500025171,
-          39.723374536131544
+          -79.48711670064516,
+          37.88975472515015,
+          -74.99961794764157,
+          39.723374039220325
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -538,19 +546,19 @@
         "row_group_bytes": 2097152,
         "large_feature_rows": 1,
         "portolan_ordering_check": true,
-        "row_groups": 50,
-        "max_row_group_uncompressed": 5330678
+        "row_groups": 49,
+        "max_row_group_uncompressed": 5331018
       },
       {
         "value": "ME",
         "rows": 12942,
-        "bytes": 33963298,
-        "sha256": "24e6422389dabc256eb377338f479f3f0642b2cb019e28c467eed94b0eba6c7d",
+        "bytes": 33831274,
+        "sha256": "e4e676d7bec06de3e42528248725834549ee9e863cd2f439170069972dac4045",
         "bbox": [
-          -71.0748216702242,
-          42.98037974597192,
-          -66.94539421902589,
-          47.4598429089292
+          -71.0748186013427,
+          42.98037912021948,
+          -66.94539354554816,
+          47.4598417146332
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -566,13 +574,13 @@
       {
         "value": "MI",
         "rows": 13990,
-        "bytes": 18927240,
-        "sha256": "823383c4ca4223679abc7c73dd5308f6c400d3c9c83f80786005bec47d256be2",
+        "bytes": 18922873,
+        "sha256": "aebcfcfbbdd0c8d20fb6b3416a4b3a6662aa49ea44804836435e4f90cedadfd4",
         "bbox": [
-          -90.41839199970899,
-          41.696117999634424,
-          -82.12290417608824,
-          48.30425468317924
+          -90.41839517508535,
+          41.69611751012485,
+          -82.12289630107163,
+          48.30425468317926
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -583,18 +591,18 @@
         "large_feature_rows": 4,
         "portolan_ordering_check": true,
         "row_groups": 15,
-        "max_row_group_uncompressed": 2031224
+        "max_row_group_uncompressed": 2031284
       },
       {
         "value": "MN",
         "rows": 17185,
-        "bytes": 27656861,
-        "sha256": "e851a168e65c3a593be684f444a251970097f0624d075a05a1128ce11a8c75c1",
+        "bytes": 27665262,
+        "sha256": "5331c97e8063adbda7d20e19a48d050e88f33ac76bd006c708b08f09303dff7f",
         "bbox": [
-          -97.23909300050248,
-          43.49936099964741,
-          -89.48568569054868,
-          49.3710267529273
+          -97.23909526947774,
+          43.49936419321432,
+          -89.48569685766252,
+          49.37103154576663
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -605,18 +613,18 @@
         "large_feature_rows": 7,
         "portolan_ordering_check": true,
         "row_groups": 21,
-        "max_row_group_uncompressed": 2077550
+        "max_row_group_uncompressed": 2077716
       },
       {
         "value": "MO",
         "rows": 5807,
-        "bytes": 8868193,
-        "sha256": "9a3e579d2dd4423823fd627e30acd1ee786b08ad773d492752fee6aeb4f06e06",
+        "bytes": 8872984,
+        "sha256": "d6a7fd590c1f3e4dee296c25c6aa8a5edb1b1382bbd3bf6bee41a430378b5646",
         "bbox": [
-          -95.75469069204124,
-          35.99782900002064,
-          -89.11446616366557,
-          40.60716935198139
+          -95.75469209650937,
+          35.99782929777345,
+          -89.11446583609931,
+          40.60716655429953
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -632,13 +640,13 @@
       {
         "value": "MP",
         "rows": 22,
-        "bytes": 274387,
-        "sha256": "a7a5fe491981be7ff42e868d44122e3e14b9d51a4c607ff4465b69457ce714e0",
+        "bytes": 267824,
+        "sha256": "f23e362b2a955f548dfc74556c25e72c795d080eaf597772501c00d841065121",
         "bbox": [
-          -177.45194400147713,
-          -3.7308374512099984,
-          170.18200671485306,
-          23.893055559846395
+          -177.45194400147716,
+          -3.730837451209958,
+          170.182006714853,
+          23.893055559846445
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -654,13 +662,13 @@
       {
         "value": "MS",
         "rows": 1984,
-        "bytes": 6592810,
-        "sha256": "a3cc56f3bdc538673653eb98ea1ace9e4e6631c23450f1a38d8c7fb3c61fa6af",
+        "bytes": 6571030,
+        "sha256": "dc3b548af81a1a8d1aa5368580b97a958fd4225d1d40cba48bb6da47758a88e5",
         "bbox": [
-          -91.63042601025265,
-          30.146096000037666,
-          -88.09789179206557,
-          35.00495431087087
+          -91.6304271909974,
+          30.146091212772895,
+          -88.09789204573198,
+          35.0049529854961
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -671,18 +679,18 @@
         "large_feature_rows": 9,
         "portolan_ordering_check": true,
         "row_groups": 10,
-        "max_row_group_uncompressed": 976721
+        "max_row_group_uncompressed": 978321
       },
       {
         "value": "MT",
         "rows": 5529,
-        "bytes": 34284383,
-        "sha256": "d7201e1957ec4dc7b078852ee4d32abcdf5dc0ac14a3e43967d5129e2b9c675f",
+        "bytes": 34280096,
+        "sha256": "45e572e8486f69067642999869c74fe62f61df49acb359990b6523346580b5af",
         "bbox": [
-          -116.04915300001798,
-          44.35791499969977,
-          -104.03969400013911,
-          49.00139940926024
+          -116.04915504648905,
+          44.35791582998127,
+          -104.03969546763645,
+          49.001393044341526
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -693,18 +701,18 @@
         "large_feature_rows": 32,
         "portolan_ordering_check": true,
         "row_groups": 45,
-        "max_row_group_uncompressed": 3818732
+        "max_row_group_uncompressed": 3817269
       },
       {
         "value": "NC",
         "rows": 14657,
-        "bytes": 81048688,
-        "sha256": "86bb43b166d0d9fc5d44d20583e53410dbfe3cdac747a920484ea0568ebf09be",
+        "bytes": 81119675,
+        "sha256": "0f73c4b17a19df6d9310253ed9b0d6a159cab18be215c7b9370ef0fff083f556",
         "bbox": [
-          -84.31760180997014,
-          33.752878000058,
-          -75.40101585064885,
-          36.58813700006317
+          -84.31760181767145,
+          33.75287484186979,
+          -75.40101488421372,
+          36.58813704743766
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -720,13 +728,13 @@
       {
         "value": "ND",
         "rows": 8396,
-        "bytes": 13541748,
-        "sha256": "ed6f7221da9c984791fa6c74fd4c7087666a47c2a4b9fc43290f9c4a37a9a763",
+        "bytes": 13558649,
+        "sha256": "1b8bba9890bbea8693178bdf0e7b2444def4d0cf95f128abc786a7f0d1edc910",
         "bbox": [
-          -104.04901199993392,
-          45.93507199964461,
-          -96.55441099994522,
-          49.00069926889359
+          -104.04901809091253,
+          45.93507248960125,
+          -96.55441320138326,
+          49.000701215452224
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -742,13 +750,13 @@
       {
         "value": "NE",
         "rows": 2915,
-        "bytes": 4617141,
-        "sha256": "899de0b738f8ab28dcbf4d2797e052985a67836f76cfb79b897b72b371adde71",
+        "bytes": 4614144,
+        "sha256": "cc5aa66d361a09f5a67934a0fa1a167d9fc41d51555f90d71abcbaeda6cdef72",
         "bbox": [
-          -104.05324899995551,
-          39.999007970337374,
-          -83.45663557230691,
-          43.00170200041599
+          -104.05324927576187,
+          39.9990065437864,
+          -83.45663026728482,
+          43.00170782927879
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -764,13 +772,13 @@
       {
         "value": "NH",
         "rows": 17023,
-        "bytes": 17916604,
-        "sha256": "2459444c37f11727e49c7f91dbefa4dc64fddacb58bdfd5209e4586bea104060",
+        "bytes": 17850454,
+        "sha256": "706ebdee949018d4e77e819941dca6d6f9ec762a9648b6f16cee52f565a0375b",
         "bbox": [
-          -72.55712400001318,
-          42.69703310997865,
-          -70.62229247445514,
-          45.305776517505315
+          -72.55712396641833,
+          42.69703281825694,
+          -70.622291031239,
+          45.30577497440386
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -786,13 +794,13 @@
       {
         "value": "NJ",
         "rows": 31030,
-        "bytes": 49152367,
-        "sha256": "6a857efa86ae04327e799917350c15e57cfd3c49cfa48a128200288307c0ef0e",
+        "bytes": 49136006,
+        "sha256": "205ac301af25f1758d7459c24b3e629f528940605f7c2c0581de68db89eaf442",
         "bbox": [
-          -75.55744361065074,
-          38.78865700003871,
-          -73.88506000027228,
-          41.3504521355529
+          -75.5574415354498,
+          38.78866125737474,
+          -73.88506062366825,
+          41.35045167567726
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -803,18 +811,18 @@
         "large_feature_rows": 15,
         "portolan_ordering_check": true,
         "row_groups": 43,
-        "max_row_group_uncompressed": 2033969
+        "max_row_group_uncompressed": 2033960
       },
       {
         "value": "NM",
         "rows": 2389,
-        "bytes": 16980295,
-        "sha256": "f53cf38b205b48c6d6825b070a7adba57c72566bda0ab84b8bdb9df5be5fac07",
+        "bytes": 17004712,
+        "sha256": "c90e941714c2885fa05d5a47a2752243e9de0a356c7c53724706d84e3ea506b1",
         "bbox": [
-          -109.05043100003812,
-          31.33228138374594,
-          -103.00215125955468,
-          37.00023299985088
+          -109.05043503214841,
+          31.33228054936146,
+          -103.0021506079156,
+          37.00023356391943
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -830,13 +838,13 @@
       {
         "value": "NV",
         "rows": 2774,
-        "bytes": 32786766,
-        "sha256": "2e5e4c50c89f11f66c739f4b4866e2202781f6306693be2162873c9488ec6b1b",
+        "bytes": 32789524,
+        "sha256": "63aeaa5b92cc6edb99281fd8ef3861dc85a06b5aa9918ed4f0db537300167f24",
         "bbox": [
-          -120.02389616459065,
-          35.00935899988743,
-          -114.03946100010614,
-          42.00184200016623
+          -120.0238932967646,
+          35.0093566516253,
+          -114.03946087112435,
+          42.00184200850929
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -852,13 +860,13 @@
       {
         "value": "NY",
         "rows": 20314,
-        "bytes": 39816957,
-        "sha256": "43d0bce250ed188fb0868eafd88ea754887f78fb44c46e2df11f7821bea24d0b",
+        "bytes": 39795042,
+        "sha256": "d889ebea0dfea18ccb9c3625ade642a749925cf1ba03dca3142885125ea04a83",
         "bbox": [
-          -79.74177995255732,
-          40.486511000267335,
-          -71.7774910001366,
-          45.01300885614914
+          -79.74178282166748,
+          40.48651081937411,
+          -71.77748951443381,
+          45.0130068093827
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -874,13 +882,13 @@
       {
         "value": "OH",
         "rows": 10191,
-        "bytes": 13491657,
-        "sha256": "47f2639137ca178941ae8c7b5f70bea3cb69d634d717220704b3048df6c81c32",
+        "bytes": 13480519,
+        "sha256": "070fc8713f10bb18b695a8ba92b63aa8e47fa8b494e5a18b34c853ac759f90ef",
         "bbox": [
-          -84.82016086612944,
-          38.40573953884323,
-          -80.51905228103216,
-          41.977248273646666
+          -84.82015838758923,
+          38.40573766819097,
+          -80.51905077676794,
+          41.977247828540676
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -891,18 +899,18 @@
         "large_feature_rows": 12,
         "portolan_ordering_check": true,
         "row_groups": 11,
-        "max_row_group_uncompressed": 1843584
+        "max_row_group_uncompressed": 1843684
       },
       {
         "value": "OK",
         "rows": 2109,
-        "bytes": 8421125,
-        "sha256": "6c13dd55bc5554e18d794807ccc2861b28138f0ff810cca61ca9794aef382b20",
+        "bytes": 8448436,
+        "sha256": "d5c65d894bab36c5b17440cfa96b12383dc2412382fafcb76f9b860bbe327899",
         "bbox": [
-          -103.00234699971378,
-          33.61578700037418,
-          -94.4310140003258,
-          37.0011227001409
+          -103.00234805631824,
+          33.615785517005136,
+          -94.43101644968772,
+          37.00112284312174
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -918,13 +926,13 @@
       {
         "value": "OR",
         "rows": 8674,
-        "bytes": 57034480,
-        "sha256": "5f2403f0e5d178b36cb8a8445fc7aa528646a4a5524da2116527fbdca1dca6ed",
+        "bytes": 57197965,
+        "sha256": "9e9be7ab6c7bfe2beeea4500825074a2fe0d23d6b8aae21dcf2aa7c75d094622",
         "bbox": [
-          -124.70380480340863,
-          41.99208200082151,
-          -116.4632620000907,
-          48.83121897128545
+          -124.70379476931228,
+          41.992080836645115,
+          -116.46326242654811,
+          48.83121883655162
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -934,19 +942,19 @@
         "row_group_bytes": 2097152,
         "large_feature_rows": 13,
         "portolan_ordering_check": true,
-        "row_groups": 41,
-        "max_row_group_uncompressed": 2141900
+        "row_groups": 42,
+        "max_row_group_uncompressed": 2142220
       },
       {
         "value": "PA",
         "rows": 59964,
-        "bytes": 90400190,
-        "sha256": "d4b4a3b07bb412a6a3d5231bcd6ce419730af65428a1df5153a42eae077ba1d9",
+        "bytes": 90351029,
+        "sha256": "11dc899e527aa4160452ae424e39214b308b4f732301bf88de773a5c366853b1",
         "bbox": [
-          -80.51949184450683,
-          39.71713938876499,
-          -74.69425410428991,
-          42.263247638286806
+          -80.5194896895013,
+          39.717139547587415,
+          -74.69425407010553,
+          42.263245470333224
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -957,18 +965,18 @@
         "large_feature_rows": 4,
         "portolan_ordering_check": true,
         "row_groups": 74,
-        "max_row_group_uncompressed": 2036415
+        "max_row_group_uncompressed": 2036535
       },
       {
         "value": "PR",
         "rows": 665,
-        "bytes": 3056305,
-        "sha256": "917ed2d7be3a7055103708cc3e6f8299f0b8ab1e482a3ec8d7cf8b584e35771b",
+        "bytes": 3079957,
+        "sha256": "819da7def3bba8797a170ac12fed5a92b8b21f8bddcf2c1bb495beb0ac23aa52",
         "bbox": [
-          -68.11160373750728,
-          17.782980000197533,
+          -68.11160373750727,
+          17.782980000197572,
           -65.20055094073693,
-          18.64577499803883
+          18.64577499803884
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -979,18 +987,18 @@
         "large_feature_rows": 1,
         "portolan_ordering_check": true,
         "row_groups": 3,
-        "max_row_group_uncompressed": 1945045
+        "max_row_group_uncompressed": 1945105
       },
       {
         "value": "RI",
         "rows": 5682,
-        "bytes": 5779746,
-        "sha256": "6b496896204ddb409283f1654b5a49d6609637ccd138d53b132d04788b2f3eee",
+        "bytes": 5787805,
+        "sha256": "5287b671f9590d87defdb15c538a8211d0d910f23ef93adf5726e17eafd32ea6",
         "bbox": [
-          -95.93956251047628,
-          38.1605987169717,
-          -71.08857100074312,
-          47.200866746160386
+          -95.93956580278152,
+          38.16059882292924,
+          -71.08857128365624,
+          47.20086680824354
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1006,13 +1014,13 @@
       {
         "value": "SC",
         "rows": 4124,
-        "bytes": 16149429,
-        "sha256": "a20b04c5f51818f049446c0c00f84b3cfaf8d7be89ea90a37acf1a4ff7cb38e4",
+        "bytes": 16159312,
+        "sha256": "2006498cf361c3c0f4ec638ff954ef9fe717c8465eb386a22160a559e4589ad6",
         "bbox": [
-          -83.35392799956524,
-          32.00428805511393,
-          -78.587802147094,
-          35.21539226836286
+          -83.3539277081239,
+          32.00428392465961,
+          -78.58779999261606,
+          35.21539239539731
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1023,18 +1031,18 @@
         "large_feature_rows": 0,
         "portolan_ordering_check": true,
         "row_groups": 12,
-        "max_row_group_uncompressed": 2057461
+        "max_row_group_uncompressed": 2057481
       },
       {
         "value": "SD",
         "rows": 9485,
-        "bytes": 14276421,
-        "sha256": "7e67515b78daa89f3f413f616772da53fb93dc670a5bda3af892b7861a120071",
+        "bytes": 14280303,
+        "sha256": "d5c9058173993897edc84af9d025fa3f029db11712f69c8ee25e8af409979112",
         "bbox": [
-          -104.07453767432597,
-          42.48341373072332,
-          -96.43647199994462,
-          45.94530579643048
+          -104.07453921747613,
+          42.48341268785152,
+          -96.4364749378933,
+          45.94531085857891
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1045,18 +1053,18 @@
         "large_feature_rows": 21,
         "portolan_ordering_check": true,
         "row_groups": 14,
-        "max_row_group_uncompressed": 2035978
+        "max_row_group_uncompressed": 2035998
       },
       {
         "value": "TN",
         "rows": 3662,
-        "bytes": 29125169,
-        "sha256": "ae567e2b8443ba34f36236b51ca927c2b96b143b848766a051d6a63d3d04d907",
+        "bytes": 29146617,
+        "sha256": "fe69351a6ef8cc3d90be5d0b2d1e82374db2a953f775fcbcc0f6cb24b99aff28",
         "bbox": [
-          -90.29484943001047,
-          33.27382447345026,
-          -81.64689999973213,
-          36.743225534223654
+          -90.29484977079352,
+          33.273822932283906,
+          -81.64690001885126,
+          36.74322557820691
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1067,18 +1075,18 @@
         "large_feature_rows": 2,
         "portolan_ordering_check": true,
         "row_groups": 23,
-        "max_row_group_uncompressed": 2674656
+        "max_row_group_uncompressed": 2688016
       },
       {
         "value": "TX",
         "rows": 24900,
-        "bytes": 43511744,
-        "sha256": "73d1afd2191c35610129f76beeacd20a297e9885443001f55786835aaa905a95",
+        "bytes": 43505244,
+        "sha256": "a003932771062cef64a6a31bde613c54b5b1193f565d03cb5816d00ad22a12df",
         "bbox": [
-          -106.63029104761752,
-          25.837231361861896,
-          -93.57090929413378,
-          36.50055033093834
+          -106.63029116031122,
+          25.837228396727934,
+          -93.57091573177499,
+          36.50054783115189
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1089,18 +1097,18 @@
         "large_feature_rows": 3,
         "portolan_ordering_check": true,
         "row_groups": 33,
-        "max_row_group_uncompressed": 2025003
+        "max_row_group_uncompressed": 2025083
       },
       {
         "value": "UM",
         "rows": 13,
-        "bytes": 121629,
-        "sha256": "9c4a352744e02f5b1b518dd70e7027b229b6a60d5c45db46c277f74212c9ebec",
+        "bytes": 121601,
+        "sha256": "9e429d463cfa4c3a551749b1451503e98b7f9f88e5d99af0fafce253751f8b7d",
         "bbox": [
           -177.6505561961015,
-          -0.011970533890631104,
-          166.86959181871106,
-          28.480133176612775
+          -0.011970533890592274,
+          166.869591818711,
+          28.480133176612796
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1116,11 +1124,11 @@
       {
         "value": "UNKF",
         "rows": 579,
-        "bytes": 9326717,
-        "sha256": "ff18fbb4f8fd6f87797348baaf9dc25bbfefbe385bdf58fca21711d004ae219e",
+        "bytes": 9331210,
+        "sha256": "b4e3e0d5355392cc7e60072a44103879f2a5faa3f5599d78ffb0705f0410e73a",
         "bbox": [
           -180.0000000000568,
-          -3.7308374512099984,
+          -3.730837451209958,
           179.99999999994174,
           74.99635387149438
         ],
@@ -1138,13 +1146,13 @@
       {
         "value": "UT",
         "rows": 7609,
-        "bytes": 24671370,
-        "sha256": "06e12610444c9ea5812aa7e832253a312103b5ad2f6f9ffd97307adecfcd8650",
+        "bytes": 24679882,
+        "sha256": "ed11c629e803c579530431c0f248a6fc23a7ce35cc5c53dfb811c77bf44013b1",
         "bbox": [
-          -114.05288500033596,
-          36.99765700046134,
-          -109.04157200036695,
-          42.001702000011655
+          -114.05288492200168,
+          36.997657529299495,
+          -109.0415716776043,
+          42.00170475335994
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1155,18 +1163,18 @@
         "large_feature_rows": 12,
         "portolan_ordering_check": true,
         "row_groups": 18,
-        "max_row_group_uncompressed": 2011114
+        "max_row_group_uncompressed": 2011394
       },
       {
         "value": "VA",
         "rows": 21268,
-        "bytes": 71236536,
-        "sha256": "1f828b70677afb5f24823ccd31473f7c9be2bedad7502859e90f1463fbf72a36",
+        "bytes": 70996318,
+        "sha256": "6236b1f8e47ad9b08e27fdf803086762aa598f86f8f42afaab9abd7a2f5786f8",
         "bbox": [
-          -83.67539500012207,
-          36.541048999827694,
-          -75.16643500041852,
-          39.46601199983743
+          -83.67539510570715,
+          36.54104907209826,
+          -75.16642541356869,
+          39.466011767361984
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1177,18 +1185,18 @@
         "large_feature_rows": 1,
         "portolan_ordering_check": true,
         "row_groups": 44,
-        "max_row_group_uncompressed": 13386935
+        "max_row_group_uncompressed": 13387255
       },
       {
         "value": "VI",
         "rows": 87,
-        "bytes": 742097,
-        "sha256": "16b0c78513653311d1f61f8ccaf9b64827eb6d60df6764b96a3b79d9348d52fb",
+        "bytes": 745194,
+        "sha256": "15f461375252e9612c234314cf2801821a7358a94267ecd1d7fdd074520327b5",
         "bbox": [
-          -75.22263080168615,
-          17.65802106881624,
-          -64.51257815428993,
-          18.596167599833585
+          -75.22263080168614,
+          17.658021068816264,
+          -64.5125781542899,
+          18.596167599833574
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1199,18 +1207,18 @@
         "large_feature_rows": 0,
         "portolan_ordering_check": true,
         "row_groups": 1,
-        "max_row_group_uncompressed": 955149
+        "max_row_group_uncompressed": 955169
       },
       {
         "value": "VT",
         "rows": 20006,
-        "bytes": 25077638,
-        "sha256": "64669d4cde887b21117d6aece6b7d8977d158603aa6bfb5764f89a5c8fd8ec14",
+        "bytes": 25032167,
+        "sha256": "ae0645ced38785d296b7b3a8b916f9a808120380c82dab2fb68d55ab39022fda",
         "bbox": [
-          -117.17938876247543,
-          32.995868903854394,
-          -71.46504700016544,
-          45.016062866961285
+          -117.17938866720405,
+          32.99586915157994,
+          -71.4650437193349,
+          45.01606149920423
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1226,13 +1234,13 @@
       {
         "value": "WA",
         "rows": 11725,
-        "bytes": 43542012,
-        "sha256": "9b43b6396736db53c6129ba38fc370515a3802faa100e9bb12421487bb2ce1ce",
+        "bytes": 43306630,
+        "sha256": "54d878793c0980d45b1b2ca30fbd6b68c1181318aa9875ac7fa202309bb1b5d5",
         "bbox": [
           -125.68166351320606,
-          45.54354100028553,
-          -116.91607099977657,
-          49.00225807090761
+          45.54353718449639,
+          -116.91607158215683,
+          49.002258516480936
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1248,13 +1256,13 @@
       {
         "value": "WI",
         "rows": 21646,
-        "bytes": 27158052,
-        "sha256": "6aa773f51c70687323b703fd44dc04a946dd00f7a7d528d7cf014c032613e840",
+        "bytes": 27192046,
+        "sha256": "059abcfff223224472044117c684eb5e226ab9d41c6a3e5083b89d8c8b468818",
         "bbox": [
-          -92.88943299955312,
-          42.491720000184486,
-          -86.24954800069109,
-          47.30982199963088
+          -92.88943243762428,
+          42.49172176828141,
+          -86.2495485367273,
+          47.30982402566289
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1265,18 +1273,18 @@
         "large_feature_rows": 25,
         "portolan_ordering_check": true,
         "row_groups": 21,
-        "max_row_group_uncompressed": 1902420
+        "max_row_group_uncompressed": 1902660
       },
       {
         "value": "WV",
         "rows": 2654,
-        "bytes": 6693862,
-        "sha256": "b80282eb6155963c1fcedf0a9fce4587ef73d74fc40f9ca28f71128bb9e2932e",
+        "bytes": 6693571,
+        "sha256": "aa086fee68754fcd5de9c28a79618db1d932840c8bc8310ac843998e8864f8e6",
         "bbox": [
-          -82.59550031026143,
-          37.23508984254578,
-          -77.7195467784887,
-          40.62915427405724
+          -82.59549930122319,
+          37.23508773912611,
+          -77.71954455631311,
+          40.6291528188527
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1292,13 +1300,13 @@
       {
         "value": "WY",
         "rows": 20995,
-        "bytes": 17036323,
-        "sha256": "1f67ba257633e270240fa96b81ebaab1ea2dfe52d85e8584f9284adc8d7c817f",
+        "bytes": 17178666,
+        "sha256": "6fe2409a078aaacd85677baacd625fe53b79b95aba3b166ed2fa8676a9211134",
         "bbox": [
-          -111.05455800004111,
-          40.99477199962605,
-          -104.05268826072236,
-          45.02098159634984
+          -111.05456179756781,
+          40.99477645117799,
+          -104.0526874793612,
+          45.020984696277516
         ],
         "geometry_types": [
           "MultiPolygon"
@@ -1319,504 +1327,504 @@
       "sha256": "f527e4b95fff0b7e13541c81642596caf06d64d2ff46fce5395727c1da4eb70b"
     },
     "README.md": {
-      "bytes": 381,
-      "sha256": "52d9bb0d1737957730e347bee13b11969234fdaf41591564d1b3f6c83f0cf3be"
+      "bytes": 457,
+      "sha256": "62bfc830580b35ee7b2d76842693891f9382425b4bd3051fac11363a4bba7f64"
     },
     "catalog.json": {
       "bytes": 1045,
-      "sha256": "a03e21a2fdc2f8cd531d87ac00f38ff00bd735152a242dbe8ba605cb688f43ec"
+      "sha256": "96b0b4cef64d360475a7020b4765627f028231673de47f36494a2ab3219afdf8"
     },
     "combined/AGENTS.md": {
       "bytes": 853,
       "sha256": "9ec711dbfbdb86ed6588ba8aa0e7c7f479bdf52af5835460dfaea241c0821c38"
     },
     "combined/README.md": {
-      "bytes": 5221,
-      "sha256": "739725ae46e832daa4788681151dc13ce61492735515779e653970ea32d3613d"
+      "bytes": 6010,
+      "sha256": "f0eb2bdeb36bb1b817b48e41be281d3fefbb906bcbb3264a4b722245fc209c8d"
     },
     "combined/collection.json": {
-      "bytes": 17166,
-      "sha256": "f06ed2a56b99761f28f48bc54a5aaf06d0fd7e29abcb272f0d76c43733bb426e"
+      "bytes": 16986,
+      "sha256": "999470b372a1fb7cddb722b8aba4ca4f5f2555804ca1bd8d01d86a4889d73ad3"
     },
     "combined/state=AK/data.parquet": {
-      "bytes": 309299337,
-      "sha256": "57f052183304d584e282998625c2d50f5e59b0b852135d1c4f15e9c3652b5994"
+      "bytes": 309225699,
+      "sha256": "0af6954404a446fc82218c3305f0df0a08ec76f952be5a89987fd8ede04146fa"
     },
     "combined/state=AK/state=AK.json": {
-      "bytes": 4821,
-      "sha256": "b0725b6d3a54f141acb64128789c6e869e794967b9478f694ae9eff28a73446c"
+      "bytes": 4859,
+      "sha256": "004d7b2ddac066c84bff854dc73986eeabdaeda6cf6c341000b25f95e4efeeec"
     },
     "combined/state=AL/data.parquet": {
-      "bytes": 15432948,
-      "sha256": "4eaf93e8bc5ade81ab63576c9ae5d7f0799b16d71eab4805ff0eb143fd2fe2df"
+      "bytes": 15436330,
+      "sha256": "80d6a71a58fb63220f12d61848566999e4ec3fec18b33a26f68a2bd446082f10"
     },
     "combined/state=AL/state=AL.json": {
-      "bytes": 4835,
-      "sha256": "bdaea7ba495949d81dfdcb12927d4c313eae9a4f93194d6d34accb555f59948d"
+      "bytes": 4873,
+      "sha256": "14fd3366403f898084fe145662cdc55a5d75eb93284df24f1a64490430cb463a"
     },
     "combined/state=AR/data.parquet": {
-      "bytes": 8830308,
-      "sha256": "d4ebfe0a23dcd3d6004a936dfe762c19bc3cd727b8bde92ef6bad99f3abdc210"
+      "bytes": 8825800,
+      "sha256": "6ba996c5fc2728a7c27fcebc9a28881d3c1a8d21926b5bfc2f86bf1cb0edd4fb"
     },
     "combined/state=AR/state=AR.json": {
-      "bytes": 4821,
-      "sha256": "e406cf7847a0cea6964f35a66e2426637287e7d524d27046860e58cada08bcec"
+      "bytes": 4871,
+      "sha256": "15f50c77146d570b4cb7d9c03eb157d322dd21652c3c460de5c951baac311eff"
     },
     "combined/state=AS/data.parquet": {
-      "bytes": 249027,
-      "sha256": "4410517691bc16f3862e547e8d9435eee2d11db1e5bc09ff31620066df112f1b"
+      "bytes": 249101,
+      "sha256": "b962d42d6324a377f1661ee2a38967f58e5324aa1bf1d21023bb871c17940605"
     },
     "combined/state=AS/state=AS.json": {
-      "bytes": 4855,
-      "sha256": "6b6ab014c8f617b1191957e432ae12024c84943e6867a286c9889445516970c6"
+      "bytes": 4893,
+      "sha256": "0bbf86e48873773863fe379c17ba0b5e0f3968fc5bf9c09c4e82bcaa2dd1ce3b"
     },
     "combined/state=AZ/data.parquet": {
-      "bytes": 26256801,
-      "sha256": "d3621a364a3dcd57314dc1063b80c2347e940fa60517c8aa27b464468a9275aa"
+      "bytes": 26134812,
+      "sha256": "1e99303815edc63a64d9e27c744025e80941f7de069ce3aeab87524d1d536f4d"
     },
     "combined/state=AZ/state=AZ.json": {
-      "bytes": 4836,
-      "sha256": "9e0e8e7f9791a085ea872bc2a24ab2c8aa9d4530341fc8fa8a8e17599823506d"
+      "bytes": 4869,
+      "sha256": "3fd1d00e7f26aa1241fd39367376035b350296ddbe654bf86e561284701a15b6"
     },
     "combined/state=CA/data.parquet": {
-      "bytes": 113984373,
-      "sha256": "e84edf7b3ace7f0b2bd0f11cda4fa1d6c0806475a241b2754add2312eb196c06"
+      "bytes": 114014525,
+      "sha256": "cab5a2c9b80972ca0bce258be48f5e5fe4a03b7f866fda554d4d2bcddd2aec8e"
     },
     "combined/state=CA/state=CA.json": {
-      "bytes": 4843,
-      "sha256": "78a2f75511173a4eea441c1a8a2fc593d01a3a9c2cfa5e2b2a2ae0c3a18f919d"
+      "bytes": 4884,
+      "sha256": "25aa8be3c4d8575c29f110a7ea070f8ab3615d3c7840a150f40f6dc5657b32ce"
     },
     "combined/state=CO/data.parquet": {
-      "bytes": 54928643,
-      "sha256": "0ce4f60d3d3d21a43772da2c7ce49c9226c0a6fb059fb9a6882519f0d25e56c3"
+      "bytes": 54933387,
+      "sha256": "ea742bef905355b5cf7aceb4582883506af5920791bd23b626d72884cdba9e7a"
     },
     "combined/state=CO/state=CO.json": {
-      "bytes": 4834,
-      "sha256": "9c748e69d4117286ba92f00de64bf94287d433b18843b83544b170dc4982daab"
+      "bytes": 4873,
+      "sha256": "47fa8519a92d51c438d1f1bd97f37bf915b0b53b8c3aca3b853c52ef6cc7b51c"
     },
     "combined/state=CT/data.parquet": {
-      "bytes": 23029839,
-      "sha256": "0696149198208c3c9aff5718b276e34762199bd0a1ab118e3bd8b8c9bdcef4af"
+      "bytes": 23022757,
+      "sha256": "53337251f71218316557095771b0ac53879575f3d33c8b80d34f1328127db36d"
     },
     "combined/state=CT/state=CT.json": {
-      "bytes": 4829,
-      "sha256": "06ea98b055275c2e27a1ada227318b0ca8abf1cf1e7d9e894a722dae6e62954e"
+      "bytes": 4875,
+      "sha256": "0eca32f15ed31ee15aa2c2102c277d734a6343dcfec958e8422177949c171abc"
     },
     "combined/state=DC/data.parquet": {
-      "bytes": 1342560,
-      "sha256": "94bdf9b1559782cd5f0e49421991f62706f64510e1af34640fafe3da4770fbcb"
+      "bytes": 1334370,
+      "sha256": "dfb5ea353b7cc4a665da39f651517660dee9f22450acd50b63aff1cf1a2e6cde"
     },
     "combined/state=DC/state=DC.json": {
-      "bytes": 4849,
-      "sha256": "9a5bc118fff1a1a47c9b46aff86886400340fe7dc92515d195763491b0630201"
+      "bytes": 4889,
+      "sha256": "7f8c77203b8533cfd43999203d8426d6a836fac4ddc3c53fbc274d34b6dfc996"
     },
     "combined/state=DE/data.parquet": {
-      "bytes": 10850779,
-      "sha256": "1ff573f46376544100405118b70669ad25db4940e06291c1cff02d45ca1d1bcc"
+      "bytes": 10847087,
+      "sha256": "504a9e3d328fb9a50df4e1c48ff2715b4658555677479dae2f43ef32fec38bce"
     },
     "combined/state=DE/state=DE.json": {
-      "bytes": 4830,
-      "sha256": "7ff4e5d5d3d275f4e67e5dffcaf89f1b8d7d8ca57e5594a67406a45e2364268b"
+      "bytes": 4868,
+      "sha256": "f57a5c44ffe51c6464509b9fb7bff86bbacf10a4c5cac6f45817689f8fb38257"
     },
     "combined/state=FL/data.parquet": {
-      "bytes": 80334878,
-      "sha256": "a241c4bf11ed5005f13b6a6b793df6aea8512be28a0dfe82385ac699817e4633"
+      "bytes": 80407554,
+      "sha256": "8cabf8f11e8ff8bf4539ac540c7758ca36b3d1fc3a32e49f36bb398395126f7d"
     },
     "combined/state=FL/state=FL.json": {
-      "bytes": 4828,
-      "sha256": "8d2a4b7581c0d923f8b74ed5eadedae8965df3871dbfc8bc2bc5577454756acd"
+      "bytes": 4874,
+      "sha256": "9c20a37d3638d4990fd3e55b413dfcf0d72988b281dc6dd7f13879150f679b40"
     },
     "combined/state=GA/data.parquet": {
-      "bytes": 18822672,
-      "sha256": "5d41defdad6b3e54585f3b4900572539827d00c6f2a89fe218ff2749ce03c23a"
+      "bytes": 18834242,
+      "sha256": "4ed8f88061575a3c3c81c5858d145f1c63aaead5fd0ac01bf68336cd0c61714c"
     },
     "combined/state=GA/state=GA.json": {
-      "bytes": 4825,
-      "sha256": "d12ef80a5b5cb17bf3e237ea4b0c7156502aa4c69d953154ac501ad506b6f31e"
+      "bytes": 4873,
+      "sha256": "c45d8dd258aac8adecbe0e3103b28d8273c844e7e2ab9a35b82a16bcb05a1fdb"
     },
     "combined/state=GU/data.parquet": {
-      "bytes": 312191,
-      "sha256": "78166e0583a5a836083b270929df6932287df0182f6591b025ed5acefaaa629a"
+      "bytes": 316755,
+      "sha256": "a1fbe652da9cceac62ba1b9fca843b0e262751416762c20c2069ee46c08b50b4"
     },
     "combined/state=GU/state=GU.json": {
-      "bytes": 4822,
-      "sha256": "34ba5b7bea297f11d7f3a916bce13e0da1c7b8ebf9214bada8c15c0980c8268e"
+      "bytes": 4863,
+      "sha256": "16c7d5629f3d643edaee6c9126d0e3164bc09faecb1ba13c64ddff37eb06f6dc"
     },
     "combined/state=HI/data.parquet": {
-      "bytes": 6896201,
-      "sha256": "b3567c0caa1f315521c977c734c498c2b8e993befda6a08fcb2f6c61ea6ef799"
+      "bytes": 6871365,
+      "sha256": "822a197f8007df708af950f00b934a2b85d5e654a2fec1e90ae1624587bc7d73"
     },
     "combined/state=HI/state=HI.json": {
-      "bytes": 4833,
-      "sha256": "42947def5850c306d67eb03c5ea0d5c7d517251add5213ccf8d4ce5335e99cd3"
+      "bytes": 4867,
+      "sha256": "44eb3b454032f3f29565a773deaf6f2b4fb9c2fc0b5e66b8351248f4fa89d0cf"
     },
     "combined/state=IA/data.parquet": {
-      "bytes": 8897219,
-      "sha256": "547f61addb45438c76e1074341e9f0be0676dbd45e7aec26db675b00e0d8cfe1"
+      "bytes": 8892204,
+      "sha256": "5ba8d187763ed424bd96620c24ce17ab780cceb4ce29e4d66d6a867c1b00de60"
     },
     "combined/state=IA/state=IA.json": {
-      "bytes": 4821,
-      "sha256": "983909a8fa38f59010218322781f4b655fd6f2f5d1617a612707c56fdaa10640"
+      "bytes": 4856,
+      "sha256": "2dddd966c3a5e940a62a655994a6aa7ed322e78e453317a8e445cbbcd74bdc08"
     },
     "combined/state=ID/data.parquet": {
-      "bytes": 47125947,
-      "sha256": "f0de9195b3fddfecbd503e4b8a87f031a8016f5adc81d29748736777497fe15d"
+      "bytes": 47381521,
+      "sha256": "9637c47e529ccee4dfdbea9f134729eb11f3fec9464f7bcfb1b3e3b9b6c50659"
     },
     "combined/state=ID/state=ID.json": {
-      "bytes": 4836,
-      "sha256": "11edd1473828e20622a24dde0675ca7dc371eb61e5419a62e2305bf55d74b278"
+      "bytes": 4874,
+      "sha256": "186cf49085aa8250658306c167dd4f6700fc54eeb87daf7781026d2d293d476c"
     },
     "combined/state=IL/data.parquet": {
-      "bytes": 23462768,
-      "sha256": "94d430c1f547fa397f9ec4841da7904f36b54500c04d8f6996e047431ee9d360"
+      "bytes": 23469716,
+      "sha256": "49873106abd9933546ee29a126bcb3983992026d1c0f4c0f6c0030fd43e7fbaf"
     },
     "combined/state=IL/state=IL.json": {
-      "bytes": 4834,
-      "sha256": "5f12fabc1b0df672dbed0b5ccbd29caaa50f12ee7ce77844aa17a5f6d6d60753"
+      "bytes": 4869,
+      "sha256": "d2bee79d79fe1de01944e2c0a3ead486f6c32ac7583f4682edc0369b9aaa1125"
     },
     "combined/state=IN/data.parquet": {
-      "bytes": 5316440,
-      "sha256": "65546d1611f6132b08c6b454b7e73f45fb14327e7a122b697b1d1737b7a55773"
+      "bytes": 5319579,
+      "sha256": "9ef15c502724f41645e526503acdaebd60f6f9a81aa65c118f52a03ff1cb32d8"
     },
     "combined/state=IN/state=IN.json": {
-      "bytes": 4826,
-      "sha256": "752bb76e62cc17d75736c611a15055cdcaecb2d5267b6b266553f722454aa10e"
+      "bytes": 4868,
+      "sha256": "d4bb95ae9dbb5669ffe5b84670a26b15bc4ada924493bcc9fa2ee23585585626"
     },
     "combined/state=KS/data.parquet": {
-      "bytes": 3807315,
-      "sha256": "ddfb023c05316930e3b8f25c6e3b082ed4d35d9614f41a23a911ec9ce8c102c3"
+      "bytes": 3806551,
+      "sha256": "dda24f942c3e919bffdb7f5aebe123031b2f47bf2949e6cb43e6fc263b36a942"
     },
     "combined/state=KS/state=KS.json": {
-      "bytes": 4829,
-      "sha256": "79ddb88ea2c369b33856b7a0f1a5ec733bb502392c475aabb219891acf0f9b38"
+      "bytes": 4868,
+      "sha256": "2ea9b1bc65798ecd8a9c2b268c64e1a56628ed3efbad4630770f78f7462fb09c"
     },
     "combined/state=KY/data.parquet": {
-      "bytes": 21166273,
-      "sha256": "4a675d406b3e1783c665711f49c83c4d06228d31122551bc4c6a7d4e2d3973e9"
+      "bytes": 21123958,
+      "sha256": "b242327353eb30b22886010d8843881843b0f09dddf9735a94ef3809f3952eed"
     },
     "combined/state=KY/state=KY.json": {
-      "bytes": 4826,
-      "sha256": "e607e9bd95bf5d21e09aab642b55878c283d1a50f528c2d95d835341f17992ef"
+      "bytes": 4867,
+      "sha256": "5309d5bf72792300b75fba480a3047f6346c299120e7352313171b757bd5cd6a"
     },
     "combined/state=LA/data.parquet": {
-      "bytes": 8848914,
-      "sha256": "b2c99a45de4136e672b2c49af08fe4cfe4f4f820fd0f28e6fa77bcb1b80021ee"
+      "bytes": 8826424,
+      "sha256": "ca74183d42f286237a7783436c5156be726c1c64c3896acf743fac20a8d386d4"
     },
     "combined/state=LA/state=LA.json": {
-      "bytes": 4828,
-      "sha256": "8d6baef4905e861c46bae425a628ac244a445c2a5d817b3d4e490b1acac87c80"
+      "bytes": 4873,
+      "sha256": "fc1fe73157f6c6855a3e9ec6229afdffeb48ed3ca3b796206fd7d3a9584f4db3"
     },
     "combined/state=MA/data.parquet": {
-      "bytes": 52970394,
-      "sha256": "571c8f747851c3bb38ed94143d38a848125d0b65155f7d34686668ad8b405d66"
+      "bytes": 52960216,
+      "sha256": "1718118dd6d0be5be9368a8055f2993c2d735bb6b6b87de8e6a54d2d41148679"
     },
     "combined/state=MA/state=MA.json": {
-      "bytes": 4845,
-      "sha256": "daaa25a16e841a52b0a3603091ba4f4725f7bb48ef80d360ecfd0e8ebbd03668"
+      "bytes": 4880,
+      "sha256": "439937b1e2883d2923214e105ab256ad50426cde66e026ceffb4e2a57e27ab0e"
     },
     "combined/state=MD/data.parquet": {
-      "bytes": 58105583,
-      "sha256": "1b8f1aab6363f8665f6b17f5a5ae011623d396c96870d10babea9949da8ab9b5"
+      "bytes": 58116414,
+      "sha256": "96640d8b21ad3c89977f43e0d0235a45d93fcc780e6ba2b86618d4d73583b935"
     },
     "combined/state=MD/state=MD.json": {
-      "bytes": 4830,
-      "sha256": "709438f7fed0228fb741ddfd715d1b3daf5e49b52d3c132bd0c7d5cf94480161"
+      "bytes": 4872,
+      "sha256": "0e564f75258db54e2846faf855fc2fe7ec217e28b0f9df22f0ae9642c233a1c7"
     },
     "combined/state=ME/data.parquet": {
-      "bytes": 33963298,
-      "sha256": "24e6422389dabc256eb377338f479f3f0642b2cb019e28c467eed94b0eba6c7d"
+      "bytes": 33831274,
+      "sha256": "e4e676d7bec06de3e42528248725834549ee9e863cd2f439170069972dac4045"
     },
     "combined/state=ME/state=ME.json": {
-      "bytes": 4818,
-      "sha256": "9513e0984fea6fa16a6a0ce01ce4e9b706deea3045b0adc0191fa45452030f2b"
+      "bytes": 4856,
+      "sha256": "eae98398dd50a1b94866f5a6ff62e171ccbc700eb71408e0cdb6ee98c9c219a9"
     },
     "combined/state=MI/data.parquet": {
-      "bytes": 18927240,
-      "sha256": "823383c4ca4223679abc7c73dd5308f6c400d3c9c83f80786005bec47d256be2"
+      "bytes": 18922873,
+      "sha256": "aebcfcfbbdd0c8d20fb6b3416a4b3a6662aa49ea44804836435e4f90cedadfd4"
     },
     "combined/state=MI/state=MI.json": {
-      "bytes": 4835,
-      "sha256": "dd4d7b08c2dbd9727078fe3b4d6d1b76e990fa40c81647fc47fd6748082cd812"
+      "bytes": 4869,
+      "sha256": "e37f0246a13b4728d0d8e91ad701b8aae5a004a32706ca8d83faa1d89a54f5c0"
     },
     "combined/state=MN/data.parquet": {
-      "bytes": 27656861,
-      "sha256": "e851a168e65c3a593be684f444a251970097f0624d075a05a1128ce11a8c75c1"
+      "bytes": 27665262,
+      "sha256": "5331c97e8063adbda7d20e19a48d050e88f33ac76bd006c708b08f09303dff7f"
     },
     "combined/state=MN/state=MN.json": {
-      "bytes": 4830,
-      "sha256": "a453e8133d373dc47bb6d59e3837fa35af79c3028cb0bf5c23d798cee798c7f9"
+      "bytes": 4871,
+      "sha256": "5b3c946c663d96e9ac8283909dc0c3f7fc96ca8d15af5e66436f43379ccd9397"
     },
     "combined/state=MO/data.parquet": {
-      "bytes": 8868193,
-      "sha256": "9a3e579d2dd4423823fd627e30acd1ee786b08ad773d492752fee6aeb4f06e06"
+      "bytes": 8872984,
+      "sha256": "d6a7fd590c1f3e4dee296c25c6aa8a5edb1b1382bbd3bf6bee41a430378b5646"
     },
     "combined/state=MO/state=MO.json": {
-      "bytes": 4829,
-      "sha256": "39337bc1b39e5b31a49864ca370d30c53108f50e95302b48a360297ebb3085ce"
+      "bytes": 4867,
+      "sha256": "7380d5ce6409f0f8c9818bf778722a25c1e3e64c3ae663783083c73158053ed8"
     },
     "combined/state=MP/data.parquet": {
-      "bytes": 274387,
-      "sha256": "a7a5fe491981be7ff42e868d44122e3e14b9d51a4c607ff4465b69457ce714e0"
+      "bytes": 267824,
+      "sha256": "f23e362b2a955f548dfc74556c25e72c795d080eaf597772501c00d841065121"
     },
     "combined/state=MP/state=MP.json": {
-      "bytes": 4873,
-      "sha256": "d453a1b9015bb35a49f7b953e49e79ef2f48f5e534f68d70402ce3e3ad729b2a"
+      "bytes": 4901,
+      "sha256": "88de1cbba1df6d786db2b820c380c3bfe4f75986cd4cb2301dadc549d622e22a"
     },
     "combined/state=MS/data.parquet": {
-      "bytes": 6592810,
-      "sha256": "a3cc56f3bdc538673653eb98ea1ace9e4e6631c23450f1a38d8c7fb3c61fa6af"
+      "bytes": 6571030,
+      "sha256": "dc3b548af81a1a8d1aa5368580b97a958fd4225d1d40cba48bb6da47758a88e5"
     },
     "combined/state=MS/state=MS.json": {
-      "bytes": 4839,
-      "sha256": "fd10e4c0d92f22f9670d8b093a4eb61b851e534c98362efba8d0b6e0b18dacc7"
+      "bytes": 4870,
+      "sha256": "1451f71fa73922455ff00c305d52f5cc9dd5cc2a9dec711d6fca77e5e79f1c2f"
     },
     "combined/state=MT/data.parquet": {
-      "bytes": 34284383,
-      "sha256": "d7201e1957ec4dc7b078852ee4d32abcdf5dc0ac14a3e43967d5129e2b9c675f"
+      "bytes": 34280096,
+      "sha256": "45e572e8486f69067642999869c74fe62f61df49acb359990b6523346580b5af"
     },
     "combined/state=MT/state=MT.json": {
-      "bytes": 4835,
-      "sha256": "90ebc7dfb6fcc6b3e7db71dbb648de67b34e2c44ca62238667eff3b21ab59766"
+      "bytes": 4876,
+      "sha256": "e0c381031d67b7425a45332b9d7f730c301b845e3ab1265a87c84e7d3d9d8b80"
     },
     "combined/state=NC/data.parquet": {
-      "bytes": 81048688,
-      "sha256": "86bb43b166d0d9fc5d44d20583e53410dbfe3cdac747a920484ea0568ebf09be"
+      "bytes": 81119675,
+      "sha256": "0f73c4b17a19df6d9310253ed9b0d6a159cab18be215c7b9370ef0fff083f556"
     },
     "combined/state=NC/state=NC.json": {
-      "bytes": 4835,
-      "sha256": "589a8c4e4f2b98cbadde3ed16f51033644ef63a2ce228b788f239998a2147286"
+      "bytes": 4881,
+      "sha256": "cdd6b04ea106f3018e7d9cd898bbe915713e8adead99fa3ae711576ee53ee14d"
     },
     "combined/state=ND/data.parquet": {
-      "bytes": 13541748,
-      "sha256": "ed6f7221da9c984791fa6c74fd4c7087666a47c2a4b9fc43290f9c4a37a9a763"
+      "bytes": 13558649,
+      "sha256": "1b8bba9890bbea8693178bdf0e7b2444def4d0cf95f128abc786a7f0d1edc910"
     },
     "combined/state=ND/state=ND.json": {
-      "bytes": 4842,
-      "sha256": "2b7e38373482976be313489c881ac4567b0dd23d5ce4b0ecab7caac8202d5d42"
+      "bytes": 4883,
+      "sha256": "ff55f7bc7bb9dc3194296e1708d3ab012f5eb507d28e119f5f47a9b0f485acff"
     },
     "combined/state=NE/data.parquet": {
-      "bytes": 4617141,
-      "sha256": "899de0b738f8ab28dcbf4d2797e052985a67836f76cfb79b897b72b371adde71"
+      "bytes": 4614144,
+      "sha256": "cc5aa66d361a09f5a67934a0fa1a167d9fc41d51555f90d71abcbaeda6cdef72"
     },
     "combined/state=NE/state=NE.json": {
-      "bytes": 4837,
-      "sha256": "d09ef94a5cb7e2bc1bcca27d3d670356fe186b85ab1b99bc6116ba689227dc4e"
+      "bytes": 4867,
+      "sha256": "e659dd98adda13f5e71cc942163ed811d98d5495c21ef73caf0df143bced6da6"
     },
     "combined/state=NH/data.parquet": {
-      "bytes": 17916604,
-      "sha256": "2459444c37f11727e49c7f91dbefa4dc64fddacb58bdfd5209e4586bea104060"
+      "bytes": 17850454,
+      "sha256": "706ebdee949018d4e77e819941dca6d6f9ec762a9648b6f16cee52f565a0375b"
     },
     "combined/state=NH/state=NH.json": {
-      "bytes": 4844,
-      "sha256": "38368c733a0de85f21d239309383c7ff8dabf41f2f04b358cc2958b966c8604a"
+      "bytes": 4873,
+      "sha256": "40b5258a4070bd53da26a87f53a6a361c185eb096549bdbb444ce2cf615e08ec"
     },
     "combined/state=NJ/data.parquet": {
-      "bytes": 49152367,
-      "sha256": "6a857efa86ae04327e799917350c15e57cfd3c49cfa48a128200288307c0ef0e"
+      "bytes": 49136006,
+      "sha256": "205ac301af25f1758d7459c24b3e629f528940605f7c2c0581de68db89eaf442"
     },
     "combined/state=NJ/state=NJ.json": {
-      "bytes": 4832,
-      "sha256": "361df8c4297e2734f8c7ecef5a0487c56693c51a040093400eed65e22db02d97"
+      "bytes": 4869,
+      "sha256": "932c11cd9ba1915120ddefb8d35af597e753831063342d4996edfbaa729635c3"
     },
     "combined/state=NM/data.parquet": {
-      "bytes": 16980295,
-      "sha256": "f53cf38b205b48c6d6825b070a7adba57c72566bda0ab84b8bdb9df5be5fac07"
+      "bytes": 17004712,
+      "sha256": "c90e941714c2885fa05d5a47a2752243e9de0a356c7c53724706d84e3ea506b1"
     },
     "combined/state=NM/state=NM.json": {
-      "bytes": 4841,
-      "sha256": "c6c33ead215f5496f773a8d68d8505d2b9da578b1feca1cbcca710e25a379b02"
+      "bytes": 4876,
+      "sha256": "3cdaf8aec063764bcaf9a32929d34d8bab8f73d21c49639b8bcc478a742766eb"
     },
     "combined/state=NV/data.parquet": {
-      "bytes": 32786766,
-      "sha256": "2e5e4c50c89f11f66c739f4b4866e2202781f6306693be2162873c9488ec6b1b"
+      "bytes": 32789524,
+      "sha256": "63aeaa5b92cc6edb99281fd8ef3861dc85a06b5aa9918ed4f0db537300167f24"
     },
     "combined/state=NV/state=NV.json": {
-      "bytes": 4833,
-      "sha256": "c4189b9f901c9a27851fe3acabe242615c35bf61c43cbbe743603bd4888cd515"
+      "bytes": 4863,
+      "sha256": "92262a235cdcb6099bc477c100e91f6463f38be342ed37c3f3ae2c091496410a"
     },
     "combined/state=NY/data.parquet": {
-      "bytes": 39816957,
-      "sha256": "43d0bce250ed188fb0868eafd88ea754887f78fb44c46e2df11f7821bea24d0b"
+      "bytes": 39795042,
+      "sha256": "d889ebea0dfea18ccb9c3625ade642a749925cf1ba03dca3142885125ea04a83"
     },
     "combined/state=NY/state=NY.json": {
-      "bytes": 4832,
-      "sha256": "b9fee0304b3411f3640bb05ffd17d53e25a2cd52337736c7f58533b30b6df1b9"
+      "bytes": 4866,
+      "sha256": "bce0e95a8f895047093403d8eb5f6c5099daed0e7cc96bfce31b91e324a36d40"
     },
     "combined/state=OH/data.parquet": {
-      "bytes": 13491657,
-      "sha256": "47f2639137ca178941ae8c7b5f70bea3cb69d634d717220704b3048df6c81c32"
+      "bytes": 13480519,
+      "sha256": "070fc8713f10bb18b695a8ba92b63aa8e47fa8b494e5a18b34c853ac759f90ef"
     },
     "combined/state=OH/state=OH.json": {
-      "bytes": 4826,
-      "sha256": "e8224bb96e9af361a44bf8d2ebddc9df6c476022c429d3eda158bff785b32f12"
+      "bytes": 4864,
+      "sha256": "c6092fa8e30f95db9fa5074b7cbedf6d4d6a4cddf818eca6901e868ec53981b9"
     },
     "combined/state=OK/data.parquet": {
-      "bytes": 8421125,
-      "sha256": "6c13dd55bc5554e18d794807ccc2861b28138f0ff810cca61ca9794aef382b20"
+      "bytes": 8448436,
+      "sha256": "d5c65d894bab36c5b17440cfa96b12383dc2412382fafcb76f9b860bbe327899"
     },
     "combined/state=OK/state=OK.json": {
-      "bytes": 4827,
-      "sha256": "9e71152ff140970daccaea6214282ad320d2f65b4db3e20d2c1394be2c9023cb"
+      "bytes": 4875,
+      "sha256": "7b73c7a9e09a7f6b833d6f0210387e4e724b9e159718f0f79e09eeb843f63280"
     },
     "combined/state=OR/data.parquet": {
-      "bytes": 57034480,
-      "sha256": "5f2403f0e5d178b36cb8a8445fc7aa528646a4a5524da2116527fbdca1dca6ed"
+      "bytes": 57197965,
+      "sha256": "9e9be7ab6c7bfe2beeea4500825074a2fe0d23d6b8aae21dcf2aa7c75d094622"
     },
     "combined/state=OR/state=OR.json": {
-      "bytes": 4830,
-      "sha256": "d053afc49d90ab83b15b89025a2191bc44f827f8538e69ace65270bf8684a6d7"
+      "bytes": 4875,
+      "sha256": "557a23e3b21bb01f7d2210f9f687fc84a9a25d1f6ff7bbea79e475dbcd7af5a2"
     },
     "combined/state=PA/data.parquet": {
-      "bytes": 90400190,
-      "sha256": "d4b4a3b07bb412a6a3d5231bcd6ce419730af65428a1df5153a42eae077ba1d9"
+      "bytes": 90351029,
+      "sha256": "11dc899e527aa4160452ae424e39214b308b4f732301bf88de773a5c366853b1"
     },
     "combined/state=PA/state=PA.json": {
-      "bytes": 4842,
-      "sha256": "a31224bba0ba4027df45ae5d8d4235e7852d4cf78eb6b39e377379d33e8ca26a"
+      "bytes": 4880,
+      "sha256": "00334f7193fbc50ddf8677c1ff896e54da19c2ed8e08873494a014f8a040649f"
     },
     "combined/state=PR/data.parquet": {
-      "bytes": 3056305,
-      "sha256": "917ed2d7be3a7055103708cc3e6f8299f0b8ab1e482a3ec8d7cf8b584e35771b"
+      "bytes": 3079957,
+      "sha256": "819da7def3bba8797a170ac12fed5a92b8b21f8bddcf2c1bb495beb0ac23aa52"
     },
     "combined/state=PR/state=PR.json": {
-      "bytes": 4838,
-      "sha256": "8bc4daf924a3fafae70f4084621bbaba8b1f3e21383702cdc36fd21158a77a0c"
+      "bytes": 4876,
+      "sha256": "15ba94c1673839411a03cc5dd6cbc4ae925c9c5a75df736e6f09a17c18837dd7"
     },
     "combined/state=RI/data.parquet": {
-      "bytes": 5779746,
-      "sha256": "6b496896204ddb409283f1654b5a49d6609637ccd138d53b132d04788b2f3eee"
+      "bytes": 5787805,
+      "sha256": "5287b671f9590d87defdb15c538a8211d0d910f23ef93adf5726e17eafd32ea6"
     },
     "combined/state=RI/state=RI.json": {
-      "bytes": 4836,
-      "sha256": "15d1fa3e054bd5cbfc5d69f2ece1a26a86505f7bdcaa55bc71e90cc0600bee60"
+      "bytes": 4875,
+      "sha256": "9dc03516fbbb24f240d5f207892c5218b9195945bd135e4e3bacacd14fda9a13"
     },
     "combined/state=SC/data.parquet": {
-      "bytes": 16149429,
-      "sha256": "a20b04c5f51818f049446c0c00f84b3cfaf8d7be89ea90a37acf1a4ff7cb38e4"
+      "bytes": 16159312,
+      "sha256": "2006498cf361c3c0f4ec638ff954ef9fe717c8465eb386a22160a559e4589ad6"
     },
     "combined/state=SC/state=SC.json": {
-      "bytes": 4836,
-      "sha256": "5c006e103c0b8df6ad8852c099fcb416756ac4f369b28717f7f3aea1ee8116d1"
+      "bytes": 4876,
+      "sha256": "26f0899d246481f97c060480b56758e74651042b893e9e4a00e07998b1471a61"
     },
     "combined/state=SD/data.parquet": {
-      "bytes": 14276421,
-      "sha256": "7e67515b78daa89f3f413f616772da53fb93dc670a5bda3af892b7861a120071"
+      "bytes": 14280303,
+      "sha256": "d5c9058173993897edc84af9d025fa3f029db11712f69c8ee25e8af409979112"
     },
     "combined/state=SD/state=SD.json": {
-      "bytes": 4842,
-      "sha256": "3ab59850a5883d093c09c53fd34185bfff73e04ac9aecd60195a9d3cfa3b3a5f"
+      "bytes": 4877,
+      "sha256": "e01984fb6d90eb026f1fa24e5609bfcc1c1e33b9c6f762676f4153c3e9a1be43"
     },
     "combined/state=TN/data.parquet": {
-      "bytes": 29125169,
-      "sha256": "ae567e2b8443ba34f36236b51ca927c2b96b143b848766a051d6a63d3d04d907"
+      "bytes": 29146617,
+      "sha256": "fe69351a6ef8cc3d90be5d0b2d1e82374db2a953f775fcbcc0f6cb24b99aff28"
     },
     "combined/state=TN/state=TN.json": {
-      "bytes": 4835,
-      "sha256": "ce4544f1e40a98041cf647e91332d0fea7f4c99875eb656b45ab95038653eb82"
+      "bytes": 4874,
+      "sha256": "e326c97678c434aad9aaa3fe4929a9169797e182fdbc5fc2af7eff80c01ce641"
     },
     "combined/state=TX/data.parquet": {
-      "bytes": 43511744,
-      "sha256": "73d1afd2191c35610129f76beeacd20a297e9885443001f55786835aaa905a95"
+      "bytes": 43505244,
+      "sha256": "a003932771062cef64a6a31bde613c54b5b1193f565d03cb5816d00ad22a12df"
     },
     "combined/state=TX/state=TX.json": {
-      "bytes": 4833,
-      "sha256": "f581ae9d2f10b0b0099611a8f3bdc77476eff179095d6cf30f195a30f82d059d"
+      "bytes": 4871,
+      "sha256": "bd5664201f04aa611bfa8ec36b7d5e3b786444c403fc4ddbe2b0b2a8028984f0"
     },
     "combined/state=UM/data.parquet": {
-      "bytes": 121629,
-      "sha256": "9c4a352744e02f5b1b518dd70e7027b229b6a60d5c45db46c277f74212c9ebec"
+      "bytes": 121601,
+      "sha256": "9e429d463cfa4c3a551749b1451503e98b7f9f88e5d99af0fafce253751f8b7d"
     },
     "combined/state=UM/state=UM.json": {
-      "bytes": 4879,
-      "sha256": "195c7abd72fd7a875114cc656e1e4a803f55b14a8da126142f1cd8c9fb67840b"
+      "bytes": 4911,
+      "sha256": "02baddedb67f39247b462ef090a9e9251d6e72ac37dec4a4a0984dc02055d4a6"
     },
     "combined/state=UNKF/data.parquet": {
-      "bytes": 9326717,
-      "sha256": "ff18fbb4f8fd6f87797348baaf9dc25bbfefbe385bdf58fca21711d004ae219e"
+      "bytes": 9331210,
+      "sha256": "b4e3e0d5355392cc7e60072a44103879f2a5faa3f5599d78ffb0705f0410e73a"
     },
     "combined/state=UNKF/state=UNKF.json": {
-      "bytes": 4834,
-      "sha256": "e3185b1ca2a17a120b1cc5eb49284d28f02dda2ec858b66a9f7080b5e9536f9c"
+      "bytes": 4868,
+      "sha256": "d5979c3ead9ae5f2b5a80281ec4bff74fc1b149a735f99375a444b027bdda49b"
     },
     "combined/state=UT/data.parquet": {
-      "bytes": 24671370,
-      "sha256": "06e12610444c9ea5812aa7e832253a312103b5ad2f6f9ffd97307adecfcd8650"
+      "bytes": 24679882,
+      "sha256": "ed11c629e803c579530431c0f248a6fc23a7ce35cc5c53dfb811c77bf44013b1"
     },
     "combined/state=UT/state=UT.json": {
-      "bytes": 4832,
-      "sha256": "80354275280c27a85da7f689bffb23a8dfa32490ddfb7b2318195de92d6aaaa5"
+      "bytes": 4868,
+      "sha256": "c42b1bd8857d28ae872d3799c6b2c1c4757973d6052d32a3cbedfbf4d1e964d7"
     },
     "combined/state=VA/data.parquet": {
-      "bytes": 71236536,
-      "sha256": "1f828b70677afb5f24823ccd31473f7c9be2bedad7502859e90f1463fbf72a36"
+      "bytes": 70996318,
+      "sha256": "6236b1f8e47ad9b08e27fdf803086762aa598f86f8f42afaab9abd7a2f5786f8"
     },
     "combined/state=VA/state=VA.json": {
-      "bytes": 4835,
-      "sha256": "363a8956ad6a00a7e6894cf1560d027085177102ca8b7f913cb81f51c3f65acf"
+      "bytes": 4872,
+      "sha256": "a4967fab79b63023e965cd28a927f781e0f987687cb06070592992a96eb7ee4a"
     },
     "combined/state=VI/data.parquet": {
-      "bytes": 742097,
-      "sha256": "16b0c78513653311d1f61f8ccaf9b64827eb6d60df6764b96a3b79d9348d52fb"
+      "bytes": 745194,
+      "sha256": "15f461375252e9612c234314cf2801821a7358a94267ecd1d7fdd074520327b5"
     },
     "combined/state=VI/state=VI.json": {
-      "bytes": 4847,
-      "sha256": "c9ff50d4996b04e19ea5024bd95207e2e582b59ff1430f417b793104d8c26cb9"
+      "bytes": 4886,
+      "sha256": "4faa7071b9117e7b2ba5ebb7bb22662244de43bb2852c2f7f2dfdbf33511af27"
     },
     "combined/state=VT/data.parquet": {
-      "bytes": 25077638,
-      "sha256": "64669d4cde887b21117d6aece6b7d8977d158603aa6bfb5764f89a5c8fd8ec14"
+      "bytes": 25032167,
+      "sha256": "ae0645ced38785d296b7b3a8b916f9a808120380c82dab2fb68d55ab39022fda"
     },
     "combined/state=VT/state=VT.json": {
-      "bytes": 4840,
-      "sha256": "708a91c8b86f0df2955505e632ce027e49917bf557f334f8009c25d63ca6f25c"
+      "bytes": 4868,
+      "sha256": "7bbdd92fb60cea841977d7ebb8fe479d690ba2aa1cb483084bca49972b5933e5"
     },
     "combined/state=WA/data.parquet": {
-      "bytes": 43542012,
-      "sha256": "9b43b6396736db53c6129ba38fc370515a3802faa100e9bb12421487bb2ce1ce"
+      "bytes": 43306630,
+      "sha256": "54d878793c0980d45b1b2ca30fbd6b68c1181318aa9875ac7fa202309bb1b5d5"
     },
     "combined/state=WA/state=WA.json": {
-      "bytes": 4842,
-      "sha256": "fc6a8ec57ab7b35e038952caf7f591ea2de98f8089a82966bed0dfedc200b30b"
+      "bytes": 4883,
+      "sha256": "52acbee7ee0206aa3e5af46cfb754769749ce1124b4452e9a00afad10e08daf3"
     },
     "combined/state=WI/data.parquet": {
-      "bytes": 27158052,
-      "sha256": "6aa773f51c70687323b703fd44dc04a946dd00f7a7d528d7cf014c032613e840"
+      "bytes": 27192046,
+      "sha256": "059abcfff223224472044117c684eb5e226ab9d41c6a3e5083b89d8c8b468818"
     },
     "combined/state=WI/state=WI.json": {
-      "bytes": 4837,
-      "sha256": "81ee8f35b52a7990017e885b2d59e16d43f485633c456982ff1dca2ab9df08ab"
+      "bytes": 4868,
+      "sha256": "1edbe4211b2562821a03f3e46c31bb86ee7c191c5b7011c4d0ecfd8f08bc897e"
     },
     "combined/state=WV/data.parquet": {
-      "bytes": 6693862,
-      "sha256": "b80282eb6155963c1fcedf0a9fce4587ef73d74fc40f9ca28f71128bb9e2932e"
+      "bytes": 6693571,
+      "sha256": "aa086fee68754fcd5de9c28a79618db1d932840c8bc8310ac843998e8864f8e6"
     },
     "combined/state=WV/state=WV.json": {
-      "bytes": 4836,
-      "sha256": "6a4a5883bd0df740f49c081938a1c06e73f2dc2661852816351dac9f3e01f518"
+      "bytes": 4874,
+      "sha256": "872754499f976f174b3283b4edc023ce42029d5babe8727b265385334fb50a08"
     },
     "combined/state=WY/data.parquet": {
-      "bytes": 17036323,
-      "sha256": "1f67ba257633e270240fa96b81ebaab1ea2dfe52d85e8584f9284adc8d7c817f"
+      "bytes": 17178666,
+      "sha256": "6fe2409a078aaacd85677baacd625fe53b79b95aba3b166ed2fa8676a9211134"
     },
     "combined/state=WY/state=WY.json": {
-      "bytes": 4836,
-      "sha256": "0d924afc7acb7bcaeb43ba2f495df8346c74952413c8db1978a2a8e20c8a7833"
+      "bytes": 4874,
+      "sha256": "9d938084718ea74036ba995933ccdad6eee8a8f02304fe8a5200ee5a5974a5cb"
     },
     "combined/styles/default.json": {
       "bytes": 650,
       "sha256": "533ce93fd0197468f0187ed20c665d3b929acfbde8031215211ab7259c5a01a5"
     },
     "combined/thumbnail.png": {
-      "bytes": 3765,
-      "sha256": "a5aa3af404ab5aada2bcefd75eeef653a296f2b9445a9f3403daa219e4e7f9f6"
+      "bytes": 3756,
+      "sha256": "64d4b6025b187b8d1c9b8e872cf1e920ae7040abf464cbe0c216e3a456c09971"
     },
     "combined/versions.json": {
-      "bytes": 14442,
-      "sha256": "6b64872f0e698d1c1d03be4aae4586f28ecc03647489b28814abcfcd34ff2d21"
+      "bytes": 14458,
+      "sha256": "43bc5ab02fe08e370f4fe8ca27d3f7f5faebe1f03e828dee2e99f9ccd387e479"
     }
   },
   "totals": {
     "parquet_files": 58,
-    "parquet_bytes": 1793551650
+    "parquet_bytes": 1793344388
   }
 }

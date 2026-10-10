@@ -13,33 +13,33 @@
     "coordinates": [
       [
         [
-          -68.11160373750728,
-          17.782980000197533
+          -68.11160373750727,
+          17.782980000197572
         ],
         [
           -65.20055094073693,
-          17.782980000197533
+          17.782980000197572
         ],
         [
           -65.20055094073693,
-          18.64577499803883
+          18.64577499803884
         ],
         [
-          -68.11160373750728,
-          18.64577499803883
+          -68.11160373750727,
+          18.64577499803884
         ],
         [
-          -68.11160373750728,
-          17.782980000197533
+          -68.11160373750727,
+          17.782980000197572
         ]
       ]
     ]
   },
   "bbox": [
-    -68.11160373750728,
-    17.782980000197533,
+    -68.11160373750727,
+    17.782980000197572,
     -65.20055094073693,
-    18.64577499803883
+    18.64577499803884
   ],
   "properties": {
     "title": "PAD-US 4.1 Combined by state: Puerto Rico",
@@ -49,9 +49,9 @@
     "table:primary_geometry": "SHAPE",
     "table:columns": [
       {
-        "name": "_cng_fid",
+        "name": "OBJECTID",
         "type": "bigint",
-        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+        "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
       },
       {
         "name": "FeatClass",
@@ -193,7 +193,7 @@
       {
         "name": "SHAPE",
         "type": "geometry",
-        "description": "Feature geometry, WKB, OGC:CRS84."
+        "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
       },
       {
         "name": "bbox",
@@ -227,8 +227,8 @@
       "roles": [
         "data"
       ],
-      "file:size": 3056305,
-      "file:checksum": "1220917ed2d7be3a7055103708cc3e6f8299f0b8ab1e482a3ec8d7cf8b584e35771b",
+      "file:size": 3079957,
+      "file:checksum": "1220819da7def3bba8797a170ac12fed5a92b8b21f8bddcf2c1bb495beb0ac23aa52",
       "proj:code": "OGC:CRS84"
     }
   }

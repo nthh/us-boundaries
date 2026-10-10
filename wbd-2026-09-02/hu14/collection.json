@@ -6,7 +6,8 @@
     "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "id": "hu14",
   "title": "WBD HUC14 (2026-09-02) by HUC2 region",
@@ -164,6 +165,16 @@
   "partition:file_count": 6,
   "partition:glob": "https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu14/huc2=*/*.parquet",
   "assets": {
+    "visual": {
+      "href": "./hu14.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "WBD HU14 vector tiles (2026-09-02; huc14, name, areasqkm)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 49968094,
+      "file:checksum": "1220bb4999c056071669c67680af680c1b69cabde0601041c544a03827a2884e5c9c"
+    },
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
@@ -173,6 +184,17 @@
       ],
       "file:size": 2234,
       "file:checksum": "1220f1a5d57e6488aeb64ff6a9d0d4a039a582032f025a96589e3e168cd19836ce59"
+    },
+    "style-default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Outlines over a light fill",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "file:size": 653,
+      "file:checksum": "12202e2fb6a2a364788fcb8ba8402b0b16a79a15e19048eaa85bb8d97b1ec42a79ce"
     }
   },
   "links": [
@@ -223,6 +245,15 @@
       "title": "WBD HUC14 (2026-09-02) by HUC2 region: Region 19 Alaska"
     },
     {
+      "rel": "pmtiles",
+      "href": "./hu14.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Web map tiles",
+      "pmtiles:layers": [
+        "hu14"
+      ]
+    },
+    {
       "rel": "via",
       "href": "https://www.usgs.gov/national-hydrography/access-national-hydrography-products",
       "type": "text/html",
@@ -247,5 +278,5 @@
       "title": "Human-readable documentation"
     }
   ],
-  "updated": "2026-10-09T20:23:00Z"
+  "updated": "2026-10-09T22:01:24Z"
 }

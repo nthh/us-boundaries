@@ -4,7 +4,7 @@
   "sources": {
     "data": {
       "type": "vector",
-      "url": "pmtiles://https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu12.pmtiles"
+      "url": "pmtiles://https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu12/hu12.pmtiles"
     }
   },
   "layers": [

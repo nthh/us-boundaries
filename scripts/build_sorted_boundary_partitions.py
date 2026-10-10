@@ -7,7 +7,7 @@
 
 Two public-domain US boundary sets, rebuilt so a reader can range-read a small area:
 
-  padus  PAD-US 4.1 Combined, from the pinned Source Cooperative `cboettig/padus` combined.parquet,
+  padus  PAD-US 4.1 Combined, from USGS's PAD-US 4.1 geodatabase (ScienceBase; pass --source),
          one GeoParquet per `State_Nm` value (hive key `state`).
   wbd    WBD HUC2 through HUC16, from USGS's pinned national File Geodatabase (2026-09-02),
          one GeoParquet per two-digit HUC2 region (hive key `huc2`) for each level.
@@ -51,6 +51,7 @@ import json
 import math
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import time
@@ -71,13 +72,17 @@ SPATIAL_EXTENSION_VERSION = "04270fe"
 
 SOURCES = {
     "padus": {
-        "title": "PAD-US 4.1 Combined (Source Cooperative cboettig/padus)",
-        "url": "https://data.source.coop/cboettig/padus/padus-4-1/combined.parquet",
-        "bytes": 1_858_273_578,
-        "etag": '"f1f0cad991ca44fdcf83af886b07c835-355"',
-        "last_modified": "2026-06-18T07:02:55Z",
-        "sha256": "2c85043d3f3d2b832b110d8e76ad002f15d50a10d586559ed683cbc2d9403582",
-        "filename": "combined.parquet",
+        # ScienceBase serves this zip only through its web app (a script gets an HTML page), and
+        # publishes no checksum for it. Download it in a browser and pass --source; the build pins
+        # the unzipped geodatabase by a digest over its files, which holds for the zip or any copy.
+        "title": "PAD-US 4.1 Geodatabase (USGS Gap Analysis Project, ScienceBase)",
+        "url": "https://www.sciencebase.gov/catalog/item/652d4fc5d34e44db0e2ee45e",
+        "filename": "PADUS4_1Geodatabase.zip",
+        "bytes": 1_523_434_496,
+        "layer": "PADUS4_1Combined_Proclamation_Marine_Fee_Designation_Easement",
+        "gdb_files": 110,
+        "gdb_bytes": 2_058_509_215,
+        "gdb_tree_sha256": "fb402c9cee022e4dd2a4feca1c991f28f421d290428682d2bc8c9f83e437c242",
     },
     "wbd": {
         "title": "USGS Watershed Boundary Dataset, national File Geodatabase",
@@ -248,8 +253,24 @@ HU_LEVEL_NAMES = {
     16: "",
 }
 
-# Upstream WBD vector tiles (cboettig/usgs-wbd mirror) exist for these levels only.
-WBD_PMTILES_BYTES = {8: 789_148_999, 10: 1_961_074_331, 12: 3_970_987_181}
+# PAD-US is reprojected (USGS Albers to OGC:CRS84) and its curved boundaries linearised by GDAL;
+# the build refuses another GDAL, and records PROJ's version with it.
+GDAL_VERSION = "3.13.1"
+PADUS_OGR2OGR_ARGS = [
+    "-t_srs", "OGC:CRS84",
+    "-nlt", "CONVERT_TO_LINEAR",
+    "-nlt", "PROMOTE_TO_MULTI",
+    "-lco", "GEOMETRY_NAME=SHAPE",
+    "-preserve_fid",
+    "-lco", "FID=OBJECTID",
+    "-lco", "WRITE_COVERING_BBOX=NO",
+    "-lco", "COMPRESSION=ZSTD",
+]
+
+# WBD vector tiles are built here, from the same release as the GeoParquet (the upstream
+# cboettig/usgs-wbd tiles are the 2025-01-07 release). The build refuses another tippecanoe.
+TIPPECANOE_VERSION = "v2.79.0"
+TIPPECANOE_ARGS = ["-zg", "--coalesce-densest-as-needed", "--extend-zooms-if-still-dropping"]
 
 # Levels USGS delineates only where a state chose to subdivide further.
 PARTIAL_LEVELS = {14, 16}
@@ -275,10 +296,66 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def gdb_tree_digest(gdb: Path) -> tuple[int, int, str]:
+    """Files, bytes and sha256 over `path<TAB>sha256` lines of a geodatabase (dotfiles skipped)."""
+    lines, total = [], 0
+    files = sorted(p for p in gdb.rglob("*") if p.is_file() and not p.name.startswith("."))
+    for f in files:
+        total += f.stat().st_size
+        lines.append(f"{f.relative_to(gdb).as_posix()}\t{sha256_file(f)}\n")
+    return len(files), total, hashlib.sha256("".join(lines).encode()).hexdigest()
+
+
+def obtain_padus_gdb(given: str | None, work: Path, allow_unpinned: bool) -> tuple[Path, dict]:
+    """Find the hand-downloaded PAD-US geodatabase (.zip, its folder, or the .gdb) and check the pin."""
+    pin = SOURCES["padus"]
+    if not given or given.startswith(("http://", "https://")):
+        raise SystemExit(
+            f"PAD-US needs --source: download {pin['filename']} from {pin['url']} in a browser "
+            "(ScienceBase has no scriptable link), then pass the .zip, its folder or the .gdb"
+        )
+    path = Path(given).expanduser().resolve()
+    if path.suffix == ".zip":
+        dest = work / "inputs" / "padus"
+        print(f"unzipping {path} -> {dest}", file=sys.stderr)
+        with zipfile.ZipFile(path) as z:
+            z.extractall(dest)
+        path = dest
+    if path.suffix != ".gdb":
+        found = sorted(path.glob("*.gdb"))
+        if len(found) != 1:
+            raise SystemExit(f"expected one .gdb in {path}, found {len(found)}")
+        path = found[0]
+    files, total, digest = gdb_tree_digest(path)
+    if (files, total, digest) != (pin["gdb_files"], pin["gdb_bytes"], pin["gdb_tree_sha256"]) and not allow_unpinned:
+        raise SystemExit(
+            f"{path}: {files} files, {total:,} bytes, tree sha256 {digest} differ from the pin "
+            f"({pin['gdb_files']}, {pin['gdb_bytes']:,}, {pin['gdb_tree_sha256']})"
+        )
+    record = {k: pin[k] for k in ("title", "url", "filename", "bytes", "layer")}
+    record.update(gdb_files=files, gdb_bytes=total, gdb_tree_sha256=digest,
+                  retrieval="downloaded by hand from ScienceBase (no scriptable link)")
+    return path, record
+
+
+def gdal_versions() -> dict:
+    exe = shutil.which("ogr2ogr")
+    if not exe:
+        raise SystemExit("ogr2ogr (GDAL) is not on PATH (needed to reproject PAD-US)")
+    found = subprocess.run([exe, "--version"], capture_output=True, text=True).stdout.split()[1].rstrip(",")
+    if found != GDAL_VERSION:
+        raise SystemExit(f"GDAL {found}; this build pins {GDAL_VERSION}")
+    proj = subprocess.run(["projinfo"], capture_output=True, text=True)
+    proj_version = (proj.stdout + proj.stderr).split("Rel. ")[-1].split(",")[0] if "Rel. " in proj.stdout + proj.stderr else "unknown"
+    return {"gdal": found, "proj": proj_version}
+
+
 def obtain_source(
     kind: str, given: str | None, work: Path, allow_unpinned: bool
 ) -> tuple[Path, dict]:
     """Return a local path to the pinned input and the source record for the manifest."""
+    if kind == "padus":
+        return obtain_padus_gdb(given, work, allow_unpinned)
     pin = SOURCES[kind]
     record = {k: pin[k] for k in ("title", "url", "bytes", "etag", "last_modified", "sha256")}
     if given and not given.startswith(("http://", "https://")):
@@ -565,6 +642,48 @@ def write_partition(
 # ── STAC / Portolan metadata ────────────────────────────────────────────────────────────────────
 
 
+def tippecanoe_version() -> str:
+    exe = shutil.which("tippecanoe")
+    if not exe:
+        raise SystemExit("tippecanoe is not on PATH (needed for the vector tiles)")
+    found = subprocess.run([exe, "--version"], capture_output=True, text=True).stderr.split()[-1]
+    if found != TIPPECANOE_VERSION:
+        raise SystemExit(f"tippecanoe {found}; this build pins {TIPPECANOE_VERSION}")
+    return found
+
+
+def build_pmtiles(files: list[Path], attributes: list[str], layer: str, path: Path) -> dict:
+    """Stream the partition files through GDAL as GeoJSON features into tippecanoe.
+
+    GDAL reads one partition at a time with little memory. Only `attributes` go into the tiles
+    (display needs a code and a name; the GeoParquet keeps every attribute). GDAL's GeoJSONSeq
+    writer converts NAD83 to WGS84, as RFC 7946 requires.
+    """
+    tippecanoe_version()
+    gdal_versions()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    started = time.monotonic()
+    proc = subprocess.Popen(
+        # Run beside the output with a bare file name: tippecanoe records its command line in the
+        # file's metadata, and a local path would be published with it.
+        ["tippecanoe", "-q", "-f", *TIPPECANOE_ARGS, "-l", layer, "-o", path.name],
+        stdin=subprocess.PIPE,
+        cwd=path.parent,
+    )
+    for f in files:
+        subprocess.run(
+            ["ogr2ogr", "-f", "GeoJSONSeq", "/vsistdout/", str(f), "-select", ",".join(attributes)],
+            stdout=proc.stdin,
+            check=True,
+        )
+    proc.stdin.close()
+    if proc.wait() != 0:
+        raise SystemExit(f"tippecanoe failed for {layer}")
+    facts = {"bytes": path.stat().st_size, "sha256": sha256_file(path)}
+    print(f"{layer}: {facts['bytes']:,} bytes of tiles in {time.monotonic() - started:.0f}s", file=sys.stderr)
+    return facts
+
+
 def multihash(sha256_hex: str) -> str:
     return "1220" + sha256_hex
 
@@ -748,7 +867,7 @@ def write_collection(
     style = tiles and {
         "version": 8,
         "name": spec["title"],
-        "sources": {"data": {"type": "vector", "url": f"pmtiles://{spec['pmtiles']['href']}"}},
+        "sources": {"data": {"type": "vector", "url": f"pmtiles://{tiles.get('style_url', tiles['href'])}"}},
         "layers": [
             {
                 "id": f"{cid}-fill",
@@ -810,6 +929,7 @@ def write_collection(
                 "title": tiles["title"],
                 "roles": ["visual"],
                 "file:size": tiles["bytes"],
+                **({"file:checksum": multihash(tiles["sha256"])} if tiles.get("sha256") else {}),
             }} if tiles else {}),
             "thumbnail": {
                 "href": "./thumbnail.png",
@@ -837,7 +957,7 @@ def write_collection(
                     "pmtiles",
                     tiles["href"],
                     "application/vnd.pmtiles",
-                    "Web map tiles (upstream)",
+                    "Web map tiles" if tiles.get("sha256") else "Web map tiles (upstream)",
                 ),
                 "pmtiles:layers": [tiles["layer"]],
             }] if tiles else []),
@@ -849,6 +969,9 @@ def write_collection(
         "updated": updated,
     }
     write_json(cdir / "collection.json", collection)
+    if tiles and tiles.get("sha256"):
+        rel_tiles = tiles["href"].removeprefix("./")
+        assets[rel_tiles] = {"sha256": tiles["sha256"], "size_bytes": tiles["bytes"], "href": rel_tiles}
     write_json(
         cdir / "versions.json",
         {
@@ -937,13 +1060,32 @@ partition's row-group budget and large-feature threshold."""
 
 def build_padus(args: argparse.Namespace) -> None:
     out, work = prepare_dirs(args)
-    src, source = obtain_source("padus", args.source, work, args.allow_unpinned_source)
+    gdb, source = obtain_source("padus", args.source, work, args.allow_unpinned_source)
+    tools = gdal_versions()
+    inter = work / "inputs" / "padus" / "combined-crs84.parquet"
+    marker = inter.with_suffix(".from")
+    stamp = f"{source['gdb_tree_sha256']} gdal {tools['gdal']} {' '.join(PADUS_OGR2OGR_ARGS)}"
+    if not (inter.is_file() and marker.is_file() and marker.read_text() == stamp):
+        print(f"reprojecting {source['layer']} -> {inter}", file=sys.stderr)
+        inter.parent.mkdir(parents=True, exist_ok=True)
+        partial = inter.with_suffix(".part.parquet")
+        subprocess.run(
+            ["ogr2ogr", "-f", "Parquet", str(partial), str(gdb), source["layer"], *PADUS_OGR2OGR_ARGS],
+            check=True,
+        )
+        os.replace(partial, inter)
+        marker.write_text(stamp)
+    source["transform"] = {
+        **tools,
+        "command": f"ogr2ogr -f Parquet combined-crs84.parquet PADUS4_1Geodatabase.gdb {source['layer']} "
+        + " ".join(PADUS_OGR2OGR_ARGS),
+    }
     con = connect(work, args.memory_limit, args.threads)
-    rel = f"read_parquet('{src}')"
+    rel = f"read_parquet('{inter}')"
     states = [s for (s,) in con.sql(f"SELECT DISTINCT State_Nm FROM {rel} ORDER BY 1").fetchall()]
     if None in states:
         raise SystemExit(
-            "combined.parquet has rows with a NULL State_Nm; decide where they go first"
+            "the Combined layer has rows with a NULL State_Nm; decide where they go first"
         )
     wanted = states if not args.only else [s for s in states if s in set(args.only.split(","))]
     total = con.sql(f"SELECT count(*) FROM {rel}").fetchone()[0]
@@ -953,9 +1095,9 @@ def build_padus(args: argparse.Namespace) -> None:
         started = time.monotonic()
         facts = write_partition(
             con,
-            f"SELECT * EXCLUDE (bbox) FROM {rel} WHERE State_Nm = '{state}'",
+            f"SELECT * FROM {rel} WHERE State_Nm = '{state}'",
             "SHAPE",
-            "_cng_fid",
+            "OBJECTID",
             out / cid / f"state={state}" / "data.parquet",
             None,
             args.row_group_bytes,
@@ -988,11 +1130,6 @@ def build_padus(args: argparse.Namespace) -> None:
             "url": "https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview",
             "roles": ["producer", "licensor"],
         },
-        {
-            "name": "Carl Boettiger (Source Cooperative cboettig/padus, GeoParquet conversion)",
-            "url": "https://source.coop/cboettig/padus",
-            "roles": ["processor"],
-        },
         {"name": args.host_name, "url": args.host_url, "roles": ["host"]},
     ]
 
@@ -1004,11 +1141,17 @@ https://doi.org/10.5066/P96WBCHS), Combined layer (fee, easement, designation, p
 marine records), split into one spatially sorted GeoParquet file per `State_Nm` value.
 
 - License: public domain (US Government work). Please cite USGS GAP as the producer.
-- Provenance: built byte-for-byte from `combined.parquet` in Source Cooperative `cboettig/padus`
-  (`padus-4-1/`, {source["bytes"]:,} bytes, ETag `{source["etag"]}`, sha256 `{source["sha256"]}`),
-  which converts the USGS release. Attributes and geometry WKB are unchanged; the source `bbox`
-  column is recomputed from the geometry, and rows are reordered.
-- CRS: OGC:CRS84 (longitude, latitude), as in the source.
+- Provenance: layer `{source["layer"]}` of USGS's
+  `{source["filename"]}` ({source["bytes"]:,} bytes, ScienceBase item {source["url"]}). ScienceBase
+  serves it only through its web app and publishes no checksum, so it was downloaded by hand and
+  is pinned by its unzipped geodatabase: {source["gdb_files"]} files, {source["gdb_bytes"]:,} bytes,
+  tree sha256 `{source["gdb_tree_sha256"]}` (sha256 over sorted `path<TAB>sha256` lines).
+- Transform: GDAL {source["transform"]["gdal"]} (PROJ {source["transform"]["proj"]}) reprojects from USGS Albers
+  (ESRI:102039, NAD83) to OGC:CRS84 and linearises the curved boundaries some records carry:
+  `{source["transform"]["command"]}`. Attributes are unchanged; rows are reordered and a `bbox`
+  column is added. `SHAPE_Length` and `SHAPE_Area` are the geodatabase's values, in Albers metres.
+- CRS: OGC:CRS84 (longitude, latitude). NAD83 to WGS84 uses PROJ's default operation, good to
+  about a metre.
 - Build: [`scripts/build_sorted_boundary_partitions.py`]({SCRIPT_URL}) `padus` (DuckDB {DUCKDB_VERSION}, spatial
   {SPATIAL_EXTENSION_VERSION}, pyarrow {PYARROW_VERSION}); the catalog's `manifest.json` records
   the inputs, tools and every output digest.
@@ -1049,7 +1192,7 @@ WHERE bbox.xmin < -111.42 AND bbox.xmax > -111.97 AND bbox.ymin < 41.03 AND bbox
     spec = dict(
         id=cid,
         title="PAD-US 4.1 Combined by state",
-        description="PAD-US 4.1 Combined protected-area records (USGS GAP), one Hilbert-sorted GeoParquet per state with a bbox covering, built from Source Cooperative cboettig/padus combined.parquet.",
+        description="PAD-US 4.1 Combined protected-area records (USGS GAP), one Hilbert-sorted GeoParquet per state with a bbox covering, built from the USGS PAD-US 4.1 geodatabase.",
         keywords=["protected-areas", "public-lands", "pad-us", "usgs", "boundaries"],
         providers=providers,
         geom_col="SHAPE",
@@ -1061,11 +1204,11 @@ WHERE bbox.xmin < -111.42 AND bbox.xmax > -111.97 AND bbox.ymin < 41.03 AND bbox
         pmtiles=pmtiles,
         style_color="#2f7d32",
         via="https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-download",
-        version_message=f"Initial build from combined.parquet sha256 {source['sha256']}",
+        version_message=f"Initial build from the PAD-US 4.1 geodatabase, tree sha256 {source['gdb_tree_sha256']}",
         column_descriptions={
-            "_cng_fid": "Feature id from the cboettig/padus conversion; stable sort tiebreak.",
+            "OBJECTID": "Feature id in the USGS geodatabase; stable sort tiebreak.",
             "State_Nm": "State or territory code; equals the partition value.",
-            "SHAPE": "Feature geometry, WKB, OGC:CRS84.",
+            "SHAPE": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised.",
         },
         readme=readme,
         agents=agents,
@@ -1078,9 +1221,10 @@ WHERE bbox.xmin < -111.42 AND bbox.xmax > -111.97 AND bbox.ymin < 41.03 AND bbox
         readme="""# PAD-US 4.1, partitioned by state
 
 A Portolan catalog with one collection, `combined`: PAD-US 4.1 Combined split by state, Hilbert
-sorted, with a GeoParquet bbox covering. It complements, and does not replace,
-`cboettig/padus/padus-4-1/combined.parquet` (the whole country in one 1.86 GB file) and
-`combined.pmtiles` (display). Public domain (USGS GAP). See `combined/README.md`.
+sorted, with a GeoParquet bbox covering, built from the USGS PAD-US 4.1 geodatabase. For the
+whole country in one file, see Source Cooperative `cboettig/padus` (`combined.parquet`, a
+conversion of the same release); its `combined.pmtiles` is the display layer linked here. Public
+domain (USGS GAP). See `combined/README.md`.
 """,
         agents="""# AGENTS.md
 
@@ -1172,8 +1316,19 @@ def build_wbd(args: argparse.Namespace) -> None:
         if not only and sum(p["rows"] for p in parts) != n:
             raise SystemExit(f"{layer}: partition row counts do not add up")
         con.sql("DROP TABLE layer")
+        tiles = build_pmtiles(
+            [out / cid / f"huc2={p['value']}" / "data.parquet" for p in parts],
+            [code, "name", "areasqkm"], cid, out / cid / f"{cid}.pmtiles",
+        )
         all_parts[cid] = parts
         specs.append(wbd_spec(args, source, level, cid, code))
+        specs[-1]["pmtiles"] = {
+            "href": f"./{cid}.pmtiles",
+            "style_url": f"{args.base_url.rstrip('/')}/{cid}/{cid}.pmtiles" if args.base_url else f"./{cid}.pmtiles",
+            "layer": cid,
+            "title": f"WBD HU{level} vector tiles (2026-09-02; {code}, name, areasqkm)",
+            **tiles,
+        }
         write_collection(con, out, specs[-1], parts, updated)
 
     names = [f"HUC{level}" for level in levels]
@@ -1266,14 +1421,7 @@ would duplicate or arbitrarily assign units.
         partition_key="huc2",
         partition_description=f"First two digits of {code}: the HUC2 region.",
         base_url=args.base_url,
-        pmtiles={
-            "href": f"https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu{level}.pmtiles",
-            "layer": f"hu{level}",
-            "bytes": WBD_PMTILES_BYTES[level],
-            "title": f"WBD HU{level} vector tiles (cboettig/usgs-wbd mirror, 2025-01-07 build)",
-        }
-        if level in WBD_PMTILES_BYTES
-        else None,
+        pmtiles=None,  # build_wbd sets this once the tiles are built
         style_color="#1f5fa8",
         via="https://www.usgs.gov/national-hydrography/access-national-hydrography-products",
         version_message=f"Initial build from WBD_National_GDB.zip sha256 {source['sha256']}",
@@ -1330,7 +1478,8 @@ def build_root(args: argparse.Namespace) -> None:
     )
     builds = "\n".join(
         f"uv run scripts/build_sorted_boundary_partitions.py {json.loads((out / name / 'manifest.json').read_text())['kind']} "
-        f"--work /tmp/work --out out/{name} --base-url https://data.source.coop/nthh/us-boundaries/{name}"
+        + ("--source PADUS4_1Geodatabase.zip " if name.startswith("padus") else "")
+        + f"--work /tmp/work --out out/{name} --base-url https://data.source.coop/nthh/us-boundaries/{name}"
         for name, _ in children
     )
     (out / "README.md").write_text(
@@ -1366,10 +1515,26 @@ WHERE bbox.xmax >= -111.85 AND bbox.xmin <= -111.55 AND bbox.ymax >= 40.45 AND b
 
 Filter on the `bbox` struct; its row-group statistics let readers skip everything outside the area.
 
+The whole country is one wildcard over the partitions (Source Cooperative allows anonymous listing):
+
+```sql
+CREATE SECRET (TYPE s3, PROVIDER config, REGION 'us-west-2', URL_STYLE 'path');
+SELECT huc12, name, geometry
+FROM 's3://us-west-2.opendata.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu12/*/data.parquet';
+```
+
+For a single national PAD-US file, [cboettig/padus](https://source.coop/cboettig/padus)
+`combined.parquet` converts the same USGS release. For web maps, each WBD collection carries
+PMTiles built from this release; PAD-US links cboettig/padus `combined.pmtiles`.
+
 ## Rebuilding
 
-Inputs are pinned by sha256, ETag and size; the build refuses a republished source unless told
-otherwise. With [uv](https://docs.astral.sh/uv/):
+Inputs are pinned (WBD by sha256, ETag and size; PAD-US by a digest over its unzipped
+geodatabase), and the build refuses a republished source unless told otherwise. ScienceBase has
+no scriptable download for PAD-US: fetch `PADUS4_1Geodatabase.zip` from
+https://www.sciencebase.gov/catalog/item/652d4fc5d34e44db0e2ee45e in a browser first. The build
+also needs GDAL {GDAL_VERSION} and tippecanoe {TIPPECANOE_VERSION} on PATH. With
+[uv](https://docs.astral.sh/uv/):
 
 ```sh
 {builds}
@@ -1423,6 +1588,7 @@ def finish(
             "duckdb_spatial": SPATIAL_EXTENSION_VERSION,
             "pyarrow": PYARROW_VERSION,
             "pillow": PILLOW_VERSION,
+            **({"tippecanoe": TIPPECANOE_VERSION, "tippecanoe_args": TIPPECANOE_ARGS, "tiles_input": "GDAL GeoJSONSeq of each partition"} if kind == "wbd" else {}),
             "python": sys.version.split()[0],
         },
         "parameters": {

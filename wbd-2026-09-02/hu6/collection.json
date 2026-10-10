@@ -6,7 +6,8 @@
     "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "id": "hu6",
   "title": "WBD HUC6 basins (2026-09-02) by HUC2 region",
@@ -144,6 +145,16 @@
   "partition:file_count": 22,
   "partition:glob": "https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu6/huc2=*/*.parquet",
   "assets": {
+    "visual": {
+      "href": "./hu6.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "WBD HU6 vector tiles (2026-09-02; huc6, name, areasqkm)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 38166866,
+      "file:checksum": "122055873d30ef82733c51a24170481579b9fa5198c2b69984bd2f895046d4c7000c"
+    },
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
@@ -153,6 +164,17 @@
       ],
       "file:size": 3152,
       "file:checksum": "1220fcc17837e8580af81bc82a3ea8bb4004ffce650eac32bb9466a9f37f1b835bf9"
+    },
+    "style-default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Outlines over a light fill",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "file:size": 653,
+      "file:checksum": "1220ac5827018114448176a2c3b68e32fa8e2f36e4305cf98c284a1839a6e2455aba"
     }
   },
   "links": [
@@ -299,6 +321,15 @@
       "title": "WBD HUC6 basins (2026-09-02) by HUC2 region: Region 22 South Pacific"
     },
     {
+      "rel": "pmtiles",
+      "href": "./hu6.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Web map tiles",
+      "pmtiles:layers": [
+        "hu6"
+      ]
+    },
+    {
       "rel": "via",
       "href": "https://www.usgs.gov/national-hydrography/access-national-hydrography-products",
       "type": "text/html",
@@ -323,5 +354,5 @@
       "title": "Human-readable documentation"
     }
   ],
-  "updated": "2026-10-09T20:23:00Z"
+  "updated": "2026-10-09T22:01:24Z"
 }

@@ -6,7 +6,8 @@
     "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "id": "hu4",
   "title": "WBD HUC4 subregions (2026-09-02) by HUC2 region",
@@ -144,6 +145,16 @@
   "partition:file_count": 22,
   "partition:glob": "https://data.source.coop/nthh/us-boundaries/wbd-2026-09-02/hu4/huc2=*/*.parquet",
   "assets": {
+    "visual": {
+      "href": "./hu4.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "WBD HU4 vector tiles (2026-09-02; huc4, name, areasqkm)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 29774478,
+      "file:checksum": "1220477247fd98af32d1268aeecfc15bea6fb8dad98e07c3f3a834a4fc3902e6451a"
+    },
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
@@ -153,6 +164,17 @@
       ],
       "file:size": 3032,
       "file:checksum": "12208795903bebdaaec07bc2af9fccacddf309185623df16b2df403ba077091c5324"
+    },
+    "style-default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Outlines over a light fill",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "file:size": 657,
+      "file:checksum": "1220f3be32c500656e3d6cb80f640e0c0ca376fdf161154b9459d17df5a03ef5d901"
     }
   },
   "links": [
@@ -299,6 +321,15 @@
       "title": "WBD HUC4 subregions (2026-09-02) by HUC2 region: Region 22 South Pacific"
     },
     {
+      "rel": "pmtiles",
+      "href": "./hu4.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Web map tiles",
+      "pmtiles:layers": [
+        "hu4"
+      ]
+    },
+    {
       "rel": "via",
       "href": "https://www.usgs.gov/national-hydrography/access-national-hydrography-products",
       "type": "text/html",
@@ -323,5 +354,5 @@
       "title": "Human-readable documentation"
     }
   ],
-  "updated": "2026-10-09T20:23:00Z"
+  "updated": "2026-10-09T22:01:24Z"
 }

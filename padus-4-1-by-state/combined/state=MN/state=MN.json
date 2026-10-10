@@ -13,33 +13,33 @@
     "coordinates": [
       [
         [
-          -97.23909300050248,
-          43.49936099964741
+          -97.23909526947774,
+          43.49936419321432
         ],
         [
-          -89.48568569054868,
-          43.49936099964741
+          -89.48569685766252,
+          43.49936419321432
         ],
         [
-          -89.48568569054868,
-          49.3710267529273
+          -89.48569685766252,
+          49.37103154576663
         ],
         [
-          -97.23909300050248,
-          49.3710267529273
+          -97.23909526947774,
+          49.37103154576663
         ],
         [
-          -97.23909300050248,
-          43.49936099964741
+          -97.23909526947774,
+          43.49936419321432
         ]
       ]
     ]
   },
   "bbox": [
-    -97.23909300050248,
-    43.49936099964741,
-    -89.48568569054868,
-    49.3710267529273
+    -97.23909526947774,
+    43.49936419321432,
+    -89.48569685766252,
+    49.37103154576663
   ],
   "properties": {
     "title": "PAD-US 4.1 Combined by state: Minnesota",
@@ -49,9 +49,9 @@
     "table:primary_geometry": "SHAPE",
     "table:columns": [
       {
-        "name": "_cng_fid",
+        "name": "OBJECTID",
         "type": "bigint",
-        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+        "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
       },
       {
         "name": "FeatClass",
@@ -193,7 +193,7 @@
       {
         "name": "SHAPE",
         "type": "geometry",
-        "description": "Feature geometry, WKB, OGC:CRS84."
+        "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
       },
       {
         "name": "bbox",
@@ -227,8 +227,8 @@
       "roles": [
         "data"
       ],
-      "file:size": 27656861,
-      "file:checksum": "1220e851a168e65c3a593be684f444a251970097f0624d075a05a1128ce11a8c75c1",
+      "file:size": 27665262,
+      "file:checksum": "12205331c97e8063adbda7d20e19a48d050e88f33ac76bd006c708b08f09303dff7f",
       "proj:code": "OGC:CRS84"
     }
   }

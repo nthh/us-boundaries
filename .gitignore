@@ -1,4 +1,5 @@
-# GeoParquet data lives on Source Cooperative, not in git.
+# GeoParquet and PMTiles live on Source Cooperative, not in git.
 *.parquet
+*.pmtiles
 out/
 work/

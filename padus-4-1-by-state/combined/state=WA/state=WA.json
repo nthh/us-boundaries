@@ -14,32 +14,32 @@
       [
         [
           -125.68166351320606,
-          45.54354100028553
+          45.54353718449639
         ],
         [
-          -116.91607099977657,
-          45.54354100028553
+          -116.91607158215683,
+          45.54353718449639
         ],
         [
-          -116.91607099977657,
-          49.00225807090761
-        ],
-        [
-          -125.68166351320606,
-          49.00225807090761
+          -116.91607158215683,
+          49.002258516480936
         ],
         [
           -125.68166351320606,
-          45.54354100028553
+          49.002258516480936
+        ],
+        [
+          -125.68166351320606,
+          45.54353718449639
         ]
       ]
     ]
   },
   "bbox": [
     -125.68166351320606,
-    45.54354100028553,
-    -116.91607099977657,
-    49.00225807090761
+    45.54353718449639,
+    -116.91607158215683,
+    49.002258516480936
   ],
   "properties": {
     "title": "PAD-US 4.1 Combined by state: Washington",
@@ -49,9 +49,9 @@
     "table:primary_geometry": "SHAPE",
     "table:columns": [
       {
-        "name": "_cng_fid",
+        "name": "OBJECTID",
         "type": "bigint",
-        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+        "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
       },
       {
         "name": "FeatClass",
@@ -193,7 +193,7 @@
       {
         "name": "SHAPE",
         "type": "geometry",
-        "description": "Feature geometry, WKB, OGC:CRS84."
+        "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
       },
       {
         "name": "bbox",
@@ -227,8 +227,8 @@
       "roles": [
         "data"
       ],
-      "file:size": 43542012,
-      "file:checksum": "12209b43b6396736db53c6129ba38fc370515a3802faa100e9bb12421487bb2ce1ce",
+      "file:size": 43306630,
+      "file:checksum": "122054d878793c0980d45b1b2ca30fbd6b68c1181318aa9875ac7fa202309bb1b5d5",
       "proj:code": "OGC:CRS84"
     }
   }

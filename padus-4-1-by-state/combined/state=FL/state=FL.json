@@ -13,33 +13,33 @@
     "coordinates": [
       [
         [
-          -87.6322633827933,
-          24.29999409027214
+          -87.63226215551768,
+          24.299988209208465
         ],
         [
           -79.97472800055978,
-          24.29999409027214
+          24.299988209208465
         ],
         [
           -79.97472800055978,
-          31.000670897153388
+          31.000669375946973
         ],
         [
-          -87.6322633827933,
-          31.000670897153388
+          -87.63226215551768,
+          31.000669375946973
         ],
         [
-          -87.6322633827933,
-          24.29999409027214
+          -87.63226215551768,
+          24.299988209208465
         ]
       ]
     ]
   },
   "bbox": [
-    -87.6322633827933,
-    24.29999409027214,
+    -87.63226215551768,
+    24.299988209208465,
     -79.97472800055978,
-    31.000670897153388
+    31.000669375946973
   ],
   "properties": {
     "title": "PAD-US 4.1 Combined by state: Florida",
@@ -49,9 +49,9 @@
     "table:primary_geometry": "SHAPE",
     "table:columns": [
       {
-        "name": "_cng_fid",
+        "name": "OBJECTID",
         "type": "bigint",
-        "description": "Feature id from the cboettig/padus conversion; stable sort tiebreak."
+        "description": "Feature id in the USGS geodatabase; stable sort tiebreak."
       },
       {
         "name": "FeatClass",
@@ -193,7 +193,7 @@
       {
         "name": "SHAPE",
         "type": "geometry",
-        "description": "Feature geometry, WKB, OGC:CRS84."
+        "description": "Feature geometry, WKB, OGC:CRS84, reprojected from USGS Albers; curves linearised."
       },
       {
         "name": "bbox",
@@ -227,8 +227,8 @@
       "roles": [
         "data"
       ],
-      "file:size": 80334878,
-      "file:checksum": "1220a241c4bf11ed5005f13b6a6b793df6aea8512be28a0dfe82385ac699817e4633",
+      "file:size": 80407554,
+      "file:checksum": "12208cabf8f11e8ff8bf4539ac540c7758ca36b3d1fc3a32e49f36bb398395126f7d",
       "proj:code": "OGC:CRS84"
     }
   }
